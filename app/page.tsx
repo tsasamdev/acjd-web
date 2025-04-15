@@ -12,13 +12,13 @@ import {
   Phone,
   Plane,
   Shield,
-  Twitter,
   Users,
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { MobileMenu } from "@/components/mobile-menu"
 
 export default function Home() {
   return (
@@ -65,8 +65,7 @@ export default function Home() {
             </Link>
           </nav>
           <div className="flex items-center gap-3">
-           
-        
+            <MobileMenu />
           </div>
         </div>
       </header>
@@ -83,13 +82,8 @@ export default function Home() {
           </div>
           <div className="container relative z-10 py-24 md:py-32 lg:py-40">
             <div className="flex flex-col items-start gap-4 text-white max-w-xl">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-                Apprendre à piloter...
-              </h1>
-              <p className="text-lg md:text-xl">
-                Ce n'est pas qu'un rêve d'enfant 
-              </p>
-              
+              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Apprendre à piloter...</h1>
+              <p className="text-lg md:text-xl">Ce n'est pas qu'un rêve d'enfant</p>
             </div>
           </div>
         </section>
@@ -100,10 +94,16 @@ export default function Home() {
               <div>
                 <h2 className="text-3xl font-bold tracking-tight mb-4">A propos du club</h2>
                 <p className="text-muted-foreground mb-6">
-                L’aéroclub est implanté sur le domaine public de l’aérodrome de Castelnaudary Villeneuve et dispose d’un hangar pouvant abriter 5 aéronefs, d’une tour de contrôle abritant le bureau des instructeurs et un simulateur de vol, d’un grand clubhouse ou se passent les réunions et animations du club, et d’une salle de cours dédiée aux élèves ULM.
+                  L’aéroclub est implanté sur le domaine public de l’aérodrome de Castelnaudary Villeneuve et dispose
+                  d’un hangar pouvant abriter 5 aéronefs, d’une tour de contrôle abritant le bureau des instructeurs et
+                  un simulateur de vol, d’un grand clubhouse ou se passent les réunions et animations du club, et d’une
+                  salle de cours dédiée aux élèves ULM.
                 </p>
                 <p className="text-muted-foreground mb-6">
-                Forte d’une soixantaine de membres actifs, elle est dirigée par un Comité de direction élu en assemblée générale et qui délègue la gestion courante au bureau directeur (Président, Trésorier, secrétaire). Tous les membres assurant le bon fonctionnement de l’aéroclub (dirigeants, instructeurs, responsables divers postes…) sont bénévoles.
+                  Forte d’une soixantaine de membres actifs, elle est dirigée par un Comité de direction élu en
+                  assemblée générale et qui délègue la gestion courante au bureau directeur (Président, Trésorier,
+                  secrétaire). Tous les membres assurant le bon fonctionnement de l’aéroclub (dirigeants, instructeurs,
+                  responsables divers postes…) sont bénévoles.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-8 mt-8">
                   <div className="flex gap-2 items-center">
@@ -146,7 +146,8 @@ export default function Home() {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight mb-4">Nos services</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-              Du vol découverte à la formation de futurs pilotes ou location d'avions, nous pouvons vous offrir différents types de services correspondant à vos besoins.
+                Du vol découverte à la formation de futurs pilotes ou location d'avions, nous pouvons vous offrir
+                différents types de services correspondant à vos besoins.
               </p>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -270,7 +271,7 @@ export default function Home() {
         </section>
 
         <section id="fleet" className="py-16 md:py-24 bg-gradient-to-b from-white to-sky-50">
-          <div className="container">
+          <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight mb-4">Notre flotte</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -279,39 +280,42 @@ export default function Home() {
             </div>
 
             <Tabs defaultValue="training" className="w-full">
-              <TabsList className="grid w-full max-w-md mx-auto mb-8 md:grid-cols-3 bg-sky-100">
-                <TabsTrigger value="training" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
+              <TabsList className="grid w-full max-w-md mx-auto mb-8 grid-cols-3 bg-sky-100">
+                <TabsTrigger
+                  value="training"
+                  className="data-[state=active]:bg-sky-600 data-[state=active]:text-white text-xs sm:text-sm"
+                >
                   Avions école
                 </TabsTrigger>
-                <TabsTrigger value="touring" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
+                <TabsTrigger
+                  value="touring"
+                  className="data-[state=active]:bg-sky-600 data-[state=active]:text-white text-xs sm:text-sm"
+                >
                   Avion voyage
                 </TabsTrigger>
-                <TabsTrigger value="advanced" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
+                <TabsTrigger
+                  value="advanced"
+                  className="data-[state=active]:bg-sky-600 data-[state=active]:text-white text-xs sm:text-sm"
+                >
                   Ulm
                 </TabsTrigger>
               </TabsList>
+
               <TabsContent value="training">
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+                <div className="grid gap-6 md:grid-cols-2">
                   <Card className="overflow-hidden border-sky-100 hover:border-sky-200 transition-colors">
                     <div className="relative h-48 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-sky-900/70 to-transparent z-10"></div>
-                      <Image
-                        src="/evss.png?height=400&width=600"
-                        alt="Cessna 152"
-                        fill
-                        className="object-cover"
-                      />
+                      <Image src="/evss.png?height=400&width=600" alt="Cessna 152" fill className="object-cover" />
                     </div>
-                    <CardHeader>
-                      <CardTitle>Evektor Sportstar F-HDLV</CardTitle>
-                      <CardDescription>Avion biplace  de fabrication 
-
-tchèque, récent, très moderne équipé d'écrans numériques (EFIS)et utilisé pour l’école et les voyages. Une distance franchissable de 900 km à une vitesse de croisière de 170 km/h.
-
-
-</CardDescription>
+                    <CardHeader className="p-4">
+                      <CardTitle className="text-lg sm:text-xl">Evektor Sportstar F-HDLV</CardTitle>
+                      <CardDescription className="text-sm">
+                        Avion biplace de fabrication tchèque, récent, très moderne équipé d'écrans numériques (EFIS) et
+                        utilisé pour l'école et les voyages.
+                      </CardDescription>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="p-4 pt-0">
                       <div className="grid grid-cols-2 gap-2 text-sm">
                         <div className="flex items-center gap-1">
                           <Users className="h-4 w-4 text-muted-foreground" />
@@ -331,29 +335,21 @@ tchèque, récent, très moderne équipé d'écrans numériques (EFIS)et utilis�
                         </div>
                       </div>
                     </CardContent>
-                 
                   </Card>
 
                   <Card className="overflow-hidden border-sky-100 hover:border-sky-200 transition-colors">
                     <div className="relative h-48 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-sky-900/70 to-transparent z-10"></div>
-                      <Image
-                        src="/evss.png?height=400&width=600"
-                        alt="Cessna 152"
-                        fill
-                        className="object-cover"
-                      />
+                      <Image src="/evss.png?height=400&width=600" alt="Cessna 152" fill className="object-cover" />
                     </div>
-                    <CardHeader>
-                      <CardTitle>Evektor Sportstar F-HDLV</CardTitle>
-                      <CardDescription>Avion biplace  de fabrication 
-
-tchèque, récent, très moderne équipé d'écrans numériques (EFIS)et utilisé pour l’école et les voyages. Une distance franchissable de 900 km à une vitesse de croisière de 170 km/h.
-
-
-</CardDescription>
+                    <CardHeader className="p-4">
+                      <CardTitle className="text-lg sm:text-xl">Evektor Sportstar F-HDLV</CardTitle>
+                      <CardDescription className="text-sm">
+                        Avion biplace de fabrication tchèque, récent, très moderne équipé d'écrans numériques (EFIS) et
+                        utilisé pour l'école et les voyages.
+                      </CardDescription>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="p-4 pt-0">
                       <div className="grid grid-cols-2 gap-2 text-sm">
                         <div className="flex items-center gap-1">
                           <Users className="h-4 w-4 text-muted-foreground" />
@@ -373,28 +369,25 @@ tchèque, récent, très moderne équipé d'écrans numériques (EFIS)et utilis�
                         </div>
                       </div>
                     </CardContent>
-                   
                   </Card>
                 </div>
               </TabsContent>
 
               <TabsContent value="touring">
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+                <div className="grid gap-6 md:grid-cols-2">
                   <Card className="overflow-hidden border-sky-100 hover:border-sky-200 transition-colors">
                     <div className="relative h-48 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-sky-900/70 to-transparent z-10"></div>
-                      <Image
-                        src="/dr180.png?height=400&width=600"
-                        alt="Cessna 182"
-                        fill
-                        className="object-cover"
-                      />
+                      <Image src="/dr180.png?height=400&width=600" alt="Cessna 182" fill className="object-cover" />
                     </div>
-                    <CardHeader>
-                      <CardTitle>Robin DR400 180cv</CardTitle>
-                      <CardDescription>Avion quadriplace de voyage,  de fabrication française, Une distance franchissable de près de 1000 km à une vitesse de croisière de 240 km/h.</CardDescription>
+                    <CardHeader className="p-4">
+                      <CardTitle className="text-lg sm:text-xl">Robin DR400 180cv</CardTitle>
+                      <CardDescription className="text-sm">
+                        Avion quadriplace de voyage, de fabrication française. Distance franchissable de près de 1000 km
+                        à une vitesse de croisière de 240 km/h.
+                      </CardDescription>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="p-4 pt-0">
                       <div className="grid grid-cols-2 gap-2 text-sm">
                         <div className="flex items-center gap-1">
                           <Users className="h-4 w-4 text-muted-foreground" />
@@ -406,7 +399,7 @@ tchèque, récent, très moderne équipé d'écrans numériques (EFIS)et utilis�
                         </div>
                         <div className="flex items-center gap-1">
                           <Clock className="h-4 w-4 text-muted-foreground" />
-                          <span>180 euros/hour</span>
+                          <span>180€/h</span>
                         </div>
                         <div className="flex items-center gap-1">
                           <Plane className="h-4 w-4 text-muted-foreground" />
@@ -414,24 +407,21 @@ tchèque, récent, très moderne équipé d'écrans numériques (EFIS)et utilis�
                         </div>
                       </div>
                     </CardContent>
-                  
                   </Card>
 
                   <Card className="overflow-hidden border-sky-100 hover:border-sky-200 transition-colors">
                     <div className="relative h-48 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-sky-900/70 to-transparent z-10"></div>
-                      <Image
-                        src="/dr160.webp?height=400&width=600"
-                        alt="Piper Arrow"
-                        fill
-                        className="object-cover"
-                      />
+                      <Image src="/dr160.webp?height=400&width=600" alt="Piper Arrow" fill className="object-cover" />
                     </div>
-                    <CardHeader>
-                      <CardTitle>Robin DR400 160cv</CardTitle>
-                      <CardDescription>Avion quadriplace de propriétaire mis à disposition des membres du club qualifiés pour les sorties et les animations.</CardDescription>
+                    <CardHeader className="p-4">
+                      <CardTitle className="text-lg sm:text-xl">Robin DR400 160cv</CardTitle>
+                      <CardDescription className="text-sm">
+                        Avion quadriplace de propriétaire mis à disposition des membres du club qualifiés pour les
+                        sorties et les animations.
+                      </CardDescription>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="p-4 pt-0">
                       <div className="grid grid-cols-2 gap-2 text-sm">
                         <div className="flex items-center gap-1">
                           <Users className="h-4 w-4 text-muted-foreground" />
@@ -443,36 +433,33 @@ tchèque, récent, très moderne équipé d'écrans numériques (EFIS)et utilis�
                         </div>
                         <div className="flex items-center gap-1">
                           <Clock className="h-4 w-4 text-muted-foreground" />
-                          <span>180 euros/h</span>
+                          <span>180€/h</span>
                         </div>
                         <div className="flex items-center gap-1">
                           <Plane className="h-4 w-4 text-muted-foreground" />
-                          <span>155 knots</span>
+                          <span>220 kmh</span>
                         </div>
                       </div>
                     </CardContent>
-                    
                   </Card>
                 </div>
               </TabsContent>
 
               <TabsContent value="advanced">
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+                <div className="grid gap-6 md:grid-cols-2">
                   <Card className="overflow-hidden border-sky-100 hover:border-sky-200 transition-colors">
                     <div className="relative h-48 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-sky-900/70 to-transparent z-10"></div>
-                      <Image
-                        src="/ulm.png?height=400&width=600"
-                        alt="Cirrus SR22"
-                        fill
-                        className="object-cover"
-                      />
+                      <Image src="/ulm.png?height=400&width=600" alt="Cirrus SR22" fill className="object-cover" />
                     </div>
-                    <CardHeader>
-                      <CardTitle>Super guepard 100CV</CardTitle>
-                      <CardDescription>Avion ultra léger motorisé (ULM) biplace de fabrication française, bien équipé pour l’école et les voyages. Une distance franchissable de 750 km à une vitesse de croisière de 180 km/h.</CardDescription>
+                    <CardHeader className="p-4">
+                      <CardTitle className="text-lg sm:text-xl">Super guepard 100CV</CardTitle>
+                      <CardDescription className="text-sm">
+                        Avion ultra léger motorisé (ULM) biplace de fabrication française, bien équipé pour l'école et
+                        les voyages. Distance franchissable de 750 km à 180 km/h.
+                      </CardDescription>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="p-4 pt-0">
                       <div className="grid grid-cols-2 gap-2 text-sm">
                         <div className="flex items-center gap-1">
                           <Users className="h-4 w-4 text-muted-foreground" />
@@ -484,15 +471,14 @@ tchèque, récent, très moderne équipé d'écrans numériques (EFIS)et utilis�
                         </div>
                         <div className="flex items-center gap-1">
                           <Clock className="h-4 w-4 text-muted-foreground" />
-                          <span>90 euros/h</span>
+                          <span>90€/h</span>
                         </div>
                         <div className="flex items-center gap-1">
                           <Plane className="h-4 w-4 text-muted-foreground" />
-                          <span>180 knots</span>
+                          <span>180 kmh</span>
                         </div>
                       </div>
                     </CardContent>
-                   
                   </Card>
                 </div>
               </TabsContent>
@@ -515,23 +501,16 @@ tchèque, récent, très moderne équipé d'écrans numériques (EFIS)et utilis�
                     <span className="text-sm font-medium">May 15, 2025</span>
                   </div>
                   <CardTitle>BREVET DE PILOTE ULM MULTIAXES</CardTitle>
-                  <CardDescription>
-                   
-                  </CardDescription>
+                  <CardDescription></CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-4">
-                  Schématiquement, l’ULM multiaxes est un petit aéronef dont le poids et la puissance sont limités et qui permet l’emport d’une à deux personnes.
-
- 
-
-La pratique du pilotage d’un ULM nécessite, outre la licence fédérale, un certificat médical de non contre-indication délivré par un médecin généraliste.
-
-
-La formation associe une partie théorique et une partie pratique avec un instructeur de l’aéroclub en double commandes. 
-
-
-Le brevet de pilote d’ULM est acquis à vie et n’est pas soumis à une obligation légale d’entraî-nement régulier. Celui-ci est laissé à l’appréciation du pilote.
+                    Schématiquement, l’ULM multiaxes est un petit aéronef dont le poids et la puissance sont limités et
+                    qui permet l’emport d’une à deux personnes. La pratique du pilotage d’un ULM nécessite, outre la
+                    licence fédérale, un certificat médical de non contre-indication délivré par un médecin généraliste.
+                    La formation associe une partie théorique et une partie pratique avec un instructeur de l’aéroclub
+                    en double commandes. Le brevet de pilote d’ULM est acquis à vie et n’est pas soumis à une obligation
+                    légale d’entraî-nement régulier. Celui-ci est laissé à l’appréciation du pilote.
                   </p>
                   <div className="flex items-center gap-2 text-sm">
                     <Clock className="h-4 w-4 text-muted-foreground" />
@@ -542,7 +521,6 @@ Le brevet de pilote d’ULM est acquis à vie et n’est pas soumis à une oblig
                     <span>24 euros/h instructeur</span>
                   </div>
                 </CardContent>
-                
               </Card>
 
               <Card className="border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
@@ -553,13 +531,13 @@ Le brevet de pilote d’ULM est acquis à vie et n’est pas soumis à une oblig
                     <span className="text-sm font-medium">May 15, 2025</span>
                   </div>
                   <CardTitle>LAPL (light aircraft pilot licence)</CardTitle>
-                  <CardDescription>
-                   
-                  </CardDescription>
+                  <CardDescription></CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-4">
-                  La LAPL permet d’accéder au pilotage de la plupart des avions d’aéroclub. Cette licence est européenne, valable uniquement au sein de l’espace Schengen. Le pilote LAPL devra avoir réalisé 10 heures de vol solo après obtention de sa licence pour être autorisé à emmener des passagers. 
+                    La LAPL permet d’accéder au pilotage de la plupart des avions d’aéroclub. Cette licence est
+                    européenne, valable uniquement au sein de l’espace Schengen. Le pilote LAPL devra avoir réalisé 10
+                    heures de vol solo après obtention de sa licence pour être autorisé à emmener des passagers.
                   </p>
                   <div className="flex items-center gap-2 text-sm">
                     <Clock className="h-4 w-4 text-muted-foreground" />
@@ -570,7 +548,6 @@ Le brevet de pilote d’ULM est acquis à vie et n’est pas soumis à une oblig
                     <span>24 euros/h instructeur</span>
                   </div>
                 </CardContent>
-                
               </Card>
 
               <Card className="border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
@@ -581,13 +558,13 @@ Le brevet de pilote d’ULM est acquis à vie et n’est pas soumis à une oblig
                     <span className="text-sm font-medium">May 15, 2025</span>
                   </div>
                   <CardTitle>PPL (private pilot licence)</CardTitle>
-                  <CardDescription>
-                   
-                  </CardDescription>
+                  <CardDescription></CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-4">
-                  La PPL, outre sa reconnaissance internationale, est une des portes d'entrée pour poursuivre une formation de pilote professionnel (pilote de ligne, vol aux instruments, avions multi-moteurs, avions de plus de cinq places,…).
+                    La PPL, outre sa reconnaissance internationale, est une des portes d'entrée pour poursuivre une
+                    formation de pilote professionnel (pilote de ligne, vol aux instruments, avions multi-moteurs,
+                    avions de plus de cinq places,…).
                   </p>
                   <div className="flex items-center gap-2 text-sm">
                     <Clock className="h-4 w-4 text-muted-foreground" />
@@ -598,7 +575,6 @@ Le brevet de pilote d’ULM est acquis à vie et n’est pas soumis à une oblig
                     <span>24 euros/h instructeur</span>
                   </div>
                 </CardContent>
-                
               </Card>
             </div>
           </div>
@@ -667,7 +643,6 @@ Le brevet de pilote d’ULM est acquis à vie et n’est pas soumis à une oblig
                       <Instagram className="h-5 w-5" />
                       <span className="sr-only">Instagram</span>
                     </Button>
-                  
                   </div>
                 </div>
               </div>
@@ -733,9 +708,7 @@ Le brevet de pilote d’ULM est acquis à vie et n’est pas soumis à une oblig
                 <Plane className="h-6 w-6 rotate-45 text-azure-400" />
                 <span className="text-xl font-bold">Aeroclub Jean Doudies</span>
               </div>
-              <p className="text-sky-200 mb-4">
-              Apprendre à piloter...  Ce n'est pas qu'un rêve d'enfant 
-              </p>
+              <p className="text-sky-200 mb-4">Apprendre à piloter... Ce n'est pas qu'un rêve d'enfant</p>
             </div>
 
             <div>
@@ -776,12 +749,8 @@ Le brevet de pilote d’ULM est acquis à vie et n’est pas soumis à une oblig
 
             <div>
               <h3 className="text-lg font-semibold mb-4">Services</h3>
-              <ul className="space-y-2">
-               
-              </ul>
+              <ul className="space-y-2"></ul>
             </div>
-
-            
           </div>
 
           <div className="border-t border-navy-800 mt-8 pt-8 text-center text-sky-300">
