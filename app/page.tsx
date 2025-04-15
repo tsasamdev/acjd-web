@@ -296,7 +296,7 @@ export default function Home() {
                     <div className="relative h-48 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-sky-900/70 to-transparent z-10"></div>
                       <Image
-                        src="/evss.jpg?height=400&width=600"
+                        src="/evss.png?height=400&width=600"
                         alt="Cessna 152"
                         fill
                         className="object-cover"
@@ -338,7 +338,7 @@ tchèque, récent, très moderne équipé d'écrans numériques (EFIS)et utilis�
                     <div className="relative h-48 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-sky-900/70 to-transparent z-10"></div>
                       <Image
-                        src="/evss.jpg?height=400&width=600"
+                        src="/evss.png?height=400&width=600"
                         alt="Cessna 152"
                         fill
                         className="object-cover"
@@ -462,7 +462,7 @@ tchèque, récent, très moderne équipé d'écrans numériques (EFIS)et utilis�
                     <div className="relative h-48 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-sky-900/70 to-transparent z-10"></div>
                       <Image
-                        src="/ulm.jpg?height=400&width=600"
+                        src="/ulm.png?height=400&width=600"
                         alt="Cirrus SR22"
                         fill
                         className="object-cover"
