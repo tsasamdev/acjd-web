@@ -3,9 +3,9 @@ import "./globals.css"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "SkyHigh Aeroclub",
-  description: "Experience the freedom of flight with SkyHigh Aeroclub",
-    generator: 'v0.dev'
+  title: "Aeroclub Jean Doudies",
+  description: "Aeroclub Jean Doudies",
+    generator: 'v0.1dev'
 }
 
 export default function RootLayout({
