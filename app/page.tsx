@@ -785,7 +785,7 @@ Le brevet de pilote d’ULM est acquis à vie et n’est pas soumis à une oblig
           </div>
 
           <div className="border-t border-navy-800 mt-8 pt-8 text-center text-sky-300">
-            <p>© {new Date().getFullYear()} Aeroclub Jean doudies.Tout droits reservés.</p>
+            <p>© {new Date().getFullYear()} Aeroclub Jean Doudies.Tout droits reservés.</p>
           </div>
         </div>
       </footer>
