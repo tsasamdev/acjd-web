@@ -6,6 +6,7 @@ import {
   ChevronRight,
   Clock,
   CloudSun,
+  CompassIcon,
   EuroIcon,
   Facebook,
   Instagram,
@@ -13,6 +14,7 @@ import {
   MapPin,
   Phone,
   Plane,
+  ReceiptCentIcon,
   Shield,
   Users,
 } from "lucide-react"
@@ -25,13 +27,9 @@ import { PricingInfo } from "@/components/pricing-info"
 import { ContactFormEnhanced } from "@/components/contact-form-enhanced"
 
 import {
-  Dialog,
-  DialogTrigger,
-  DialogContent,
   DialogHeader,
   DialogTitle,
   DialogDescription,
-  DialogClose,
 } from "@/components/ui/dialog"
 import TrainingCard from "@/components/training-card-reusable"
 
@@ -41,7 +39,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b border-sky-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-          <Image src="/logo.png" alt="" width={40} height={40} className="h-10 w-auto" />
+            <Image src="/logo.png" alt="" width={40} height={40} className="h-10 w-auto" />
             <span className="text-xl font-bold">Aeroclub Jean Doudies</span>
           </div>
           <nav className="hidden md:flex gap-6">
@@ -171,10 +169,10 @@ export default function Home() {
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {/* Service cards */}
-            
+
               <TrainingCard
                 title="Formation au pilotage"
-                description="Comprehensive training programs for all levels, from beginners to advanced pilots."
+                description=""
                 icon={<Plane className="h-6 w-6 text-white" />}
                 details={[
                   "Light aircraft pilot licence (LAPL)",
@@ -188,99 +186,92 @@ export default function Home() {
                         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center">
                           <Plane className="h-5 w-5 text-white" />
                         </div>
-                        <DialogTitle className="text-lg font-semibold text-sky-900">
+                        <DialogTitle className="text-xl font-semibold text-sky-900">
                           Formation au pilotage
                         </DialogTitle>
                       </div>
-                      <DialogDescription className="text-sm text-sky-800">
-                        Explore detailed insights into our aviation training. Tailored programs, certified instructors, and real flight simulations.
+                      <DialogDescription className="text-base text-sky-800 leading-relaxed">
+                        Coucou, ici description plus detaillée.
                       </DialogDescription>
                     </DialogHeader>
 
                     <div className="mt-4 space-y-3 text-sm text-sky-700">
-                      <p>🎓 100+ certified pilots trained</p>
-                      <p>🛩️ State-of-the-art simulators</p>
-                      <p>📍 Courses available in multiple locations</p>
+                      <p>🎓 10+ ppl par an</p>
+                      <p>🛩️ Avions equipés a jours</p>
+                      <p>📍 Aeroclub tres bien situé</p>
                     </div>
                   </>
                 }
               />
 
-              {/* Other service cards */}
-              {/* ... */}
-              <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="h-1 bg-gradient-to-r from-sky-400 to-azure-500"></div>
-                <div className="flex flex-col flex-grow">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center mb-4">
-                      <CloudSun className="h-6 w-6 text-white" />
-                    </div>
-                    <CardTitle>Vols découvertes</CardTitle>
-                    <CardDescription>
-                      Rent our well-maintained aircraft for personal or training flights.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <ul className="space-y-2 text-sm">
-                      <li className="flex items-center">
-                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                        Baptêmes de l'air
-                      </li>
-                      <li className="flex items-center">
-                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                        Vols d'initiation au pilotage
-                      </li>
-                      <li className="flex items-center">
-                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                        Vols a frais partagés
-                      </li>
-                    </ul>
-                  </CardContent>
-                  <CardFooter className="mt-auto">
-                    <Button
-                      variant="outline"
-                      className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
-                    >
-                      En savoir plus
-                    </Button>
-                  </CardFooter>
-                </div>
-              </Card>
+              <TrainingCard
+                title="Vols découvertes"
+                description=""
+                icon={<CompassIcon className="h-6 w-6 text-white" />}
+                details={[
+                  "Baptêmes de l'air",
+                  "Vols d'initiation au pilotage",
+                  "Vols a frais partagés",
+                ]}
+                modalContent={
+                  <>
+                    <DialogHeader>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center">
+                          <CompassIcon className="h-5 w-5 text-white" />
+                        </div>
+                        <DialogTitle className="text-xl font-semibold text-sky-900">
+                          Vols découvertes
+                        </DialogTitle>
+                      </div>
+                      <DialogDescription className="text-base text-sky-800 leading-relaxed">
+                        Coucou, ici description plus detaillée.
+                      </DialogDescription>
+                    </DialogHeader>
 
-              <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="h-1 bg-gradient-to-r from-sky-400 to-azure-500"></div>
-                <div className="flex flex-col flex-grow">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center mb-4">
-                      <Calendar className="h-6 w-6 text-white" />
+                    <div className="mt-4 space-y-3 text-sm text-sky-700">
+                      <p>🎓 10+ ppl par an</p>
+                      <p>🛩️ Avions equipés a jours</p>
+                      <p>📍 Aeroclub tres bien situé</p>
                     </div>
-                    <CardTitle>Location d'avions</CardTitle>
-                    <CardDescription>
-                      
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <ul className="space-y-2 text-sm">
-                      <li className="flex items-center">
-                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                        Location à l'heure ou à la journée
-                      </li>
-                      <li className="flex items-center">
-                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                        Large choix d'appareils
-                      </li>
-                    </ul>
-                  </CardContent>
-                  <CardFooter className="mt-auto">
-                    <Button
-                      variant="outline"
-                      className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
-                    >
-                      En savoir plus
-                    </Button>
-                  </CardFooter>
-                </div>
-              </Card>
+                  </>
+                }
+              />
+
+<TrainingCard
+                title="Location d'avions"
+                description=""
+                icon={<ReceiptCentIcon className="h-6 w-6 text-white" />}
+                details={[
+                  "Location à l'heure ou à la journée",
+                  "Large choix d'appareils",
+                  "Pack murissement"
+                ]}
+                modalContent={
+                  <>
+                    <DialogHeader>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center">
+                          <ReceiptCentIcon className="h-5 w-5 text-white" />
+                        </div>
+                        <DialogTitle className="text-xl font-semibold text-sky-900">
+                        Location d'avions
+                        </DialogTitle>
+                      </div>
+                      <DialogDescription className="text-base text-sky-800 leading-relaxed">
+                        Coucou, ici description plus detaillée.
+                      </DialogDescription>
+                    </DialogHeader>
+
+                    <div className="mt-4 space-y-3 text-sm text-sky-700">
+                      <p>🎓 10+ ppl par an</p>
+                      <p>🛩️ Avions equipés a jours</p>
+                      <p>📍 Aeroclub tres bien situé</p>
+                    </div>
+                  </>
+                }
+              />
+    
             </div>
           </div>
         </section>
@@ -361,7 +352,7 @@ export default function Home() {
                           </div>
                         </div>
                       </CardContent>
-                    
+
                     </div>
                   </Card>
 
@@ -403,7 +394,7 @@ export default function Home() {
                             <span>170 kmh</span>
                           </div>
                         </div>
-                      </CardContent>          
+                      </CardContent>
                     </div>
                   </Card>
                 </div>
@@ -450,7 +441,7 @@ export default function Home() {
                           </div>
                         </div>
                       </CardContent>
-                     
+
                     </div>
                   </Card>
 
@@ -493,7 +484,7 @@ export default function Home() {
                           </div>
                         </div>
                       </CardContent>
-                 
+
                     </div>
                   </Card>
                 </div>
@@ -532,7 +523,7 @@ export default function Home() {
                           </div>
                           <div className="flex items-center gap-1">
                             <EuroIcon className="h-4 w-4 text-muted-foreground" />
-                            <span>90€/h</span>          
+                            <span>90€/h</span>
                           </div>
                           <div className="flex items-center gap-1">
                             <Plane className="h-4 w-4 text-muted-foreground" />
@@ -540,7 +531,7 @@ export default function Home() {
                           </div>
                         </div>
                       </CardContent>
-                     
+
                     </div>
                   </Card>
                 </div>
@@ -564,9 +555,9 @@ export default function Home() {
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="h-1 bg-gradient-to-r from-sky-400 to-azure-500"></div>
+                <div className="h-1 bg-gradient-to-r from-sky-400 to-azure-500"></div>
                 <div className="flex flex-col flex-grow">
-                <CardHeader>
+                  <CardHeader>
                     <div className="flex items-center gap-2 text-azure-600 mb-2">
                       <BookAIcon className="h-5 w-5" />
                       <span className="text-sm font-medium">~ 1 an</span>
@@ -751,6 +742,11 @@ export default function Home() {
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Aeroclub Jean Doudies. Tous droits réservés.
           </p>
+          <div className="flex items-center gap-6">
+    <img src="/logoFFA.png" alt="ffa" className="h-10 opacity-80 hover:opacity-100 transition" />
+    <img src="/ffplum.png" alt="Sponsor 2" className="h-10 opacity-80 hover:opacity-100 transition" />
+    <img src="/castel.png" alt="Sponsor 3" className="h-10 opacity-80 hover:opacity-100 transition" />
+  </div>
         </div>
       </footer>
     </div>
