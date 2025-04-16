@@ -24,6 +24,17 @@ import { MobileMenu } from "@/components/mobile-menu"
 import { PricingInfo } from "@/components/pricing-info"
 import { ContactFormEnhanced } from "@/components/contact-form-enhanced"
 
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogClose,
+} from "@/components/ui/dialog"
+import TrainingCard from "@/components/training-card-reusable"
+
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -160,48 +171,40 @@ export default function Home() {
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {/* Service cards */}
-              <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="h-1 bg-gradient-to-r from-sky-400 to-azure-500"></div>
-                <div className="flex flex-col flex-grow">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center mb-4">
-                      <Plane className="h-6 w-6 text-white" />
+            
+              <TrainingCard
+                title="Formation au pilotage"
+                description="Comprehensive training programs for all levels, from beginners to advanced pilots."
+                icon={<Plane className="h-6 w-6 text-white" />}
+                details={[
+                  "Light aircraft pilot licence (LAPL)",
+                  "License pilote privé avion (PPL)",
+                  "Brevet de pilote (ULM)",
+                ]}
+                modalContent={
+                  <>
+                    <DialogHeader>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center">
+                          <Plane className="h-5 w-5 text-white" />
+                        </div>
+                        <DialogTitle className="text-lg font-semibold text-sky-900">
+                          Formation au pilotage
+                        </DialogTitle>
+                      </div>
+                      <DialogDescription className="text-sm text-sky-800">
+                        Explore detailed insights into our aviation training. Tailored programs, certified instructors, and real flight simulations.
+                      </DialogDescription>
+                    </DialogHeader>
+
+                    <div className="mt-4 space-y-3 text-sm text-sky-700">
+                      <p>🎓 100+ certified pilots trained</p>
+                      <p>🛩️ State-of-the-art simulators</p>
+                      <p>📍 Courses available in multiple locations</p>
                     </div>
-                    <CardTitle>Formation au pilotage</CardTitle>
-                    <CardDescription>
-                      Comprehensive training programs for all levels, from beginners to advanced pilots.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <ul className="space-y-2 text-sm">
-                      <li className="flex items-center">
-                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                        Light aircraft pilot licence (LAPL)
-                      </li>
-                      <li className="flex items-center">
-                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                        License pilote privé avion (PPL)
-                      </li>
-                      <li className="flex items-center">
-                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                        Brevet de pilote (ULM)
-                      </li>
-                      <li className="flex items-center">
-                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                        Forfait initiation
-                      </li>
-                    </ul>
-                  </CardContent>
-                  <CardFooter className="mt-auto">
-                    <Button
-                      variant="outline"
-                      className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
-                    >
-                      En savoir plus
-                    </Button>
-                  </CardFooter>
-                </div>
-              </Card>
+                  </>
+                }
+              />
 
               {/* Other service cards */}
               {/* ... */}
@@ -227,6 +230,10 @@ export default function Home() {
                         <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
                         Vols d'initiation au pilotage
                       </li>
+                      <li className="flex items-center">
+                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
+                        Vols a frais partagés
+                      </li>
                     </ul>
                   </CardContent>
                   <CardFooter className="mt-auto">
@@ -249,7 +256,7 @@ export default function Home() {
                     </div>
                     <CardTitle>Location d'avions</CardTitle>
                     <CardDescription>
-                      Rent our well-maintained aircraft for your personal or business travel needs.
+                      
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="flex-grow">
@@ -262,7 +269,6 @@ export default function Home() {
                         <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
                         Large choix d'appareils
                       </li>
-                    
                     </ul>
                   </CardContent>
                   <CardFooter className="mt-auto">
