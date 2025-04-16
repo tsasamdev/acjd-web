@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { MobileMenu } from "@/components/mobile-menu"
+import { PricingInfo } from "@/components/pricing-info"
 
 export default function Home() {
   return (
@@ -97,7 +98,7 @@ export default function Home() {
                   L’aéroclub est implanté sur le domaine public de l’aérodrome de Castelnaudary Villeneuve et dispose
                   d’un hangar pouvant abriter 5 aéronefs, d’une tour de contrôle abritant le bureau des instructeurs et
                   un simulateur de vol, d’un grand clubhouse ou se passent les réunions et animations du club, et d’une
-                  salle de cours dédiée aux élèves ULM.
+                  salle de cours .
                 </p>
                 <p className="text-muted-foreground mb-6">
                   Forte d’une soixantaine de membres actifs, elle est dirigée par un Comité de direction élu en
@@ -151,120 +152,128 @@ export default function Home() {
               </p>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <Card className="border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center mb-4">
-                    <Plane className="h-6 w-6 text-white" />
-                  </div>
-                  <CardTitle>Formation au pilotage</CardTitle>
-                  <CardDescription>
-                    Comprehensive training programs for all levels, from beginners to advanced pilots.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-center">
-                      <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                      Light aircraft pilot licence (LAPL)
-                    </li>
-                    <li className="flex items-center">
-                      <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                      License pilote privé avion (PPL)
-                    </li>
-                    <li className="flex items-center">
-                      <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                      Brevet de pilote (ULM)
-                    </li>
-                    <li className="flex items-center">
-                      <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                      Forfait initiation
-                    </li>
-                  </ul>
-                </CardContent>
-                <CardFooter>
-                  <Button
-                    variant="outline"
-                    className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
-                  >
-                    En savoir plus
-                  </Button>
-                </CardFooter>
+              <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="flex flex-col flex-grow">
+                  <CardHeader>
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center mb-4">
+                      <Plane className="h-6 w-6 text-white" />
+                    </div>
+                    <CardTitle>Formation au pilotage</CardTitle>
+                    <CardDescription>
+                      Comprehensive training programs for all levels, from beginners to advanced pilots.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-center">
+                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
+                        Light aircraft pilot licence (LAPL)
+                      </li>
+                      <li className="flex items-center">
+                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
+                        License pilote privé avion (PPL)
+                      </li>
+                      <li className="flex items-center">
+                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
+                        Brevet de pilote (ULM)
+                      </li>
+                      <li className="flex items-center">
+                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
+                        Forfait initiation
+                      </li>
+                    </ul>
+                  </CardContent>
+                  <CardFooter className="mt-auto">
+                    <Button
+                      variant="outline"
+                      className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
+                    >
+                      En savoir plus
+                    </Button>
+                  </CardFooter>
+                </div>
               </Card>
 
-              <Card className="border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center mb-4">
-                    <Users className="h-6 w-6 text-white" />
-                  </div>
-                  <CardTitle>Vols découverte</CardTitle>
-                  <CardDescription>Rent our well-maintained aircraft for personal or training flights.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-center">
-                      <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                      Hourly and daily rental options
-                    </li>
-                    <li className="flex items-center">
-                      <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                      Discounted rates for members
-                    </li>
-                    <li className="flex items-center">
-                      <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                      Online booking system
-                    </li>
-                    <li className="flex items-center">
-                      <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                      Flexible scheduling
-                    </li>
-                  </ul>
-                </CardContent>
-                <CardFooter>
-                  <Button
-                    variant="outline"
-                    className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
-                  >
-                    En savoir plus
-                  </Button>
-                </CardFooter>
+              <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="flex flex-col flex-grow">
+                  <CardHeader>
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center mb-4">
+                      <Users className="h-6 w-6 text-white" />
+                    </div>
+                    <CardTitle>Vols découverte</CardTitle>
+                    <CardDescription>
+                      Rent our well-maintained aircraft for personal or training flights.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-center">
+                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
+                        Hourly and daily rental options
+                      </li>
+                      <li className="flex items-center">
+                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
+                        Discounted rates for members
+                      </li>
+                      <li className="flex items-center">
+                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
+                        Online booking system
+                      </li>
+                      <li className="flex items-center">
+                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
+                        Flexible scheduling
+                      </li>
+                    </ul>
+                  </CardContent>
+                  <CardFooter className="mt-auto">
+                    <Button
+                      variant="outline"
+                      className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
+                    >
+                      En savoir plus
+                    </Button>
+                  </CardFooter>
+                </div>
               </Card>
 
-              <Card className="border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center mb-4">
-                    <Clock className="h-6 w-6 text-white" />
-                  </div>
-                  <CardTitle>Location d'avion</CardTitle>
-                  <CardDescription>Join our community and enjoy exclusive benefits and events.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-center">
-                      <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                      Discounted aircraft rental rates
-                    </li>
-                    <li className="flex items-center">
-                      <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                      Access to club facilities
-                    </li>
-                    <li className="flex items-center">
-                      <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                      Monthly social events
-                    </li>
-                    <li className="flex items-center">
-                      <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                      Flying competitions and trips
-                    </li>
-                  </ul>
-                </CardContent>
-                <CardFooter>
-                  <Button
-                    variant="outline"
-                    className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
-                  >
-                    Tarifs
-                  </Button>
-                </CardFooter>
+              <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="flex flex-col flex-grow">
+                  <CardHeader>
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center mb-4">
+                      <Clock className="h-6 w-6 text-white" />
+                    </div>
+                    <CardTitle>Location d'avion</CardTitle>
+                    <CardDescription>Join our community and enjoy exclusive benefits and events.</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-center">
+                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
+                        Discounted aircraft rental rates
+                      </li>
+                      <li className="flex items-center">
+                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
+                        Access to club facilities
+                      </li>
+                      <li className="flex items-center">
+                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
+                        Monthly social events
+                      </li>
+                      <li className="flex items-center">
+                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
+                        Flying competitions and trips
+                      </li>
+                    </ul>
+                  </CardContent>
+                  <CardFooter className="mt-auto">
+                    <Button
+                      variant="outline"
+                      className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
+                    >
+                      Tarifs
+                    </Button>
+                  </CardFooter>
+                </div>
               </Card>
             </div>
           </div>
@@ -303,182 +312,226 @@ export default function Home() {
 
               <TabsContent value="training">
                 <div className="grid gap-6 md:grid-cols-2">
-                  <Card className="overflow-hidden border-sky-100 hover:border-sky-200 transition-colors">
-                    <div className="relative h-48 overflow-hidden">
+                  <Card className="flex flex-col h-full overflow-hidden border-sky-100 hover:border-sky-200 transition-colors">
+                    <div className="relative aspect-[16/9] overflow-hidden group">
                       <div className="absolute inset-0 bg-gradient-to-t from-sky-900/70 to-transparent z-10"></div>
-                      <Image src="/evss.png?height=400&width=600" alt="Cessna 152" fill className="object-cover" />
+                      <Image
+                        src="/evss.png"
+                        alt="Cessna 152"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                      />
                     </div>
-                    <CardHeader className="p-4">
-                      <CardTitle className="text-lg sm:text-xl">Evektor Sportstar F-HDLV</CardTitle>
-                      <CardDescription className="text-sm">
-                        Avion biplace de fabrication tchèque, récent, très moderne équipé d'écrans numériques (EFIS) et
-                        utilisé pour l'école et les voyages.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="p-4 pt-0">
-                      <div className="grid grid-cols-2 gap-2 text-sm">
-                        <div className="flex items-center gap-1">
-                          <Users className="h-4 w-4 text-muted-foreground" />
-                          <span>2 places</span>
+                    <div className="flex flex-col flex-grow">
+                      <CardHeader className="p-4">
+                        <CardTitle className="text-lg sm:text-xl">Evektor Sportstar F-HDLV</CardTitle>
+                        <CardDescription className="text-sm">
+                          Avion biplace de fabrication tchèque, récent, très moderne équipé d'écrans numériques (EFIS)
+                          et utilisé pour l'école et les voyages.
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="p-4 pt-0 flex-grow">
+                        <div className="grid grid-cols-2 gap-2 text-sm">
+                          <div className="flex items-center gap-1">
+                            <Users className="h-4 w-4 text-muted-foreground" />
+                            <span>2 places</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <CloudSun className="h-4 w-4 text-muted-foreground" />
+                            <span>VFR</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Clock className="h-4 w-4 text-muted-foreground" />
+                            <span>111 euros/h</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Plane className="h-4 w-4 text-muted-foreground" />
+                            <span>170 kmh</span>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-1">
-                          <CloudSun className="h-4 w-4 text-muted-foreground" />
-                          <span>VFR</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Clock className="h-4 w-4 text-muted-foreground" />
-                          <span>111 euros/h</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Plane className="h-4 w-4 text-muted-foreground" />
-                          <span>170 kmh</span>
-                        </div>
-                      </div>
-                    </CardContent>
+                      </CardContent>
+                    
+                    </div>
                   </Card>
 
-                  <Card className="overflow-hidden border-sky-100 hover:border-sky-200 transition-colors">
-                    <div className="relative h-48 overflow-hidden">
+                  <Card className="flex flex-col h-full overflow-hidden border-sky-100 hover:border-sky-200 transition-colors">
+                    <div className="relative aspect-[16/9] overflow-hidden group">
                       <div className="absolute inset-0 bg-gradient-to-t from-sky-900/70 to-transparent z-10"></div>
-                      <Image src="/evss.png?height=400&width=600" alt="Cessna 152" fill className="object-cover" />
+                      <Image
+                        src="/evss.png"
+                        alt="Cessna 152"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                      />
                     </div>
-                    <CardHeader className="p-4">
-                      <CardTitle className="text-lg sm:text-xl">Evektor Sportstar F-HDLV</CardTitle>
-                      <CardDescription className="text-sm">
-                        Avion biplace de fabrication tchèque, récent, très moderne équipé d'écrans numériques (EFIS) et
-                        utilisé pour l'école et les voyages.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="p-4 pt-0">
-                      <div className="grid grid-cols-2 gap-2 text-sm">
-                        <div className="flex items-center gap-1">
-                          <Users className="h-4 w-4 text-muted-foreground" />
-                          <span>2 places</span>
+                    <div className="flex flex-col flex-grow">
+                      <CardHeader className="p-4">
+                        <CardTitle className="text-lg sm:text-xl">Evektor Sportstar F-HDLV</CardTitle>
+                        <CardDescription className="text-sm">
+                          Avion biplace de fabrication tchèque, récent, très moderne équipé d'écrans numériques (EFIS)
+                          et utilisé pour l'école et les voyages.
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="p-4 pt-0 flex-grow">
+                        <div className="grid grid-cols-2 gap-2 text-sm">
+                          <div className="flex items-center gap-1">
+                            <Users className="h-4 w-4 text-muted-foreground" />
+                            <span>2 places</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <CloudSun className="h-4 w-4 text-muted-foreground" />
+                            <span>VFR</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Clock className="h-4 w-4 text-muted-foreground" />
+                            <span>111 euros/h</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Plane className="h-4 w-4 text-muted-foreground" />
+                            <span>170 kmh</span>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-1">
-                          <CloudSun className="h-4 w-4 text-muted-foreground" />
-                          <span>VFR</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Clock className="h-4 w-4 text-muted-foreground" />
-                          <span>111 euros/h</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Plane className="h-4 w-4 text-muted-foreground" />
-                          <span>170 kmh</span>
-                        </div>
-                      </div>
-                    </CardContent>
+                      </CardContent>          
+                    </div>
                   </Card>
                 </div>
               </TabsContent>
 
               <TabsContent value="touring">
                 <div className="grid gap-6 md:grid-cols-2">
-                  <Card className="overflow-hidden border-sky-100 hover:border-sky-200 transition-colors">
-                    <div className="relative h-48 overflow-hidden">
+                  <Card className="flex flex-col h-full overflow-hidden border-sky-100 hover:border-sky-200 transition-colors">
+                    <div className="relative aspect-[16/9] overflow-hidden group">
                       <div className="absolute inset-0 bg-gradient-to-t from-sky-900/70 to-transparent z-10"></div>
-                      <Image src="/dr180.png?height=400&width=600" alt="Cessna 182" fill className="object-cover" />
+                      <Image
+                        src="/dr180.png"
+                        alt="Cessna 182"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                      />
                     </div>
-                    <CardHeader className="p-4">
-                      <CardTitle className="text-lg sm:text-xl">Robin DR400 180cv</CardTitle>
-                      <CardDescription className="text-sm">
-                        Avion quadriplace de voyage, de fabrication française. Distance franchissable de près de 1000 km
-                        à une vitesse de croisière de 240 km/h.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="p-4 pt-0">
-                      <div className="grid grid-cols-2 gap-2 text-sm">
-                        <div className="flex items-center gap-1">
-                          <Users className="h-4 w-4 text-muted-foreground" />
-                          <span>4 places</span>
+                    <div className="flex flex-col flex-grow">
+                      <CardHeader className="p-4">
+                        <CardTitle className="text-lg sm:text-xl">Robin DR400 180cv</CardTitle>
+                        <CardDescription className="text-sm">
+                          Avion quadriplace de voyage, de fabrication française. Distance franchissable de près de 1000
+                          km à une vitesse de croisière de 240 km/h.
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="p-4 pt-0 flex-grow">
+                        <div className="grid grid-cols-2 gap-2 text-sm">
+                          <div className="flex items-center gap-1">
+                            <Users className="h-4 w-4 text-muted-foreground" />
+                            <span>4 places</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <CloudSun className="h-4 w-4 text-muted-foreground" />
+                            <span>VFR/IFR</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Clock className="h-4 w-4 text-muted-foreground" />
+                            <span>180€/h</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Plane className="h-4 w-4 text-muted-foreground" />
+                            <span>240 kmh</span>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-1">
-                          <CloudSun className="h-4 w-4 text-muted-foreground" />
-                          <span>VFR/IFR</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Clock className="h-4 w-4 text-muted-foreground" />
-                          <span>180€/h</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Plane className="h-4 w-4 text-muted-foreground" />
-                          <span>240 kmh</span>
-                        </div>
-                      </div>
-                    </CardContent>
+                      </CardContent>
+                     
+                    </div>
                   </Card>
 
-                  <Card className="overflow-hidden border-sky-100 hover:border-sky-200 transition-colors">
-                    <div className="relative h-48 overflow-hidden">
+                  <Card className="flex flex-col h-full overflow-hidden border-sky-100 hover:border-sky-200 transition-colors">
+                    <div className="relative aspect-[16/9] overflow-hidden group">
                       <div className="absolute inset-0 bg-gradient-to-t from-sky-900/70 to-transparent z-10"></div>
-                      <Image src="/dr160.webp?height=400&width=600" alt="Piper Arrow" fill className="object-cover" />
+                      <Image
+                        src="/dr160.webp"
+                        alt="Piper Arrow"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                      />
                     </div>
-                    <CardHeader className="p-4">
-                      <CardTitle className="text-lg sm:text-xl">Robin DR400 160cv</CardTitle>
-                      <CardDescription className="text-sm">
-                        Avion quadriplace de propriétaire mis à disposition des membres du club qualifiés pour les
-                        sorties et les animations.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="p-4 pt-0">
-                      <div className="grid grid-cols-2 gap-2 text-sm">
-                        <div className="flex items-center gap-1">
-                          <Users className="h-4 w-4 text-muted-foreground" />
-                          <span>4 places</span>
+                    <div className="flex flex-col flex-grow">
+                      <CardHeader className="p-4">
+                        <CardTitle className="text-lg sm:text-xl">Robin DR400 160cv</CardTitle>
+                        <CardDescription className="text-sm">
+                          Avion quadriplace de propriétaire mis à disposition des membres du club qualifiés pour les
+                          sorties et les animations.
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="p-4 pt-0 flex-grow">
+                        <div className="grid grid-cols-2 gap-2 text-sm">
+                          <div className="flex items-center gap-1">
+                            <Users className="h-4 w-4 text-muted-foreground" />
+                            <span>4 places</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <CloudSun className="h-4 w-4 text-muted-foreground" />
+                            <span>VFR/IFR</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Clock className="h-4 w-4 text-muted-foreground" />
+                            <span>180€/h</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Plane className="h-4 w-4 text-muted-foreground" />
+                            <span>220 kmh</span>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-1">
-                          <CloudSun className="h-4 w-4 text-muted-foreground" />
-                          <span>VFR/IFR</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Clock className="h-4 w-4 text-muted-foreground" />
-                          <span>180€/h</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Plane className="h-4 w-4 text-muted-foreground" />
-                          <span>220 kmh</span>
-                        </div>
-                      </div>
-                    </CardContent>
+                      </CardContent>
+                 
+                    </div>
                   </Card>
                 </div>
               </TabsContent>
 
               <TabsContent value="advanced">
                 <div className="grid gap-6 md:grid-cols-2">
-                  <Card className="overflow-hidden border-sky-100 hover:border-sky-200 transition-colors">
-                    <div className="relative h-48 overflow-hidden">
+                  <Card className="flex flex-col h-full overflow-hidden border-sky-100 hover:border-sky-200 transition-colors">
+                    <div className="relative aspect-[16/9] overflow-hidden group">
                       <div className="absolute inset-0 bg-gradient-to-t from-sky-900/70 to-transparent z-10"></div>
-                      <Image src="/ulm.png?height=400&width=600" alt="Cirrus SR22" fill className="object-cover" />
+                      <Image
+                        src="/ulm.png"
+                        alt="Cirrus SR22"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                      />
                     </div>
-                    <CardHeader className="p-4">
-                      <CardTitle className="text-lg sm:text-xl">Super guepard 100CV</CardTitle>
-                      <CardDescription className="text-sm">
-                        Avion ultra léger motorisé (ULM) biplace de fabrication française, bien équipé pour l'école et
-                        les voyages. Distance franchissable de 750 km à 180 km/h.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="p-4 pt-0">
-                      <div className="grid grid-cols-2 gap-2 text-sm">
-                        <div className="flex items-center gap-1">
-                          <Users className="h-4 w-4 text-muted-foreground" />
-                          <span>2 places</span>
+                    <div className="flex flex-col flex-grow">
+                      <CardHeader className="p-4">
+                        <CardTitle className="text-lg sm:text-xl">Super guepard 100CV</CardTitle>
+                        <CardDescription className="text-sm">
+                          Avion ultra léger motorisé (ULM) biplace de fabrication française, bien équipé pour l'école et
+                          les voyages. Distance franchissable de 750 km à 180 km/h.
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="p-4 pt-0 flex-grow">
+                        <div className="grid grid-cols-2 gap-2 text-sm">
+                          <div className="flex items-center gap-1">
+                            <Users className="h-4 w-4 text-muted-foreground" />
+                            <span>2 places</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <CloudSun className="h-4 w-4 text-muted-foreground" />
+                            <span>VFR</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Clock className="h-4 w-4 text-muted-foreground" />
+                            <span>90€/h</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Plane className="h-4 w-4 text-muted-foreground" />
+                            <span>180 kmh</span>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-1">
-                          <CloudSun className="h-4 w-4 text-muted-foreground" />
-                          <span>VFR</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Clock className="h-4 w-4 text-muted-foreground" />
-                          <span>90€/h</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Plane className="h-4 w-4 text-muted-foreground" />
-                          <span>180 kmh</span>
-                        </div>
-                      </div>
-                    </CardContent>
+                      </CardContent>
+                     
+                    </div>
                   </Card>
                 </div>
               </TabsContent>
@@ -493,92 +546,110 @@ export default function Home() {
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+              <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
                 <div className="h-1 bg-gradient-to-r from-sky-400 to-azure-500"></div>
-                <CardHeader>
-                  <div className="flex items-center gap-2 text-azure-600 mb-2">
-                    <Calendar className="h-5 w-5" />
-                    <span className="text-sm font-medium">May 15, 2025</span>
-                  </div>
-                  <CardTitle>BREVET DE PILOTE ULM MULTIAXES</CardTitle>
-                  <CardDescription></CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Schématiquement, l’ULM multiaxes est un petit aéronef dont le poids et la puissance sont limités et
-                    qui permet l’emport d’une à deux personnes. La pratique du pilotage d’un ULM nécessite, outre la
-                    licence fédérale, un certificat médical de non contre-indication délivré par un médecin généraliste.
-                    La formation associe une partie théorique et une partie pratique avec un instructeur de l’aéroclub
-                    en double commandes. Le brevet de pilote d’ULM est acquis à vie et n’est pas soumis à une obligation
-                    légale d’entraî-nement régulier. Celui-ci est laissé à l’appréciation du pilote.
-                  </p>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Clock className="h-4 w-4 text-muted-foreground" />
-                    <span>81 euros/h</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Clock className="h-4 w-4 text-muted-foreground" />
-                    <span>24 euros/h instructeur</span>
-                  </div>
-                </CardContent>
+                <div className="flex flex-col flex-grow">
+                  <CardHeader>
+                    <div className="flex items-center gap-2 text-azure-600 mb-2">
+                      <Calendar className="h-5 w-5" />
+                      <span className="text-sm font-medium">May 15, 2025</span>
+                    </div>
+                    <CardTitle>BREVET DE PILOTE ULM MULTIAXES</CardTitle>
+                    <CardDescription></CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col">
+                    <div className="flex-grow">
+                      <p className="text-sm text-muted-foreground mb-4">
+                        Schématiquement, l'ULM multiaxes est un petit aéronef dont le poids et la puissance sont limités
+                        et qui permet l'emport d'une à deux personnes. La pratique du pilotage d'un ULM nécessite, outre
+                        la licence fédérale, un certificat médical de non contre-indication délivré par un médecin
+                        généraliste. La formation associe une partie théorique et une partie pratique avec un
+                        instructeur de l'aéroclub en double commandes. Le brevet de pilote d'ULM est acquis à vie et
+                        n'est pas soumis à une obligation légale d'entraî-nement régulier. Celui-ci est laissé à
+                        l'appréciation du pilote.
+                      </p>
+                    </div>
+                    <PricingInfo flightPrice="81 euros/h" instructorPrice="24 euros/h instr" />
+                  </CardContent>
+                  <CardFooter className="mt-auto">
+                    <Button
+                      variant="outline"
+                      className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
+                    >
+                      En savoir plus
+                    </Button>
+                  </CardFooter>
+                </div>
               </Card>
 
-              <Card className="border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+              <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
                 <div className="h-1 bg-gradient-to-r from-sky-400 to-azure-500"></div>
-                <CardHeader>
-                  <div className="flex items-center gap-2 text-azure-600 mb-2">
-                    <Calendar className="h-5 w-5" />
-                    <span className="text-sm font-medium">May 15, 2025</span>
-                  </div>
-                  <CardTitle>LAPL (light aircraft pilot licence)</CardTitle>
-                  <CardDescription></CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    La LAPL permet d’accéder au pilotage de la plupart des avions d’aéroclub. Cette licence est
-                    européenne, valable uniquement au sein de l’espace Schengen. Le pilote LAPL devra avoir réalisé 10
-                    heures de vol solo après obtention de sa licence pour être autorisé à emmener des passagers.
-                  </p>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Clock className="h-4 w-4 text-muted-foreground" />
-                    <span>81 euros/h</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Clock className="h-4 w-4 text-muted-foreground" />
-                    <span>24 euros/h instructeur</span>
-                  </div>
-                </CardContent>
+                <div className="flex flex-col flex-grow">
+                  <CardHeader>
+                    <div className="flex items-center gap-2 text-azure-600 mb-2">
+                      <Calendar className="h-5 w-5" />
+                      <span className="text-sm font-medium">May 15, 2025</span>
+                    </div>
+                    <CardTitle>LAPL (light aircraft pilot licence)</CardTitle>
+                    <CardDescription></CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col">
+                    <div className="flex-grow">
+                      <p className="text-sm text-muted-foreground mb-4">
+                        La LAPL permet d'accéder au pilotage de la plupart des avions d'aéroclub. Cette licence est
+                        européenne, valable uniquement au sein de l'espace Schengen. Le pilote LAPL devra avoir réalisé
+                        10 heures de vol solo après obtention de sa licence pour être autorisé à emmener des passagers.
+                      </p>
+                    </div>
+                    <PricingInfo flightPrice="81 euros/h" instructorPrice="24 euros/h instr" />
+                  </CardContent>
+                  <CardFooter className="mt-auto">
+                    <Button
+                      variant="outline"
+                      className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
+                    >
+                      En savoir plus
+                    </Button>
+                  </CardFooter>
+                </div>
               </Card>
 
-              <Card className="border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+              <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
                 <div className="h-1 bg-gradient-to-r from-sky-400 to-azure-500"></div>
-                <CardHeader>
-                  <div className="flex items-center gap-2 text-azure-600 mb-2">
-                    <Calendar className="h-5 w-5" />
-                    <span className="text-sm font-medium">May 15, 2025</span>
-                  </div>
-                  <CardTitle>PPL (private pilot licence)</CardTitle>
-                  <CardDescription></CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    La PPL, outre sa reconnaissance internationale, est une des portes d'entrée pour poursuivre une
-                    formation de pilote professionnel (pilote de ligne, vol aux instruments, avions multi-moteurs,
-                    avions de plus de cinq places,…).
-                  </p>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Clock className="h-4 w-4 text-muted-foreground" />
-                    <span>81 euros/h</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Clock className="h-4 w-4 text-muted-foreground" />
-                    <span>24 euros/h instructeur</span>
-                  </div>
-                </CardContent>
+                <div className="flex flex-col flex-grow">
+                  <CardHeader>
+                    <div className="flex items-center gap-2 text-azure-600 mb-2">
+                      <Calendar className="h-5 w-5" />
+                      <span className="text-sm font-medium">May 15, 2025</span>
+                    </div>
+                    <CardTitle>PPL (private pilot licence)</CardTitle>
+                    <CardDescription></CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col">
+                    <div className="flex-grow">
+                      <p className="text-sm text-muted-foreground mb-4">
+                        La PPL, outre sa reconnaissance internationale, est une des portes d'entrée pour poursuivre une
+                        formation de pilote professionnel (pilote de ligne, vol aux instruments, avions multi-moteurs,
+                        avions de plus de cinq places,…).
+                      </p>
+                    </div>
+                    <PricingInfo flightPrice="81 euros/h" instructorPrice="24 euros/h instr" />
+                  </CardContent>
+                  <CardFooter className="mt-auto">
+                    <Button
+                      variant="outline"
+                      className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
+                    >
+                      En savoir plus
+                    </Button>
+                  </CardFooter>
+                </div>
               </Card>
             </div>
           </div>
         </section>
+
+
 
         <section id="contact" className="py-16 md:py-24 bg-sky-50">
           <div className="container">
