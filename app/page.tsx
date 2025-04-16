@@ -5,6 +5,7 @@ import {
   ChevronRight,
   Clock,
   CloudSun,
+  EuroIcon,
   Facebook,
   Instagram,
   Mail,
@@ -20,6 +21,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { MobileMenu } from "@/components/mobile-menu"
 import { PricingInfo } from "@/components/pricing-info"
+import { ContactFormEnhanced } from "@/components/contact-form-enhanced"
 
 export default function Home() {
   return (
@@ -70,7 +72,9 @@ export default function Home() {
           </div>
         </div>
       </header>
+
       <main className="flex-1">
+        {/* Hero section */}
         <section className="relative bg-sky-to-navy-gradient">
           <div className="absolute inset-0 z-0">
             <Image
@@ -89,21 +93,22 @@ export default function Home() {
           </div>
         </section>
 
+        {/* About section */}
         <section id="about" className="py-16 md:py-24 bg-sky-pattern">
           <div className="container">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold tracking-tight mb-4">A propos du club</h2>
                 <p className="text-muted-foreground mb-6">
-                  L’aéroclub est implanté sur le domaine public de l’aérodrome de Castelnaudary Villeneuve et dispose
-                  d’un hangar pouvant abriter 5 aéronefs, d’une tour de contrôle abritant le bureau des instructeurs et
-                  un simulateur de vol, d’un grand clubhouse ou se passent les réunions et animations du club, et d’une
-                  salle de cours .
+                  L'aéroclub est implanté sur le domaine public de l'aérodrome de Castelnaudary Villeneuve et dispose
+                  d'un hangar pouvant abriter 5 aéronefs, d'une tour de contrôle abritant le bureau des instructeurs et
+                  un simulateur de vol, d'un grand clubhouse ou se passent les réunions et animations du club, et d'une
+                  salle de cours dédiée aux élèves ULM.
                 </p>
                 <p className="text-muted-foreground mb-6">
-                  Forte d’une soixantaine de membres actifs, elle est dirigée par un Comité de direction élu en
+                  Forte d'une soixantaine de membres actifs, elle est dirigée par un Comité de direction élu en
                   assemblée générale et qui délègue la gestion courante au bureau directeur (Président, Trésorier,
-                  secrétaire). Tous les membres assurant le bon fonctionnement de l’aéroclub (dirigeants, instructeurs,
+                  secrétaire). Tous les membres assurant le bon fonctionnement de l'aéroclub (dirigeants, instructeurs,
                   responsables divers postes…) sont bénévoles.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-8 mt-8">
@@ -142,6 +147,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Services section */}
         <section id="services" className="py-16 md:py-24">
           <div className="container">
             <div className="text-center mb-12">
@@ -152,6 +158,7 @@ export default function Home() {
               </p>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {/* Service cards */}
               <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300">
                 <div className="flex flex-col flex-grow">
                   <CardHeader>
@@ -194,13 +201,15 @@ export default function Home() {
                 </div>
               </Card>
 
+              {/* Other service cards */}
+              {/* ... */}
               <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300">
                 <div className="flex flex-col flex-grow">
                   <CardHeader>
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center mb-4">
-                      <Users className="h-6 w-6 text-white" />
+                      <CloudSun className="h-6 w-6 text-white" />
                     </div>
-                    <CardTitle>Vols découverte</CardTitle>
+                    <CardTitle>Vols découvertes</CardTitle>
                     <CardDescription>
                       Rent our well-maintained aircraft for personal or training flights.
                     </CardDescription>
@@ -209,19 +218,11 @@ export default function Home() {
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-center">
                         <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                        Hourly and daily rental options
+                        Baptêmes de l'air
                       </li>
                       <li className="flex items-center">
                         <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                        Discounted rates for members
-                      </li>
-                      <li className="flex items-center">
-                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                        Online booking system
-                      </li>
-                      <li className="flex items-center">
-                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                        Flexible scheduling
+                        Vols d'initiation au pilotage
                       </li>
                     </ul>
                   </CardContent>
@@ -240,29 +241,24 @@ export default function Home() {
                 <div className="flex flex-col flex-grow">
                   <CardHeader>
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center mb-4">
-                      <Clock className="h-6 w-6 text-white" />
+                      <Calendar className="h-6 w-6 text-white" />
                     </div>
-                    <CardTitle>Location d'avion</CardTitle>
-                    <CardDescription>Join our community and enjoy exclusive benefits and events.</CardDescription>
+                    <CardTitle>Location d'avions</CardTitle>
+                    <CardDescription>
+                      Rent our well-maintained aircraft for your personal or business travel needs.
+                    </CardDescription>
                   </CardHeader>
                   <CardContent className="flex-grow">
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-center">
                         <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                        Discounted aircraft rental rates
+                        Location à l'heure ou à la journée
                       </li>
                       <li className="flex items-center">
                         <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                        Access to club facilities
+                        Large choix d'appareils
                       </li>
-                      <li className="flex items-center">
-                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                        Monthly social events
-                      </li>
-                      <li className="flex items-center">
-                        <ChevronRight className="h-4 w-4 mr-2 text-sky-600" />
-                        Flying competitions and trips
-                      </li>
+                    
                     </ul>
                   </CardContent>
                   <CardFooter className="mt-auto">
@@ -270,7 +266,7 @@ export default function Home() {
                       variant="outline"
                       className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
                     >
-                      Tarifs
+                      En savoir plus
                     </Button>
                   </CardFooter>
                 </div>
@@ -279,12 +275,16 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Fleet section */}
         <section id="fleet" className="py-16 md:py-24 bg-gradient-to-b from-white to-sky-50">
-          <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
+          {/* Fleet content */}
+          {/* ... */}
+          <div className="container">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight mb-4">Notre flotte</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Nous avons plusieurs types d'avions a disposition.
+                Nous disposons d'une flotte diversifiée d'avions pour répondre à tous vos besoins, que ce soit pour
+                l'apprentissage, les vols de loisirs ou les voyages.
               </p>
             </div>
 
@@ -342,8 +342,8 @@ export default function Home() {
                             <span>VFR</span>
                           </div>
                           <div className="flex items-center gap-1">
-                            <Clock className="h-4 w-4 text-muted-foreground" />
-                            <span>111 euros/h</span>
+                            <EuroIcon className="h-4 w-4 text-muted-foreground" />
+                            <span>111/h</span>
                           </div>
                           <div className="flex items-center gap-1">
                             <Plane className="h-4 w-4 text-muted-foreground" />
@@ -385,8 +385,8 @@ export default function Home() {
                             <span>VFR</span>
                           </div>
                           <div className="flex items-center gap-1">
-                            <Clock className="h-4 w-4 text-muted-foreground" />
-                            <span>111 euros/h</span>
+                            <EuroIcon className="h-4 w-4 text-muted-foreground" />
+                            <span>111/h</span>
                           </div>
                           <div className="flex items-center gap-1">
                             <Plane className="h-4 w-4 text-muted-foreground" />
@@ -431,8 +431,8 @@ export default function Home() {
                             <span>VFR/IFR</span>
                           </div>
                           <div className="flex items-center gap-1">
-                            <Clock className="h-4 w-4 text-muted-foreground" />
-                            <span>180€/h</span>
+                            <EuroIcon className="h-4 w-4 text-muted-foreground" />
+                            <span>180/h</span>
                           </div>
                           <div className="flex items-center gap-1">
                             <Plane className="h-4 w-4 text-muted-foreground" />
@@ -474,8 +474,8 @@ export default function Home() {
                             <span>VFR/IFR</span>
                           </div>
                           <div className="flex items-center gap-1">
-                            <Clock className="h-4 w-4 text-muted-foreground" />
-                            <span>180€/h</span>
+                            <EuroIcon className="h-4 w-4 text-muted-foreground" />
+                            <span>180/h</span>
                           </div>
                           <div className="flex items-center gap-1">
                             <Plane className="h-4 w-4 text-muted-foreground" />
@@ -521,8 +521,8 @@ export default function Home() {
                             <span>VFR</span>
                           </div>
                           <div className="flex items-center gap-1">
-                            <Clock className="h-4 w-4 text-muted-foreground" />
-                            <span>90€/h</span>
+                            <EuroIcon className="h-4 w-4 text-muted-foreground" />
+                            <span>90€/h</span>          
                           </div>
                           <div className="flex items-center gap-1">
                             <Plane className="h-4 w-4 text-muted-foreground" />
@@ -539,23 +539,25 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Events section */}
         <section id="events" className="py-16 md:py-24">
+          {/* Events content */}
+          {/* ... */}
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tight mb-4">Formations</h2>
+              <h2 className="text-3xl font-bold tracking-tight mb-4">Nos Formations</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Nous proposons des formations de qualité pour tous les niveaux, que vous soyez débutant ou pilote
+                expérimenté.
+              </p>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
-                <div className="h-1 bg-gradient-to-r from-sky-400 to-azure-500"></div>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300">
                 <div className="flex flex-col flex-grow">
                   <CardHeader>
-                    <div className="flex items-center gap-2 text-azure-600 mb-2">
-                      <Calendar className="h-5 w-5" />
-                      <span className="text-sm font-medium">May 15, 2025</span>
-                    </div>
-                    <CardTitle>BREVET DE PILOTE ULM MULTIAXES</CardTitle>
-                    <CardDescription></CardDescription>
+                    <CardTitle>PPL(A) - Private Pilot License</CardTitle>
+                    <CardDescription>Devenez pilote privé avion</CardDescription>
                   </CardHeader>
                   <CardContent className="flex-grow flex flex-col">
                     <div className="flex-grow">
@@ -633,7 +635,7 @@ export default function Home() {
                         avions de plus de cinq places,…).
                       </p>
                     </div>
-                    <PricingInfo flightPrice="81 euros/h" instructorPrice="24 euros/h instr" />
+                    <PricingInfo flightPrice="81/h" instructorPrice="24/h instr" />
                   </CardContent>
                   <CardFooter className="mt-auto">
                     <Button
@@ -718,115 +720,22 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-b from-white to-sky-50 p-6 rounded-lg shadow-sm border border-sky-100">
-                <h3 className="text-xl font-semibold mb-4">Envoyez nous un message</h3>
-                <form className="space-y-4">
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">
-                        Nom
-                      </label>
-                      <input
-                        id="name"
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        placeholder="Votre name"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Email
-                      </label>
-                      <input
-                        id="email"
-                        type="email"
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        placeholder="Votre email"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium">
-                      Sujet
-                    </label>
-                    <input
-                      id="subject"
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                      placeholder="Sujet du message"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                      placeholder="Votre message"
-                    />
-                  </div>
-                  <Button className="w-full bg-azure-600 hover:bg-azure-700">Envoyer le message</Button>
-                </form>
+              <div className="bg-white p-8 rounded-lg shadow-md border border-sky-100">
+                <h3 className="text-xl font-semibold mb-6 text-gray-800">Envoyez nous un message</h3>
+                <ContactFormEnhanced />
               </div>
             </div>
           </div>
         </section>
       </main>
+
       <footer className="bg-navy-950 text-white py-12">
-        <div className="container">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Plane className="h-6 w-6 rotate-45 text-azure-400" />
-                <span className="text-xl font-bold">Aeroclub Jean Doudies</span>
-              </div>
-              <p className="text-sky-200 mb-4">Apprendre à piloter... Ce n'est pas qu'un rêve d'enfant</p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Liens rapides</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="#" className="text-sky-300 hover:text-white transition-colors">
-                    Accueil
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#about" className="text-sky-300 hover:text-white transition-colors">
-                    A propos
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#services" className="text-sky-300 hover:text-white transition-colors">
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#fleet" className="text-sky-300 hover:text-white transition-colors">
-                    Notre flotte
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#events" className="text-sky-300 hover:text-white transition-colors">
-                    Formations
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#contact" className="text-sky-300 hover:text-white transition-colors">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Services</h3>
-              <ul className="space-y-2"></ul>
-            </div>
-          </div>
-
-          <div className="border-t border-navy-800 mt-8 pt-8 text-center text-sky-300">
-            <p>© {new Date().getFullYear()} Aeroclub Jean Doudies.Tout droits reservés.</p>
-          </div>
+        {/* Footer content */}
+        {/* ... */}
+        <div className="container text-center">
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Aeroclub Jean Doudies. Tous droits réservés.
+          </p>
         </div>
       </footer>
     </div>
