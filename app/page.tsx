@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import {
+  BookAIcon,
   Calendar,
   ChevronRight,
   Clock,
@@ -160,6 +161,7 @@ export default function Home() {
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {/* Service cards */}
               <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="h-1 bg-gradient-to-r from-sky-400 to-azure-500"></div>
                 <div className="flex flex-col flex-grow">
                   <CardHeader>
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center mb-4">
@@ -204,6 +206,7 @@ export default function Home() {
               {/* Other service cards */}
               {/* ... */}
               <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="h-1 bg-gradient-to-r from-sky-400 to-azure-500"></div>
                 <div className="flex flex-col flex-grow">
                   <CardHeader>
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center mb-4">
@@ -238,6 +241,7 @@ export default function Home() {
               </Card>
 
               <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="h-1 bg-gradient-to-r from-sky-400 to-azure-500"></div>
                 <div className="flex flex-col flex-grow">
                   <CardHeader>
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center mb-4">
@@ -554,10 +558,15 @@ export default function Home() {
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="h-1 bg-gradient-to-r from-sky-400 to-azure-500"></div>
                 <div className="flex flex-col flex-grow">
-                  <CardHeader>
-                    <CardTitle>PPL(A) - Private Pilot License</CardTitle>
-                    <CardDescription>Devenez pilote privé avion</CardDescription>
+                <CardHeader>
+                    <div className="flex items-center gap-2 text-azure-600 mb-2">
+                      <BookAIcon className="h-5 w-5" />
+                      <span className="text-sm font-medium">~ 1 an</span>
+                    </div>
+                    <CardTitle>Brevet pilote ULM multiaxes</CardTitle>
+                    <CardDescription></CardDescription>
                   </CardHeader>
                   <CardContent className="flex-grow flex flex-col">
                     <div className="flex-grow">
@@ -589,8 +598,8 @@ export default function Home() {
                 <div className="flex flex-col flex-grow">
                   <CardHeader>
                     <div className="flex items-center gap-2 text-azure-600 mb-2">
-                      <Calendar className="h-5 w-5" />
-                      <span className="text-sm font-medium">May 15, 2025</span>
+                      <BookAIcon className="h-5 w-5" />
+                      <span className="text-sm font-medium">~ 1 an</span>
                     </div>
                     <CardTitle>LAPL (light aircraft pilot licence)</CardTitle>
                     <CardDescription></CardDescription>
@@ -621,8 +630,8 @@ export default function Home() {
                 <div className="flex flex-col flex-grow">
                   <CardHeader>
                     <div className="flex items-center gap-2 text-azure-600 mb-2">
-                      <Calendar className="h-5 w-5" />
-                      <span className="text-sm font-medium">May 15, 2025</span>
+                      <BookAIcon className="h-5 w-5" />
+                      <span className="text-sm font-medium">~ 1 an</span>
                     </div>
                     <CardTitle>PPL (private pilot licence)</CardTitle>
                     <CardDescription></CardDescription>
