@@ -238,7 +238,7 @@ export default function Home() {
                 }
               />
 
-<TrainingCard
+              <TrainingCard
                 title="Location d'avions"
                 description=""
                 icon={<ReceiptCentIcon className="h-6 w-6 text-white" />}
@@ -255,7 +255,7 @@ export default function Home() {
                           <ReceiptCentIcon className="h-5 w-5 text-white" />
                         </div>
                         <DialogTitle className="text-xl font-semibold text-sky-900">
-                        Location d'avions
+                          Location d'avions
                         </DialogTitle>
                       </div>
                       <DialogDescription className="text-base text-sky-800 leading-relaxed">
@@ -271,7 +271,7 @@ export default function Home() {
                   </>
                 }
               />
-    
+
             </div>
           </div>
         </section>
@@ -743,10 +743,10 @@ export default function Home() {
             © {new Date().getFullYear()} Aeroclub Jean Doudies. Tous droits réservés.
           </p>
           <div className="flex items-center gap-6">
-    <img src="/logoFFA.png" alt="ffa" className="h-10 opacity-80 hover:opacity-100 transition" />
-    <img src="/ffplum.png" alt="Sponsor 2" className="h-10 opacity-80 hover:opacity-100 transition" />
-    <img src="/castel.png" alt="Sponsor 3" className="h-10 opacity-80 hover:opacity-100 transition" />
-  </div>
+            <img src="/ffa.png" alt="ffa" className="h-10 opacity-80 hover:opacity-100 transition" />
+            <img src="/ffplum.png" alt="ffplum" className="h-10 opacity-80 hover:opacity-100 transition" />
+            <img src="/castel.png" alt="castel" className="h-10 opacity-80 hover:opacity-100 transition" />
+          </div>
         </div>
       </footer>
     </div>
