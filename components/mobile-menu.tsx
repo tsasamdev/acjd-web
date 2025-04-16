@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
-
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 
@@ -24,7 +24,10 @@ export function MobileMenu() {
       </SheetTrigger>
       <SheetContent side="right" className="w-[80%] max-w-sm bg-white p-0">
         <SheetHeader className="border-b border-sky-100 p-4">
-          <SheetTitle>Menu</SheetTitle>
+        <div className="flex items-center gap-2">
+            <Image src="/logo.png" alt="o" width={30} height={30} className="h-8 w-auto" />
+            <SheetTitle>Menu</SheetTitle>
+          </div>
           <Button variant="ghost" size="icon" onClick={() => setOpen(false)} className="absolute right-4 top-4">
             <X className="h-5 w-5" />
             <span className="sr-only">Close</span>

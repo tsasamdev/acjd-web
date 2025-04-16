@@ -30,7 +30,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b border-sky-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <Plane className="h-6 w-6 rotate-45 text-sky-600" />
+          <Image src="/logo.png" alt="" width={40} height={40} className="h-10 w-auto" />
             <span className="text-xl font-bold">Aeroclub Jean Doudies</span>
           </div>
           <nav className="hidden md:flex gap-6">
