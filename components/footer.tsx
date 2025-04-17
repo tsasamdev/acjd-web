@@ -2,14 +2,16 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react'
+import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react"
 
 export function Footer() {
   return (
     <footer className="bg-gradient-to-b from-sky-900 to-navy-950 text-white py-12 md:py-16">
       <div className="container px-4 md:px-6">
         {/* Mobile Footer */}
-        <div className="md:hidden">
+        <div className="md:hidden pb-16">
+          {" "}
+          {/* Added padding at the bottom for the sticky contact bar */}
           <div className="flex flex-col items-center text-center mb-8">
             <div className="flex items-center gap-3 mb-4">
               <Image src="/logo.png" alt="" width={40} height={40} className="h-10 w-auto" />
@@ -20,15 +22,15 @@ export function Footer() {
               de pilotes depuis plus de 50 ans.
             </p>
             <div className="flex gap-4 mb-6">
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="w-10 h-10 rounded-full bg-sky-800/50 flex items-center justify-center hover:bg-sky-700/50 transition-colors"
               >
                 <Facebook className="h-5 w-5 text-white" />
                 <span className="sr-only">Facebook</span>
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="w-10 h-10 rounded-full bg-sky-800/50 flex items-center justify-center hover:bg-sky-700/50 transition-colors"
               >
                 <Instagram className="h-5 w-5 text-white" />
@@ -36,7 +38,6 @@ export function Footer() {
               </a>
             </div>
           </div>
-          
           <div className="space-y-8">
             {/* Contact Info */}
             <div className="bg-sky-800/20 rounded-xl p-4">
@@ -54,13 +55,16 @@ export function Footer() {
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-sky-300 shrink-0" />
-                  <a href="mailto:ac.jd@freesbee.fr" className="text-sky-200 text-sm hover:text-white transition-colors">
+                  <a
+                    href="mailto:ac.jd@freesbee.fr"
+                    className="text-sky-200 text-sm hover:text-white transition-colors"
+                  >
                     ac.jd@freesbee.fr
                   </a>
                 </li>
               </ul>
             </div>
-            
+
             {/* Quick Links - Accordion Style */}
             <div className="space-y-4">
               <div className="bg-sky-800/20 rounded-xl p-4">
@@ -68,16 +72,16 @@ export function Footer() {
                   <summary className="flex justify-between items-center cursor-pointer list-none">
                     <h3 className="font-semibold text-lg">Liens rapides</h3>
                     <span className="transition group-open:rotate-180">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="24" 
-                        height="24" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         className="h-4 w-4"
                       >
                         <polyline points="6 9 12 15 18 9"></polyline>
@@ -120,22 +124,22 @@ export function Footer() {
                   </div>
                 </details>
               </div>
-              
+
               <div className="bg-sky-800/20 rounded-xl p-4">
                 <details className="group">
                   <summary className="flex justify-between items-center cursor-pointer list-none">
                     <h3 className="font-semibold text-lg">Formations</h3>
                     <span className="transition group-open:rotate-180">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="24" 
-                        height="24" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         className="h-4 w-4"
                       >
                         <polyline points="6 9 12 15 18 9"></polyline>
@@ -175,7 +179,6 @@ export function Footer() {
               </div>
             </div>
           </div>
-          
           <div className="mt-8 pt-6 border-t border-sky-800">
             <div className="flex justify-center mb-6">
               <div className="flex items-center gap-4">
@@ -195,7 +198,7 @@ export function Footer() {
             </p>
           </div>
         </div>
-        
+
         {/* Desktop Footer */}
         <div className="hidden md:block">
           <div className="grid gap-10 md:grid-cols-4 mb-10">

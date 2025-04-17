@@ -31,6 +31,7 @@ import { Footer } from "@/components/footer"
 import { DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import TrainingCard from "@/components/training-card-reusable"
 import { useActiveSection } from "@/hooks/use-active-section"
+import { StickyContactBar } from "@/components/sticky-contact-bar"
 
 export default function Home() {
   const activeSection = useActiveSection(["home", "about", "services", "fleet", "events", "contact"])
@@ -846,6 +847,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      <StickyContactBar />
     </div>
   )
 }
