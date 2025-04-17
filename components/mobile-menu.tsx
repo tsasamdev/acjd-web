@@ -2,17 +2,28 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { Menu } from "lucide-react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { useActiveSection } from "@/hooks/use-active-section"
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false)
+  const activeSection = useActiveSection(["home", "about", "services", "fleet", "events", "contact"])
 
   const handleLinkClick = () => {
     setOpen(false)
   }
+
+  const menuItems = [
+    { name: "Accueil", href: "#home", id: "home" },
+    { name: "A propos", href: "#about", id: "about" },
+    { name: "Services", href: "#services", id: "services" },
+    { name: "Flotte", href: "#fleet", id: "fleet" },
+    { name: "Formations", href: "#events", id: "events" },
+    { name: "Contact", href: "#contact", id: "contact" },
+  ]
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -24,71 +35,31 @@ export function MobileMenu() {
       </SheetTrigger>
       <SheetContent side="right" className="w-[80%] max-w-sm bg-white p-0">
         <SheetHeader className="border-b border-sky-100 p-4">
-        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <Image src="/logo.png" alt="o" width={30} height={30} className="h-8 w-auto" />
             <SheetTitle>Menu</SheetTitle>
           </div>
-          <Button variant="ghost" size="icon" onClick={() => setOpen(false)} className="absolute right-4 top-4">
-            <X className="h-5 w-5" />
-            <span className="sr-only">Close</span>
-          </Button>
+          {/* Removed the duplicate close button */}
         </SheetHeader>
         <nav className="flex-1 overflow-auto py-4">
           <ul className="flex flex-col space-y-2 px-4">
-            <li>
-              <Link
-                href="#"
-                className="flex h-10 items-center rounded-md px-4 text-sm font-medium hover:bg-sky-50"
-                onClick={handleLinkClick}
-              >
-                Accueil
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#about"
-                className="flex h-10 items-center rounded-md px-4 text-sm font-medium hover:bg-sky-50"
-                onClick={handleLinkClick}
-              >
-                A propos
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#services"
-                className="flex h-10 items-center rounded-md px-4 text-sm font-medium hover:bg-sky-50"
-                onClick={handleLinkClick}
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#fleet"
-                className="flex h-10 items-center rounded-md px-4 text-sm font-medium hover:bg-sky-50"
-                onClick={handleLinkClick}
-              >
-                Flotte
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#events"
-                className="flex h-10 items-center rounded-md px-4 text-sm font-medium hover:bg-sky-50"
-                onClick={handleLinkClick}
-              >
-                Formations
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#contact"
-                className="flex h-10 items-center rounded-md px-4 text-sm font-medium hover:bg-sky-50"
-                onClick={handleLinkClick}
-              >
-                Contact
-              </Link>
-            </li>
+            {menuItems.map((item) => {
+              const isActive = activeSection === item.id || (activeSection === "" && item.id === "home")
+              return (
+                <li key={item.id}>
+                  <Link
+                    href={item.href}
+                    className={`flex h-10 items-center rounded-md px-4 text-sm font-medium transition-colors ${
+                      isActive ? "bg-sky-50 text-sky-600" : "text-muted-foreground hover:bg-sky-50 hover:text-sky-600"
+                    }`}
+                    onClick={handleLinkClick}
+                  >
+                    {item.name}
+                    {isActive && <span className="ml-auto h-1.5 w-1.5 rounded-full bg-sky-600"></span>}
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
         </nav>
       </SheetContent>
