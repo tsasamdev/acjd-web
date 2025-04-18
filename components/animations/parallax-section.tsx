@@ -17,8 +17,7 @@ export function ParallaxSection({ children, speed = 0.3, className = "" }: Paral
     offset: ["start end", "end start"],
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", `${speed * 100}%`])
-
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", `${speed * 100}%`]) 
   return (
     <div ref={ref} className={`relative overflow-hidden ${className}`}>
       <motion.div style={{ y }} className="w-full h-full">

@@ -40,6 +40,7 @@ import { HeroSection } from "@/components/hero-section"
 import { DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import TrainingCard from "@/components/training-card-reusable"
 import { useActiveSection } from "@/hooks/use-active-section"
+import { FloatingPriceButton } from "@/components/floating-price-section"
 
 export default function Home() {
   const activeSection = useActiveSection(["home", "about", "services", "fleet", "events", "contact"])
@@ -91,45 +92,7 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Use either the image-based hero or the fallback */}
-        {useBackupHero ? (
-          <HeroSection />
-        ) : (
-          <section id="home" className="relative h-[600px] md:h-[700px] lg:h-[800px]">
-            {/* Background image - direct implementation */}
-            <div className="absolute inset-0 w-full h-full bg-sky-900">
-              <Image
-                src="/aerodrome.jpg"
-                alt="Aérodrome de Castelnaudary"
-                fill
-                priority
-                className="object-cover opacity-70"
-                onError={() => setUseBackupHero(true)}
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-sky-900/50 to-sky-900/70"></div>
-            </div>
-
-            {/* Content */}
-            <div className="container relative z-10 h-full flex items-center">
-              <div className="flex flex-col items-start gap-6 text-white max-w-xl">     
-                <FadeIn delay={0.4}>
-                  <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl leading-tight">
-                    <AnimatedText text="Apprendre à piloter" delay={0.6} />
-                    <span className="text-sky-300">...</span>
-                  </h1>
-                </FadeIn>
-                <FadeIn delay={0.6}>
-                  <p className="text-lg md:text-xl text-sky-100">
-                    Ce n'est pas qu'un rêve d'enfant, c'est une aventure accessible à tous.
-                  </p>
-                </FadeIn>
-              </div>
-            </div>
-
-            {/* Bottom gradient */}
-            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
-          </section>
-        )}
-
+        <HeroSection />
         {/* Rest of the sections remain the same */}
         {/* About section */}
         <section id="about" className="py-20 md:py-28 bg-sky-pattern">
@@ -965,6 +928,7 @@ export default function Home() {
 
       <Footer />
       <StickyContactBar />
+      <FloatingPriceButton />
     </div>
   )
 }
