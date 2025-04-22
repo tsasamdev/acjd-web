@@ -22,7 +22,6 @@ export function MobileMenu({ onOpenPriceModal }: { onOpenPriceModal: () => void 
     { name: "Services", href: "#services", id: "services" },
     { name: "Flotte", href: "#fleet", id: "fleet" },
     { name: "Formations", href: "#events", id: "events" },
-    { name: "Tarifs", href: "#pricing", id: "pricing" },
     { name: "Contact", href: "#contact", id: "contact" },
   ]
 
@@ -61,20 +60,6 @@ export function MobileMenu({ onOpenPriceModal }: { onOpenPriceModal: () => void 
               )
             })}
           </ul>
-
-          {/* Add prominent pricing button in mobile menu */}
-          <div className="mt-6 px-4">
-            <Button
-              className="w-full bg-sky-600 hover:bg-sky-700 text-white flex items-center justify-center gap-2"
-              onClick={() => {
-                setOpen(false)
-                onOpenPriceModal()
-              }}
-            >
-              <EuroIcon className="h-4 w-4" />
-              <span>Voir nos tarifs</span>
-            </Button>
-          </div>
         </nav>
       </SheetContent>
     </Sheet>

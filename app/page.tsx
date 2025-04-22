@@ -86,7 +86,7 @@ export default function Home() {
             })}
           </nav>
           <div className="flex items-center gap-3">
-
+          <MobileMenu onOpenPriceModal={() => setIsPriceModalOpen(true)} />
           </div>
         </div>
       </header>
@@ -721,6 +721,7 @@ export default function Home() {
 
       <Footer />
       <StickyContactBar />
+      <ImprovedPriceButton />
       <ImprovedPriceButton />
     </div>
   )
