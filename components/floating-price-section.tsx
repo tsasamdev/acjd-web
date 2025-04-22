@@ -24,7 +24,7 @@ export function FloatingPriceButton() {
                 </DialogHeader>
 
                 <Tabs defaultValue="membership" className="w-full">
-                    <TabsList className="grid w-full grid-cols-3 mb-6 bg-sky-50">
+                    <TabsList className="grid w-full grid-cols-4 mb-6 bg-sky-50">
                         <TabsTrigger value="membership" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
                             Adhésion
                         </TabsTrigger>
@@ -33,6 +33,9 @@ export function FloatingPriceButton() {
                         </TabsTrigger>
                         <TabsTrigger value="instruction" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
                             Formation
+                        </TabsTrigger>
+                        <TabsTrigger value="decouverte" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
+                            Decouverte
                         </TabsTrigger>
                     </TabsList>
 
@@ -120,7 +123,7 @@ export function FloatingPriceButton() {
                                         <p className="font-medium text-gray-700">Super guepard 100CV</p>
                                         <p className="text-xs text-gray-500">ULM biplace</p>
                                     </div>
-                                    <p className="font-semibold text-sky-700">90€/h</p>
+                                    <p className="font-semibold text-sky-700">81€/h</p>
                                 </div>
                             </div>
                         </div>
@@ -147,6 +150,62 @@ export function FloatingPriceButton() {
                     </TabsContent>
 
 
+                    <TabsContent value="decouverte" className="space-y-4">
+                    <div className="rounded-lg border border-sky-100 overflow-hidden">
+                            <div className="bg-sky-50 px-4 py-3 border-b border-sky-100">
+                                <h3 className="font-medium text-sky-800">Tarifs baptemes</h3>
+                            </div>
+                            <div className="divide-y divide-sky-100">
+                                <div className="px-4 py-3">
+                                    <div className="flex justify-between mb-1">
+                                        <p className="font-medium text-gray-700">Bapteme ULM</p>
+                                        <p className="font-semibold text-sky-700">50€</p>
+                                    </div> 
+                                    <p className="text-xs text-gray-500">Baptême 1 personne 30 mn</p>
+                                </div>
+                                <div className="px-4 py-3">
+                                    <div className="flex justify-between mb-1">
+                                        <p className="font-medium text-gray-700">Bapteme EvektorSportstar</p>
+                                        <p className="font-semibold text-sky-700">60€</p>
+                                    </div> 
+                                    <p className="text-xs text-gray-500">Baptême 1 personne 30 mn</p>
+                                </div>
+                                <div className="px-4 py-3">
+                                    <div className="flex justify-between mb-1">
+                                        <p className="font-medium text-gray-700">Bapteme Robin DR400</p>
+                                        <p className="font-semibold text-sky-700">120€</p>
+                                    </div> 
+                                    <p className="text-xs text-gray-500">Baptême 1 à 3 personnes 30 mn</p>
+                                </div>
+                            
+                            </div>
+                        </div>
+
+                        <div className="rounded-lg border border-sky-100 overflow-hidden">
+                            <div className="bg-sky-50 px-4 py-3 border-b border-sky-100">
+                                <h3 className="font-medium text-sky-800">Tarifs vols initiation</h3>
+                            </div>
+                            <div className="divide-y divide-sky-100">
+                                <div className="px-4 py-3">
+                                    <div className="flex justify-between mb-1">
+                                        <p className="font-medium text-gray-700">Vol d’initiation ULM</p>
+                                        <p className="font-semibold text-sky-700">90€</p>
+                                    </div> 
+                                    <p className="text-xs text-gray-500">40 mn avec instructeur</p>
+                                </div>
+                                <div className="px-4 py-3">
+                                    <div className="flex justify-between mb-1">
+                                        <p className="font-medium text-gray-700">Vol d’initiation EvektorSportstar</p>
+                                        <p className="font-semibold text-sky-700">120€</p>
+                                    </div> 
+                                    <p className="text-xs text-gray-500">40 mn avec instructeur</p>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                    </TabsContent>
+
                     <TabsContent value="instruction" className="space-y-4">
                         <div className="rounded-lg border border-sky-100 overflow-hidden">
                             <div className="bg-sky-50 px-4 py-3 border-b border-sky-100">
@@ -156,15 +215,7 @@ export function FloatingPriceButton() {
                                 <div className="px-4 py-3 flex justify-between items-center">
                                     <p className="text-gray-700">Instruction en vol</p>
                                     <p className="font-semibold text-sky-700">24€/h</p>
-                                </div>
-                                <div className="px-4 py-3 flex justify-between items-center">
-                                    <p className="text-gray-700">Cours théoriques</p>
-                                    <p className="font-semibold text-sky-700">35€/h</p>
-                                </div>
-                                <div className="px-4 py-3 flex justify-between items-center">
-                                    <p className="text-gray-700">Simulateur de vol</p>
-                                    <p className="font-semibold text-sky-700">45€/h</p>
-                                </div>
+                                </div>                       
                             </div>
                         </div>
 
@@ -175,25 +226,12 @@ export function FloatingPriceButton() {
                             <div className="divide-y divide-sky-100">
                                 <div className="px-4 py-3">
                                     <div className="flex justify-between mb-1">
-                                        <p className="font-medium text-gray-700">Forfait initiation</p>
-                                        <p className="font-semibold text-sky-700">350€</p>
+                                        <p className="font-medium text-gray-700">Pack PPL pilote</p>
+                                        <p className="font-semibold text-sky-700">100€</p>
                                     </div>
-                                    <p className="text-xs text-gray-500">3 heures de vol avec instructeur</p>
+                                    <p className="text-xs text-gray-500">Cours GoodPilot + cartes VFR</p>
                                 </div>
-                                <div className="px-4 py-3">
-                                    <div className="flex justify-between mb-1">
-                                        <p className="font-medium text-gray-700">Pack PPL théorique</p>
-                                        <p className="font-semibold text-sky-700">650€</p>
-                                    </div>
-                                    <p className="text-xs text-gray-500">Cours complet + supports + examens blancs</p>
-                                </div>
-                                <div className="px-4 py-3">
-                                    <div className="flex justify-between mb-1">
-                                        <p className="font-medium text-gray-700">Pack perfectionnement</p>
-                                        <p className="font-semibold text-sky-700">550€</p>
-                                    </div>
-                                    <p className="text-xs text-gray-500">5 heures avec instructeur spécialisé</p>
-                                </div>
+                            
                             </div>
                         </div>
 
@@ -228,12 +266,6 @@ export function FloatingPriceButton() {
                     </TabsContent>
                 </Tabs>
 
-                <div className="mt-8 text-center">
-                    <p className="text-sm text-gray-500 mb-4">
-                        Pour plus d'informations ou pour des tarifs personnalisés, n'hésitez pas à nous contacter.
-                    </p>
-                    <Button className="bg-sky-600 hover:bg-sky-700 text-white">Nous contacter</Button>
-                </div>
             </DialogContent>
         </Dialog>
     )
