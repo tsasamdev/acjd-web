@@ -17,6 +17,7 @@ import {
   ReceiptCentIcon,
   Shield,
   Users,
+  EuroIcon
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -34,16 +35,18 @@ import { ScrollProgress } from "@/components/animations/scroll-progress"
 import { FlyingPlane } from "@/components/animations/flying-plane"
 import { HeroSection } from "@/components/hero-section"
 
-import { DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import TrainingCard from "@/components/training-card-reusable"
 import { useActiveSection } from "@/hooks/use-active-section"
 import { FloatingPriceButton } from "@/components/floating-price-section"
 import { AircraftCard } from "@/components/aircraft-card"
 import { evektorImages, robinDR180Images, robinDR160Images, ulmImages } from "@/components/placeholder-images"
+import { ImprovedPriceButton } from "@/components/improved-price-button"
 
 export default function Home() {
   const activeSection = useActiveSection(["home", "about", "services", "fleet", "events", "contact"])
   const [useBackupHero, setUseBackupHero] = useState(false)
+  const [isPriceModalOpen, setIsPriceModalOpen] = useState(false)
 
   // Check if the image is available
 
@@ -84,7 +87,7 @@ export default function Home() {
             })}
           </nav>
           <div className="flex items-center gap-3">
-            <MobileMenu />
+          
           </div>
         </div>
       </header>
@@ -703,7 +706,8 @@ export default function Home() {
 
       <Footer />
       <StickyContactBar />
-      <FloatingPriceButton />
+      <ImprovedPriceButton />
     </div>
+    
   )
 }

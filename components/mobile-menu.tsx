@@ -2,13 +2,13 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu } from "lucide-react"
+import { Menu, EuroIcon } from "lucide-react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { useActiveSection } from "@/hooks/use-active-section"
 
-export function MobileMenu() {
+export function MobileMenu({ onOpenPriceModal }: { onOpenPriceModal: () => void }) {
   const [open, setOpen] = useState(false)
   const activeSection = useActiveSection(["home", "about", "services", "fleet", "events", "pricing", "contact"])
 
@@ -40,7 +40,6 @@ export function MobileMenu() {
             <Image src="/logo.png" alt="o" width={30} height={30} className="h-8 w-auto" />
             <SheetTitle>Menu</SheetTitle>
           </div>
-          {/* Removed the duplicate close button */}
         </SheetHeader>
         <nav className="flex-1 overflow-auto py-4">
           <ul className="flex flex-col space-y-2 px-4">
@@ -62,6 +61,20 @@ export function MobileMenu() {
               )
             })}
           </ul>
+
+          {/* Add prominent pricing button in mobile menu */}
+          <div className="mt-6 px-4">
+            <Button
+              className="w-full bg-sky-600 hover:bg-sky-700 text-white flex items-center justify-center gap-2"
+              onClick={() => {
+                setOpen(false)
+                onOpenPriceModal()
+              }}
+            >
+              <EuroIcon className="h-4 w-4" />
+              <span>Voir nos tarifs</span>
+            </Button>
+          </div>
         </nav>
       </SheetContent>
     </Sheet>
