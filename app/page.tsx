@@ -17,7 +17,7 @@ import {
   ReceiptCentIcon,
   Shield,
   Users,
-  EuroIcon
+  Calendar,
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -38,10 +38,10 @@ import { HeroSection } from "@/components/hero-section"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import TrainingCard from "@/components/training-card-reusable"
 import { useActiveSection } from "@/hooks/use-active-section"
-import { FloatingPriceButton } from "@/components/floating-price-section"
 import { AircraftCard } from "@/components/aircraft-card"
 import { evektorImages, robinDR180Images, robinDR160Images, ulmImages } from "@/components/placeholder-images"
 import { ImprovedPriceButton } from "@/components/improved-price-button"
+import { EventsTimeline } from "@/components/events-timeline"
 
 export default function Home() {
   const activeSection = useActiveSection(["home", "about", "services", "fleet", "events", "contact"])
@@ -74,9 +74,8 @@ export default function Home() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-sm font-medium transition-colors hover:text-sky-600 relative ${
-                    isActive ? "text-sky-600" : "text-muted-foreground"
-                  }`}
+                  className={`text-sm font-medium transition-colors hover:text-sky-600 relative ${isActive ? "text-sky-600" : "text-muted-foreground"
+                    }`}
                 >
                   {item.name}
                   {isActive && (
@@ -87,7 +86,7 @@ export default function Home() {
             })}
           </nav>
           <div className="flex items-center gap-3">
-          
+
           </div>
         </div>
       </header>
@@ -95,12 +94,11 @@ export default function Home() {
       <main className="flex-1">
         {/* Use either the image-based hero or the fallback */}
         <HeroSection />
-        {/* Rest of the sections remain the same */}
+
         {/* About section */}
         <section id="about" className="py-20 md:py-28 bg-sky-pattern">
-          {/* Content remains the same */}
           <div className="container">
-            <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
+            <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-start">
               <div>
                 <FadeIn>
                   <div className="inline-flex items-center px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-sm font-medium mb-6">
@@ -129,35 +127,52 @@ export default function Home() {
                 <StaggerIn delay={0.4}>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-8">
                     <HoverCard>
-                      <div className="flex flex-col items-center justify-center p-6 rounded-xl bg-white shadow-sm border border-sky-50 transition-all duration-300 hover:shadow-md hover:border-sky-100 h-[180px]">
-                        <Users className="h-10 w-10 text-sky-600 mb-3" />
-                        <p className="font-bold text-3xl text-sky-900">60+</p>
-                        <p className="text-muted-foreground text-center">Membres actifs</p>
+                      <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white shadow-sm border border-sky-50 transition-all duration-300 hover:shadow-md hover:border-sky-100 h-[120px]">
+                        <Users className="h-8 w-8 text-sky-600 mb-2" /> {/* Reduced icon size */}
+                        <p className="font-bold text-2xl text-sky-900">60+</p> {/* Smaller number font size */}
+                        <p className="text-muted-foreground text-sm text-center">Membres actifs</p> {/* Smaller label font size */}
                       </div>
                     </HoverCard>
                     <HoverCard>
-                      <div className="flex flex-col items-center justify-center p-6 rounded-xl bg-white shadow-sm border border-sky-50 transition-all duration-300 hover:shadow-md hover:border-sky-100 h-[180px]">
-                        <Plane className="h-10 w-10 text-sky-600 mb-3" />
-                        <p className="font-bold text-3xl text-sky-900">5</p>
-                        <p className="text-muted-foreground text-center">Avions</p>
+                    <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white shadow-sm border border-sky-50 transition-all duration-300 hover:shadow-md hover:border-sky-100 h-[120px]">
+                        <Plane className="h-8 w-8 text-sky-600 mb-2" />
+                        <p className="font-bold text-2xl text-sky-900">5</p>
+                        <p className="text-muted-foreground text-sm text-center">Avions</p>
                       </div>
                     </HoverCard>
                     <HoverCard>
-                      <div className="flex flex-col items-center justify-center p-6 rounded-xl bg-white shadow-sm border border-sky-50 transition-all duration-300 hover:shadow-md hover:border-sky-100 h-[180px]">
-                        <Shield className="h-10 w-10 text-sky-600 mb-3" />
-                        <p className="font-bold text-3xl text-sky-900">50+</p>
-                        <p className="text-muted-foreground text-center">Années d'expérience</p>
+                    <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white shadow-sm border border-sky-50 transition-all duration-300 hover:shadow-md hover:border-sky-100 h-[120px]">
+                        <Shield className="h-8 w-8 text-sky-600 mb-2" />
+                        <p className="font-bold text-2xl text-sky-900">50+</p>
+                        <p className="text-muted-foreground text-sm text-center">Années d'expérience</p>
                       </div>
                     </HoverCard>
                   </div>
+                  <div className="flex flex-col gap-8 mt-8">
+                    <FadeIn direction="right" delay={0.2}>
+                      <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
+                        <div className="absolute inset-0 bg-gradient-to-t from-sky-900/40 to-transparent z-10"></div>
+                        <Image src="/accueil.png" alt="Aeroclub members and aircraft" fill className="object-cover" />
+                      </div>
+                    </FadeIn>
+                  </div>
                 </StaggerIn>
               </div>
-              <FadeIn direction="right" delay={0.2}>
-                <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
-                  <div className="absolute inset-0 bg-gradient-to-t from-sky-900/40 to-transparent z-10"></div>
-                  <Image src="/accueil.png" alt="Aeroclub members and aircraft" fill className="object-cover" />
+
+              <div className="flex flex-col gap-8">
+                {/* Events Timeline */}
+                <div className="mt-8">
+                  <FadeIn direction="right" delay={0.3}>
+                    <div className="bg-white p-6 rounded-xl shadow-sm border border-sky-100">
+                      <div className="flex items-center gap-2 mb-4">
+                        <Calendar className="h-5 w-5 text-sky-600" />
+                        <h3 className="font-semibold text-lg text-sky-800">Événements à venir</h3>
+                      </div>
+                      <EventsTimeline limit={3} />
+                    </div>
+                  </FadeIn>
                 </div>
-              </FadeIn>
+              </div>
             </div>
           </div>
         </section>
@@ -708,6 +723,5 @@ export default function Home() {
       <StickyContactBar />
       <ImprovedPriceButton />
     </div>
-    
   )
 }
