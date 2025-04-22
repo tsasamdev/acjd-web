@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import {
@@ -32,7 +32,6 @@ import { StickyContactBar } from "@/components/sticky-contact-bar"
 import { FadeIn } from "@/components/animations/fade-in"
 import { StaggerIn } from "@/components/animations/stagger-in"
 import { HoverCard } from "@/components/animations/hover-card"
-import { AnimatedText } from "@/components/animations/animated-text"
 import { ScrollProgress } from "@/components/animations/scroll-progress"
 import { FlyingPlane } from "@/components/animations/flying-plane"
 import { HeroSection } from "@/components/hero-section"
@@ -127,21 +126,21 @@ export default function Home() {
                 <StaggerIn delay={0.4}>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-8">
                     <HoverCard>
-                      <div className="flex flex-col items-center p-6 rounded-xl bg-white shadow-sm border border-sky-50 transition-all duration-300 hover:shadow-md hover:border-sky-100">
+                      <div className="flex flex-col items-center justify-center p-6 rounded-xl bg-white shadow-sm border border-sky-50 transition-all duration-300 hover:shadow-md hover:border-sky-100 h-[180px]">
                         <Users className="h-10 w-10 text-sky-600 mb-3" />
                         <p className="font-bold text-3xl text-sky-900">60+</p>
                         <p className="text-muted-foreground text-center">Membres actifs</p>
                       </div>
                     </HoverCard>
                     <HoverCard>
-                      <div className="flex flex-col items-center p-6 rounded-xl bg-white shadow-sm border border-sky-50 transition-all duration-300 hover:shadow-md hover:border-sky-100">
+                      <div className="flex flex-col items-center justify-center p-6 rounded-xl bg-white shadow-sm border border-sky-50 transition-all duration-300 hover:shadow-md hover:border-sky-100 h-[180px]">
                         <Plane className="h-10 w-10 text-sky-600 mb-3" />
                         <p className="font-bold text-3xl text-sky-900">5</p>
                         <p className="text-muted-foreground text-center">Avions</p>
                       </div>
                     </HoverCard>
                     <HoverCard>
-                      <div className="flex flex-col items-center p-6 rounded-xl bg-white shadow-sm border border-sky-50 transition-all duration-300 hover:shadow-md hover:border-sky-100">
+                      <div className="flex flex-col items-center justify-center p-6 rounded-xl bg-white shadow-sm border border-sky-50 transition-all duration-300 hover:shadow-md hover:border-sky-100 h-[180px]">
                         <Shield className="h-10 w-10 text-sky-600 mb-3" />
                         <p className="font-bold text-3xl text-sky-900">50+</p>
                         <p className="text-muted-foreground text-center">Années d'expérience</p>
