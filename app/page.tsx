@@ -7,9 +7,7 @@ import {
   BookAIcon,
   ChevronRight,
   Clock,
-  CloudSun,
   CompassIcon,
-  EuroIcon,
   Facebook,
   Instagram,
   Mail,
@@ -40,6 +38,8 @@ import { DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/di
 import TrainingCard from "@/components/training-card-reusable"
 import { useActiveSection } from "@/hooks/use-active-section"
 import { FloatingPriceButton } from "@/components/floating-price-section"
+import { AircraftCard } from "@/components/aircraft-card"
+import { evektorImages, robinDR180Images, robinDR160Images, ulmImages } from "@/components/placeholder-images"
 
 export default function Home() {
   const activeSection = useActiveSection(["home", "about", "services", "fleet", "events", "contact"])
@@ -332,121 +332,29 @@ export default function Home() {
                   <StaggerIn>
                     <div className="grid gap-8 md:grid-cols-2">
                       <HoverCard>
-                        <Card className="flex flex-col h-full overflow-hidden border-sky-100 hover:border-sky-200 transition-all duration-300 hover:shadow-md rounded-xl">
-                          <div className="relative aspect-[16/9] overflow-hidden group">
-                            <div className="absolute inset-0 bg-gradient-to-t from-sky-900/80 to-transparent z-10"></div>
-                            <Image
-                              src="/evss.png"
-                              alt="Cessna 152"
-                              fill
-                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                              className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute bottom-4 left-4 z-20">
-                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-500 text-white">
-                                École
-                              </span>
-                            </div>
-                          </div>
-                          <div className="flex flex-col flex-grow">
-                            <CardHeader className="p-6">
-                              <CardTitle className="text-xl sm:text-2xl text-sky-800">
-                                Evektor Sportstar F-HDLV
-                              </CardTitle>
-                              <CardDescription className="text-sm mt-2">
-                                Avion biplace de fabrication tchèque, récent, très moderne équipé d'écrans numériques
-                                (EFIS) et utilisé pour l'école et les voyages.
-                              </CardDescription>
-                            </CardHeader>
-                            <CardContent className="p-6 pt-0 flex-grow">
-                              <div className="grid grid-cols-2 gap-4 text-sm">
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <Users className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">2 places</span>
-                                </div>
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <CloudSun className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">VFR</span>
-                                </div>
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <EuroIcon className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">111€/h</span>
-                                </div>
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <Plane className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">170 km/h</span>
-                                </div>
-                              </div>
-                            </CardContent>
-                            <CardFooter className="p-6 pt-0">
-                              <Button
-                                variant="outline"
-                                className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
-                              >
-                                Voir les détails
-                              </Button>
-                            </CardFooter>
-                          </div>
-                        </Card>
+                        <AircraftCard
+                          name="Evektor Sportstar F-HDLV"
+                          description="Avion biplace de fabrication tchèque, récent, très moderne équipé d'écrans numériques (EFIS) et utilisé pour l'école et les voyages."
+                          images={evektorImages}
+                          badge="École"
+                          seats={2}
+                          flightRules="VFR"
+                          price="111€/h"
+                          speed="170 km/h"
+                        />
                       </HoverCard>
 
                       <HoverCard>
-                        <Card className="flex flex-col h-full overflow-hidden border-sky-100 hover:border-sky-200 transition-all duration-300 hover:shadow-md rounded-xl">
-                          <div className="relative aspect-[16/9] overflow-hidden group">
-                            <div className="absolute inset-0 bg-gradient-to-t from-sky-900/80 to-transparent z-10"></div>
-                            <Image
-                              src="/evss.png"
-                              alt="Cessna 152"
-                              fill
-                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                              className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute bottom-4 left-4 z-20">
-                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-500 text-white">
-                                École
-                              </span>
-                            </div>
-                          </div>
-                          <div className="flex flex-col flex-grow">
-                            <CardHeader className="p-6">
-                              <CardTitle className="text-xl sm:text-2xl text-sky-800">
-                                Evektor Sportstar F-HDLV
-                              </CardTitle>
-                              <CardDescription className="text-sm mt-2">
-                                Avion biplace de fabrication tchèque, récent, très moderne équipé d'écrans numériques
-                                (EFIS) et utilisé pour l'école et les voyages.
-                              </CardDescription>
-                            </CardHeader>
-                            <CardContent className="p-6 pt-0 flex-grow">
-                              <div className="grid grid-cols-2 gap-4 text-sm">
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <Users className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">2 places</span>
-                                </div>
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <CloudSun className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">VFR</span>
-                                </div>
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <EuroIcon className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">111€/h</span>
-                                </div>
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <Plane className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">170 km/h</span>
-                                </div>
-                              </div>
-                            </CardContent>
-                            <CardFooter className="p-6 pt-0">
-                              <Button
-                                variant="outline"
-                                className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
-                              >
-                                Voir les détails
-                              </Button>
-                            </CardFooter>
-                          </div>
-                        </Card>
+                        <AircraftCard
+                          name="Evektor Sportstar F-HDLV"
+                          description="Avion biplace de fabrication tchèque, récent, très moderne équipé d'écrans numériques (EFIS) et utilisé pour l'école et les voyages."
+                          images={evektorImages}
+                          badge="École"
+                          seats={2}
+                          flightRules="VFR"
+                          price="111€/h"
+                          speed="170 km/h"
+                        />
                       </HoverCard>
                     </div>
                   </StaggerIn>
@@ -456,117 +364,29 @@ export default function Home() {
                   <StaggerIn>
                     <div className="grid gap-8 md:grid-cols-2">
                       <HoverCard>
-                        <Card className="flex flex-col h-full overflow-hidden border-sky-100 hover:border-sky-200 transition-all duration-300 hover:shadow-md rounded-xl">
-                          <div className="relative aspect-[16/9] overflow-hidden group">
-                            <div className="absolute inset-0 bg-gradient-to-t from-sky-900/80 to-transparent z-10"></div>
-                            <Image
-                              src="/dr180.png"
-                              alt="Cessna 182"
-                              fill
-                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                              className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute bottom-4 left-4 z-20">
-                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-500 text-white">
-                                Voyage
-                              </span>
-                            </div>
-                          </div>
-                          <div className="flex flex-col flex-grow">
-                            <CardHeader className="p-6">
-                              <CardTitle className="text-xl sm:text-2xl text-sky-800">Robin DR400 180cv</CardTitle>
-                              <CardDescription className="text-sm mt-2">
-                                Avion quadriplace de voyage, de fabrication française. Distance franchissable de près de
-                                1000 km à une vitesse de croisière de 240 km/h.
-                              </CardDescription>
-                            </CardHeader>
-                            <CardContent className="p-6 pt-0 flex-grow">
-                              <div className="grid grid-cols-2 gap-4 text-sm">
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <Users className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">4 places</span>
-                                </div>
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <CloudSun className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">VFR/IFR</span>
-                                </div>
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <EuroIcon className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">180€/h</span>
-                                </div>
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <Plane className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">240 km/h</span>
-                                </div>
-                              </div>
-                            </CardContent>
-                            <CardFooter className="p-6 pt-0">
-                              <Button
-                                variant="outline"
-                                className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
-                              >
-                                Voir les détails
-                              </Button>
-                            </CardFooter>
-                          </div>
-                        </Card>
+                        <AircraftCard
+                          name="Robin DR400 180cv"
+                          description="Avion quadriplace de voyage, de fabrication française. Distance franchissable de près de 1000 km à une vitesse de croisière de 240 km/h."
+                          images={robinDR180Images}
+                          badge="Voyage"
+                          seats={4}
+                          flightRules="VFR/IFR"
+                          price="180€/h"
+                          speed="240 km/h"
+                        />
                       </HoverCard>
 
                       <HoverCard>
-                        <Card className="flex flex-col h-full overflow-hidden border-sky-100 hover:border-sky-200 transition-all duration-300 hover:shadow-md rounded-xl">
-                          <div className="relative aspect-[16/9] overflow-hidden group">
-                            <div className="absolute inset-0 bg-gradient-to-t from-sky-900/80 to-transparent z-10"></div>
-                            <Image
-                              src="/dr160.webp"
-                              alt="Piper Arrow"
-                              fill
-                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                              className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute bottom-4 left-4 z-20">
-                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-500 text-white">
-                                Voyage
-                              </span>
-                            </div>
-                          </div>
-                          <div className="flex flex-col flex-grow">
-                            <CardHeader className="p-6">
-                              <CardTitle className="text-xl sm:text-2xl text-sky-800">Robin DR400 160cv</CardTitle>
-                              <CardDescription className="text-sm mt-2">
-                                Avion quadriplace de propriétaire mis à disposition des membres du club qualifiés pour
-                                les sorties et les animations.
-                              </CardDescription>
-                            </CardHeader>
-                            <CardContent className="p-6 pt-0 flex-grow">
-                              <div className="grid grid-cols-2 gap-4 text-sm">
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <Users className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">4 places</span>
-                                </div>
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <CloudSun className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">VFR/IFR</span>
-                                </div>
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <EuroIcon className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">180€/h</span>
-                                </div>
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <Plane className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">220 km/h</span>
-                                </div>
-                              </div>
-                            </CardContent>
-                            <CardFooter className="p-6 pt-0">
-                              <Button
-                                variant="outline"
-                                className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
-                              >
-                                Voir les détails
-                              </Button>
-                            </CardFooter>
-                          </div>
-                        </Card>
+                        <AircraftCard
+                          name="Robin DR400 160cv"
+                          description="Avion quadriplace de propriétaire mis à disposition des membres du club qualifiés pour les sorties et les animations."
+                          images={robinDR160Images}
+                          badge="Voyage"
+                          seats={4}
+                          flightRules="VFR/IFR"
+                          price="180€/h"
+                          speed="220 km/h"
+                        />
                       </HoverCard>
                     </div>
                   </StaggerIn>
@@ -576,60 +396,16 @@ export default function Home() {
                   <StaggerIn>
                     <div className="grid gap-8 md:grid-cols-2">
                       <HoverCard>
-                        <Card className="flex flex-col h-full overflow-hidden border-sky-100 hover:border-sky-200 transition-all duration-300 hover:shadow-md rounded-xl">
-                          <div className="relative aspect-[16/9] overflow-hidden group">
-                            <div className="absolute inset-0 bg-gradient-to-t from-sky-900/80 to-transparent z-10"></div>
-                            <Image
-                              src="/ulm.png"
-                              alt="Cirrus SR22"
-                              fill
-                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                              className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute bottom-4 left-4 z-20">
-                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-500 text-white">
-                                ULM
-                              </span>
-                            </div>
-                          </div>
-                          <div className="flex flex-col flex-grow">
-                            <CardHeader className="p-6">
-                              <CardTitle className="text-xl sm:text-2xl text-sky-800">Super guepard 100CV</CardTitle>
-                              <CardDescription className="text-sm mt-2">
-                                Avion ultra léger motorisé (ULM) biplace de fabrication française, bien équipé pour
-                                l'école et les voyages. Distance franchissable de 750 km à 180 km/h.
-                              </CardDescription>
-                            </CardHeader>
-                            <CardContent className="p-6 pt-0 flex-grow">
-                              <div className="grid grid-cols-2 gap-4 text-sm">
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <Users className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">2 places</span>
-                                </div>
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <CloudSun className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">VFR</span>
-                                </div>
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <EuroIcon className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">90€/h</span>
-                                </div>
-                                <div className="flex items-center gap-2 p-2 rounded-lg bg-sky-50">
-                                  <Plane className="h-5 w-5 text-sky-600" />
-                                  <span className="font-medium">180 km/h</span>
-                                </div>
-                              </div>
-                            </CardContent>
-                            <CardFooter className="p-6 pt-0">
-                              <Button
-                                variant="outline"
-                                className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
-                              >
-                                Voir les détails
-                              </Button>
-                            </CardFooter>
-                          </div>
-                        </Card>
+                        <AircraftCard
+                          name="Super guepard 100CV"
+                          description="Avion ultra léger motorisé (ULM) biplace de fabrication française, bien équipé pour l'école et les voyages. Distance franchissable de 750 km à 180 km/h."
+                          images={ulmImages}
+                          badge="ULM"
+                          seats={2}
+                          flightRules="VFR"
+                          price="90€/h"
+                          speed="180 km/h"
+                        />
                       </HoverCard>
                     </div>
                   </StaggerIn>
