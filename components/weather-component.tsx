@@ -25,9 +25,11 @@ const WeatherForecast: React.FC<WeatherForecastProps> = ({ latitude, longitude }
 
   useEffect(() => {
     const fetchForecast = async () => {
+        const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY;
+
       try {
         const response = await axios.get(
-          `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly,alerts&units=metric&appid=79b7eda28392dccaf6c9b4b7d44a2f9b`
+          `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly,alerts&units=metric&appid=${apiKey}`
         );
         setForecast(response.data.daily);
         setLoading(false);
