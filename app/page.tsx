@@ -42,9 +42,12 @@ import { AircraftCard } from "@/components/aircraft-card"
 import { evektorImages, robinDR180Images, robinDR160Images, ulmImages } from "@/components/placeholder-images"
 import { ImprovedPriceButton } from "@/components/improved-price-button"
 import { EventsTimeline } from "@/components/events-timeline"
+import { WebcamFeed } from "@/components/webcam-feed"
+import WeatherComponent from "@/components/weather-component"
+import WeatherForecast from "@/components/weather-component"
 
 export default function Home() {
-  const activeSection = useActiveSection(["home", "about", "services", "fleet", "events", "contact"])
+  const activeSection = useActiveSection(["home", "about", "services", "fleet", "events", "webcam","contact"])
   const [useBackupHero, setUseBackupHero] = useState(false)
   const [isPriceModalOpen, setIsPriceModalOpen] = useState(false)
 
@@ -67,6 +70,7 @@ export default function Home() {
               { name: "Services", href: "#services", id: "services" },
               { name: "Flotte", href: "#fleet", id: "fleet" },
               { name: "Formations", href: "#events", id: "events" },
+              { name: "Webcam", href: "#webcam", id: "webcam" },
               { name: "Contact", href: "#contact", id: "contact" },
             ].map((item) => {
               const isActive = activeSection === item.id || (activeSection === "" && item.id === "home")
@@ -86,7 +90,7 @@ export default function Home() {
             })}
           </nav>
           <div className="flex items-center gap-3">
-          <MobileMenu onOpenPriceModal={() => setIsPriceModalOpen(true)} />
+            <MobileMenu onOpenPriceModal={() => setIsPriceModalOpen(true)} />
           </div>
         </div>
       </header>
@@ -134,14 +138,14 @@ export default function Home() {
                       </div>
                     </HoverCard>
                     <HoverCard>
-                    <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white shadow-sm border border-sky-50 transition-all duration-300 hover:shadow-md hover:border-sky-100 h-[120px]">
+                      <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white shadow-sm border border-sky-50 transition-all duration-300 hover:shadow-md hover:border-sky-100 h-[120px]">
                         <Plane className="h-8 w-8 text-sky-600 mb-2" />
                         <p className="font-bold text-2xl text-sky-900">5</p>
                         <p className="text-muted-foreground text-sm text-center">Avions</p>
                       </div>
                     </HoverCard>
                     <HoverCard>
-                    <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white shadow-sm border border-sky-50 transition-all duration-300 hover:shadow-md hover:border-sky-100 h-[120px]">
+                      <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-white shadow-sm border border-sky-50 transition-all duration-300 hover:shadow-md hover:border-sky-100 h-[120px]">
                         <Shield className="h-8 w-8 text-sky-600 mb-2" />
                         <p className="font-bold text-2xl text-sky-900">50+</p>
                         <p className="text-muted-foreground text-sm text-center">Années d'expérience</p>
@@ -599,6 +603,35 @@ export default function Home() {
             </StaggerIn>
           </div>
         </section>
+
+        <section id="webcam" className="py-20 md:py-28 bg-sky-50">
+      <div className="container">
+        <div className="text-center mb-10">
+          <FadeIn>
+            <h2 className="text-3xl font-bold tracking-tight mb-4 text-sky-900">Notre Webcam en direct</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Découvrez en temps réel les conditions météorologiques et l'ambiance de notre aérodrome !
+            </p>
+          </FadeIn>
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-12">
+          {/* Webcam Feed Section (Left Side) */}
+          <div className="lg:w-1/2">
+            <FadeIn delay={0.1}>
+              <WebcamFeed streamUrl="" />
+            </FadeIn>
+          </div>
+
+          {/* Weather Forecast Section (Right Side) */}
+          <div className="lg:w-1/2">
+            <div className="mt-16 lg:mt-0">
+              <WeatherForecast latitude={43.310362} longitude={1.921527} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
         {/* Contact section */}
         <section id="contact" className="py-20 md:py-28 bg-gradient-to-b from-sky-50 to-white">

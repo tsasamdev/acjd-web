@@ -10,7 +10,7 @@ import { useActiveSection } from "@/hooks/use-active-section"
 
 export function MobileMenu({ onOpenPriceModal }: { onOpenPriceModal: () => void }) {
   const [open, setOpen] = useState(false)
-  const activeSection = useActiveSection(["home", "about", "services", "fleet", "events", "pricing", "contact"])
+  const activeSection = useActiveSection(["home", "about", "services", "fleet", "events", "pricing","webcam", "contact"])
 
   const handleLinkClick = () => {
     setOpen(false)
@@ -22,6 +22,7 @@ export function MobileMenu({ onOpenPriceModal }: { onOpenPriceModal: () => void 
     { name: "Services", href: "#services", id: "services" },
     { name: "Flotte", href: "#fleet", id: "fleet" },
     { name: "Formations", href: "#events", id: "events" },
+    { name: "Webcam", href: "#webcam", id: "webcam" },
     { name: "Contact", href: "#contact", id: "contact" },
   ]
 
