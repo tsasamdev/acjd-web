@@ -15,8 +15,9 @@ interface WeatherData {
     description: string;
     icon: string;
   }>;
-  humidity: number;
+  pressure: number;
   wind_speed: number;
+  wind_deg: string
 }
 
 interface WeatherForecastProps {
@@ -103,8 +104,8 @@ const WeatherForecast: React.FC<WeatherForecastProps> = ({ latitude, longitude }
             {/* Expandable details */}
             {openIndex === index && (
               <div className="px-6 pb-4 text-sm text-gray-600 bg-sky-50">
-                <p><strong>Humidité:</strong> {day.humidity}%</p>
-                <p><strong>Vent:</strong> {Math.round(day.wind_speed)} km/h</p>
+                <p><strong>Pression:</strong> {day.pressure}hPa</p>
+                <p><strong>Vent:</strong> {day.wind_deg}° {Math.round(day.wind_speed)} km/h</p>
                 <p><strong>Température Jour:</strong> {Math.round(day.temp.day)}°C</p>
               </div>
             )}
