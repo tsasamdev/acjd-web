@@ -619,7 +619,7 @@ export default function Home() {
           {/* Webcam Feed Section (Left Side) */}
           <div className="lg:w-1/2">
             <FadeIn delay={0.1}>
-              <WebcamFeed streamUrl="" />
+              <WebcamFeed streamUrl="https://www.youtube.com/watch?v=t0J6D3XAVh8"  isYouTube/>
             </FadeIn>
           </div>
 
