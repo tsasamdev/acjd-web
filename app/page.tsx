@@ -34,7 +34,6 @@ import { HoverCard } from "@/components/animations/hover-card"
 import { ScrollProgress } from "@/components/animations/scroll-progress"
 import { FlyingPlane } from "@/components/animations/flying-plane"
 import { HeroSection } from "@/components/hero-section"
-
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import TrainingCard from "@/components/training-card-reusable"
 import { useActiveSection } from "@/hooks/use-active-section"
@@ -45,6 +44,7 @@ import { EventsTimeline } from "@/components/events-timeline"
 import { WebcamFeed } from "@/components/webcam-feed"
 import WeatherComponent from "@/components/weather-component"
 import WeatherForecast from "@/components/weather-component"
+import { FormationsSection } from "@/components/formations-section"
 
 export default function Home() {
   const activeSection = useActiveSection(["home", "about", "services", "fleet", "events", "webcam","contact"])
@@ -435,174 +435,49 @@ export default function Home() {
           </div>
         </section>
 
-       
-        <section id="formations" className="py-20 md:py-28 bg-white">
-          {/* Content remains the same */}
-          <div className="container">
-            <div className="text-center mb-16">
-              <FadeIn>
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-sm font-medium mb-4">
-                  <BookAIcon className="w-4 h-4 mr-2" />
-                  Nos Formations
-                </div>
-              </FadeIn>
-              <FadeIn delay={0.1}>
-                <h2 className="text-3xl font-bold tracking-tight mb-4 text-sky-900">Devenez pilote</h2>
-              </FadeIn>
-              <FadeIn delay={0.2}>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Nous proposons des formations de qualité pour tous les niveaux, que vous soyez débutant ou pilote
-                  expérimenté.
-                </p>
-              </FadeIn>
-            </div>
-
-            <StaggerIn>
-              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                <HoverCard>
-                  <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-all duration-300 rounded-xl overflow-hidden">
-                    <div className="h-2 bg-gradient-to-r from-sky-400 to-azure-500"></div>
-                    <div className="flex flex-col flex-grow">
-                      <CardHeader className="p-6">
-                        <div className="flex items-center gap-2 text-sky-600 mb-3">
-                          <BookAIcon className="h-5 w-5" />
-                          <span className="text-sm font-medium">~ 1 an</span>
-                        </div>
-                        <CardTitle className="text-xl text-sky-800">Brevet pilote ULM multiaxes</CardTitle>
-                        <CardDescription className="mt-2"></CardDescription>
-                      </CardHeader>
-                      <CardContent className="p-6 pt-0 flex-grow flex flex-col">
-                        <div className="flex-grow">
-                          <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                            Schématiquement, l'ULM multiaxes est un petit aéronef dont le poids et la puissance sont
-                            limités et qui permet l'emport d'une à deux personnes. La pratique du pilotage d'un ULM
-                            nécessite, outre la licence fédérale, un certificat médical de non contre-indication délivré
-                            par un médecin généraliste.
-                          </p>
-                          <ul className="space-y-2 mb-6">
-                            <li className="flex items-start gap-2">
-                              <ChevronRight className="h-5 w-5 text-sky-500 shrink-0 mt-0.5" />
-                              <span className="text-sm text-muted-foreground">Formation théorique et pratique</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                              <ChevronRight className="h-5 w-5 text-sky-500 shrink-0 mt-0.5" />
-                              <span className="text-sm text-muted-foreground">Brevet acquis à vie</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                              <ChevronRight className="h-5 w-5 text-sky-500 shrink-0 mt-0.5" />
-                              <span className="text-sm text-muted-foreground">Certificat médical simple</span>
-                            </li>
-                          </ul>
-                        </div>
-                        <div className="mt-auto pt-4 border-t border-sky-100">
-                          <PricingInfo flightPrice="81 euros/h" instructorPrice="24 euros/h instr" />
-                        </div>
-                      </CardContent>
-                      <CardFooter className="p-6 pt-0">
-                        <Button className="w-full bg-sky-600 hover:bg-sky-700 text-white">En savoir plus</Button>
-                      </CardFooter>
-                    </div>
-                  </Card>
-                </HoverCard>
-
-                <HoverCard>
-                  <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-all duration-300 rounded-xl overflow-hidden">
-                    <div className="h-2 bg-gradient-to-r from-sky-400 to-azure-500"></div>
-                    <div className="flex flex-col flex-grow">
-                      <CardHeader className="p-6">
-                        <div className="flex items-center gap-2 text-sky-600 mb-3">
-                          <BookAIcon className="h-5 w-5" />
-                          <span className="text-sm font-medium">~ 1 an</span>
-                        </div>
-                        <CardTitle className="text-xl text-sky-800">LAPL (light aircraft pilot licence)</CardTitle>
-                        <CardDescription className="mt-2"></CardDescription>
-                      </CardHeader>
-                      <CardContent className="p-6 pt-0 flex-grow flex flex-col">
-                        <div className="flex-grow">
-                          <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                            La LAPL permet d'accéder au pilotage de la plupart des avions d'aéroclub. Cette licence est
-                            européenne, valable uniquement au sein de l'espace Schengen. Le pilote LAPL devra avoir
-                            réalisé 10 heures de vol solo après obtention de sa licence pour être autorisé à emmener des
-                            passagers.
-                          </p>
-                          <ul className="space-y-2 mb-6">
-                            <li className="flex items-start gap-2">
-                              <ChevronRight className="h-5 w-5 text-sky-500 shrink-0 mt-0.5" />
-                              <span className="text-sm text-muted-foreground">Licence européenne</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                              <ChevronRight className="h-5 w-5 text-sky-500 shrink-0 mt-0.5" />
-                              <span className="text-sm text-muted-foreground">30 heures de vol minimum</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                              <ChevronRight className="h-5 w-5 text-sky-500 shrink-0 mt-0.5" />
-                              <span className="text-sm text-muted-foreground">Examen théorique et pratique</span>
-                            </li>
-                          </ul>
-                        </div>
-                        <div className="mt-auto pt-4 border-t border-sky-100">
-                          <PricingInfo flightPrice="81 euros/h" instructorPrice="24 euros/h instr" />
-                        </div>
-                      </CardContent>
-                      <CardFooter className="p-6 pt-0">
-                        <Button className="w-full bg-sky-600 hover:bg-sky-700 text-white">En savoir plus</Button>
-                      </CardFooter>
-                    </div>
-                  </Card>
-                </HoverCard>
-
-                <HoverCard>
-                  <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-all duration-300 rounded-xl overflow-hidden">
-                    <div className="h-2 bg-gradient-to-r from-sky-400 to-azure-500"></div>
-                    <div className="flex flex-col flex-grow">
-                      <CardHeader className="p-6">
-                        <div className="flex items-center gap-2 text-sky-600 mb-3">
-                          <BookAIcon className="h-5 w-5" />
-                          <span className="text-sm font-medium">~ 1 an</span>
-                        </div>
-                        <CardTitle className="text-xl text-sky-800">PPL (private pilot licence)</CardTitle>
-                        <CardDescription className="mt-2"></CardDescription>
-                      </CardHeader>
-                      <CardContent className="p-6 pt-0 flex-grow flex flex-col">
-                        <div className="flex-grow">
-                          <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                            La PPL, outre sa reconnaissance internationale, est une des portes d'entrée pour poursuivre
-                            une formation de pilote professionnel (pilote de ligne, vol aux instruments, avions
-                            multi-moteurs, avions de plus de cinq places,…).
-                          </p>
-                          <ul className="space-y-2 mb-6">
-                            <li className="flex items-start gap-2">
-                              <ChevronRight className="h-5 w-5 text-sky-500 shrink-0 mt-0.5" />
-                              <span className="text-sm text-muted-foreground">Reconnaissance internationale</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                              <ChevronRight className="h-5 w-5 text-sky-500 shrink-0 mt-0.5" />
-                              <span className="text-sm text-muted-foreground">45 heures de vol minimum</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                              <ChevronRight className="h-5 w-5 text-sky-500 shrink-0 mt-0.5" />
-                              <span className="text-sm text-muted-foreground">
-                                Possibilité d'évolution professionnelle
-                              </span>
-                            </li>
-                          </ul>
-                        </div>
-                        <div className="mt-auto pt-4 border-t border-sky-100">
-                          <PricingInfo flightPrice="81 euros/h" instructorPrice="24 euros/h instr" />
-                        </div>
-                      </CardContent>
-                      <CardFooter className="p-6 pt-0">
-                        <Button className="w-full bg-sky-600 hover:bg-sky-700 text-white">En savoir plus</Button>
-                      </CardFooter>
-                    </div>
-                  </Card>
-                </HoverCard>
-              </div>
-            </StaggerIn>
-          </div>
-        </section>
-
-   
+        {/* Nos Formations section (reusable component) */}
+        <FormationsSection
+          sectionTitle="Nos Formations"
+          sectionSubtitle="Nous proposons des formations de qualité pour tous les niveaux, que vous soyez débutant ou pilote expérimenté."
+          formations={[
+            {
+              title: "Brevet pilote ULM multiaxes",
+              description:
+                "Schématiquement, l'ULM multiaxes est un petit aéronef dont le poids et la puissance sont limités et qui permet l'emport d'une à deux personnes. La pratique du pilotage d'un ULM nécessite, outre la licence fédérale, un certificat médical de non contre-indication délivré par un médecin généraliste.",
+              duration: "~ 1 an",
+              features: [
+                "Formation théorique et pratique",
+                "Brevet acquis à vie",
+                "Certificat médical simple",
+              ],
+             
+            },
+            {
+              title: "LAPL (light aircraft pilot licence)",
+              description:
+                "La LAPL permet d'accéder au pilotage de la plupart des avions d'aéroclub. Cette licence est européenne, valable uniquement au sein de l'espace Schengen. Le pilote LAPL devra avoir réalisé 10 heures de vol solo après obtention de sa licence pour être autorisé à emmener des passagers.",
+              duration: "~ 1 an",
+              features: [
+                "Licence européenne",
+                "30 heures de vol minimum",
+                "Examen théorique et pratique",
+              ],
+            
+            },
+            {
+              title: "PPL (private pilot licence)",
+              description:
+                "La PPL, outre sa reconnaissance internationale, est une des portes d'entrée pour poursuivre une formation de pilote professionnel (pilote de ligne, vol aux instruments, avions multi-moteurs, avions de plus de cinq places,…).",
+              duration: "~ 1 an",
+              features: [
+                "Reconnaissance internationale",
+                "45 heures de vol minimum",
+                "Possibilité d'évolution professionnelle",
+              ],
+           
+            },
+          ]}
+        />
 
         {/* Contact section */}
         <section id="contact" className="py-20 md:py-28 bg-gradient-to-b from-sky-50 to-white">
