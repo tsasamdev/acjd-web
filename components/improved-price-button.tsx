@@ -30,23 +30,50 @@ export function ImprovedPriceButton() {
           <DialogTitle className="text-xl font-semibold text-sky-800">Tarifs</DialogTitle>
         </DialogHeader>
 
-        <Tabs defaultValue="aircraft" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-6 bg-sky-50">
-            <TabsTrigger value="aircraft" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
+        <Tabs defaultValue="discovery" className="w-full">
+          <TabsList className="flex w-full mb-6 bg-sky-50">
+            <TabsTrigger value="discovery" className="flex-1 data-[state=active]:bg-sky-600 data-[state=active]:text-white">
+              Pack decouverte
+            </TabsTrigger>
+            <TabsTrigger value="aircraft" className="flex-1 data-[state=active]:bg-sky-600 data-[state=active]:text-white">
               Avions
             </TabsTrigger>
-            <TabsTrigger value="membership" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
-              Adhésion
+            <TabsTrigger value="membership" className="flex-1 data-[state=active]:bg-sky-600 data-[state=active]:text-white">
+              Cotisations club
             </TabsTrigger>
-            <TabsTrigger value="instruction" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
-              Formation
+            <TabsTrigger value="insurance" className="flex-1 data-[state=active]:bg-sky-600 data-[state=active]:text-white">
+              Licences, assurances
             </TabsTrigger>
+          
           </TabsList>
 
-          <TabsContent value="aircraft" className="space-y-4">
+          <TabsContent value="discovery" className="space-y-4">
             <div className="rounded-lg border border-sky-100 overflow-hidden">
               <div className="bg-sky-50 px-4 py-3 border-b border-sky-100">
                 <h3 className="font-medium text-sky-800">Tarifs horaires de location</h3>
+              </div>
+              <div className="divide-y divide-sky-100">
+                <div className="px-4 py-3 flex justify-between items-center">
+                  <div>
+                    <p className="font-medium text-gray-700">4 vols sur avion ecole</p>
+                    <p className="text-xs text-gray-500">cotisation annuelle incluse - durée vol 45 mn</p>
+                  </div>
+                  <p className="font-semibold text-sky-700">460€</p>
+                </div>
+                <div className="px-4 py-3 flex justify-between items-center">
+                  <div>
+                    <p className="font-medium text-gray-700">5 vols sur ULM Super Guépard</p>
+                    <p className="text-xs text-gray-500">cotisation annuelle incluse - durée vol 45 mn</p>
+                  </div>
+                  <p className="font-semibold text-sky-700">460€</p>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+          <TabsContent value="aircraft" className="space-y-4">
+            <div className="rounded-lg border border-sky-100 overflow-hidden">
+              <div className="bg-sky-50 px-4 py-3 border-b border-sky-100">
+                <h3 className="font-medium text-sky-800">Tarifs horaires</h3>
               </div>
               <div className="divide-y divide-sky-100">
                 <div className="px-4 py-3 flex justify-between items-center">
@@ -75,168 +102,122 @@ export function ImprovedPriceButton() {
                     <p className="font-medium text-gray-700">Super guepard 100CV</p>
                     <p className="text-xs text-gray-500">ULM biplace</p>
                   </div>
-                  <p className="font-semibold text-sky-700">90€/h</p>
+                  <p className="font-semibold text-sky-700">81€/h</p>
                 </div>
-              </div>
-            </div>
-
-            <div className="rounded-lg border border-sky-100 overflow-hidden">
-              <div className="bg-sky-50 px-4 py-3 border-b border-sky-100">
-                <h3 className="font-medium text-sky-800">Forfaits de location</h3>
-              </div>
-              <div className="divide-y divide-sky-100">
-                <div className="px-4 py-3">
-                  <p className="font-medium text-gray-700">Forfait 5 heures</p>
-                  <p className="text-sm text-gray-600">-5% sur le tarif horaire</p>
-                </div>
-                <div className="px-4 py-3">
-                  <p className="font-medium text-gray-700">Forfait 10 heures</p>
-                  <p className="text-sm text-gray-600">-8% sur le tarif horaire</p>
-                </div>
-                <div className="px-4 py-3">
-                  <p className="font-medium text-gray-700">Forfait 20 heures</p>
-                  <p className="text-sm text-gray-600">-12% sur le tarif horaire</p>
+                 <div className="px-4 py-3 flex justify-between items-center">
+                  <div>
+                    <p className="font-medium text-gray-700">Instruction</p>
+                  </div>
+                  <p className="font-semibold text-sky-700">24€/h</p>
                 </div>
               </div>
             </div>
           </TabsContent>
 
+<TabsContent value="insurance" className="space-y-4">
+            <div className="rounded-lg border border-sky-100 overflow-hidden">
+              <div className="bg-sky-50 px-4 py-3 border-b border-sky-100">
+                <h3 className="font-medium text-sky-800">Tarifs</h3>
+              </div>
+              <div className="divide-y divide-sky-100">
+                <div className="px-4 py-3">
+                  <div className="flex justify-between mb-1">
+                    <p className="font-medium text-gray-700">FFA</p>
+                    <p className="font-semibold text-sky-700">92€</p>
+                  </div>
+                </div>
+              </div>
+               <div className="divide-y divide-sky-100">
+                <div className="px-4 py-3">
+                  <div className="flex justify-between mb-1">
+                    <p className="font-medium text-gray-700">FFA + Info pilote</p>
+                    <p className="font-semibold text-sky-700">141€</p>
+                  </div>
+                </div>
+              </div>
+               <div className="divide-y divide-sky-100">
+                <div className="px-4 py-3">
+                  <div className="flex justify-between mb-1">
+                    <p className="font-medium text-gray-700">FFPULM</p>
+                    <p className="font-semibold text-sky-700">83,20€</p>
+                  </div>
+                </div>
+              </div>
+               <div className="divide-y divide-sky-100">
+                <div className="px-4 py-3">
+                  <div className="flex justify-between mb-1">
+                    <p className="font-medium text-gray-700">FFPULM -25 ans</p>
+                    <p className="font-semibold text-sky-700">52€</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
           <TabsContent value="membership" className="space-y-4">
             <div className="rounded-lg border border-sky-100 overflow-hidden">
               <div className="bg-sky-50 px-4 py-3 border-b border-sky-100">
-                <h3 className="font-medium text-sky-800">Cotisations annuelles</h3>
+                <h3 className="font-medium text-sky-800">Membre actif</h3>
               </div>
               <div className="divide-y divide-sky-100">
                 <div className="px-4 py-3">
                   <div className="flex justify-between mb-1">
-                    <p className="font-medium text-gray-700">Adhésion Découverte</p>
-                    <p className="font-semibold text-sky-700">450€/an</p>
+                    <p className="font-medium text-gray-700">Cotisation annuelle</p>
+                    <p className="font-semibold text-sky-700">55€</p>
                   </div>
-                  <p className="text-xs text-gray-500">Idéal pour les débutants</p>
                 </div>
-                <div className="px-4 py-3 bg-sky-50/50">
-                  <div className="flex justify-between mb-1">
-                    <p className="font-medium text-gray-700">Adhésion Pilote</p>
-                    <p className="font-semibold text-sky-700">650€/an</p>
-                  </div>
-                  <p className="text-xs text-gray-500">Pour les pilotes réguliers</p>
-                </div>
+              
+              </div>
+            </div>
+            <div className="rounded-lg border border-sky-100 overflow-hidden">
+              <div className="bg-sky-50 px-4 py-3 border-b border-sky-100">
+                <h3 className="font-medium text-sky-800">Membre non pilote</h3>
+              </div>
+              <div className="divide-y divide-sky-100">
                 <div className="px-4 py-3">
                   <div className="flex justify-between mb-1">
-                    <p className="font-medium text-gray-700">Adhésion Famille</p>
-                    <p className="font-semibold text-sky-700">950€/an</p>
+                    <p className="font-medium text-gray-700">Cotisation annuelle</p>
+                    <p className="font-semibold text-sky-700">85€</p>
                   </div>
-                  <p className="text-xs text-gray-500">Jusqu'à 4 membres de la même famille</p>
                 </div>
+              
               </div>
             </div>
 
+
             <div className="rounded-lg border border-sky-100 overflow-hidden">
               <div className="bg-sky-50 px-4 py-3 border-b border-sky-100">
-                <h3 className="font-medium text-sky-800">Cotisations mensuelles</h3>
+                <h3 className="font-medium text-sky-800">Participation aux frais de fonctionnement</h3>
               </div>
               <div className="divide-y divide-sky-100">
                 <div className="px-4 py-3">
                   <div className="flex justify-between mb-1">
-                    <p className="font-medium text-gray-700">Adhésion Découverte</p>
-                    <p className="font-semibold text-sky-700">45€/mois</p>
+                    <p className="font-medium text-gray-700">Avion</p>
+                    <p className="font-semibold text-sky-700">125€</p>
                   </div>
                 </div>
                 <div className="px-4 py-3">
                   <div className="flex justify-between mb-1">
-                    <p className="font-medium text-gray-700">Adhésion Pilote</p>
-                    <p className="font-semibold text-sky-700">65€/mois</p>
+                    <p className="font-medium text-gray-700">Ulm</p>
+                    <p className="font-semibold text-sky-700">85€</p>
                   </div>
                 </div>
                 <div className="px-4 py-3">
                   <div className="flex justify-between mb-1">
-                    <p className="font-medium text-gray-700">Adhésion Famille</p>
-                    <p className="font-semibold text-sky-700">95€/mois</p>
+                    <p className="font-medium text-gray-700">Avion -21 ans</p>
+                    <p className="font-semibold text-sky-700">63€</p>
+                  </div>
+                </div>
+                 <div className="px-4 py-3">
+                  <div className="flex justify-between mb-1">
+                    <p className="font-medium text-gray-700">Ulm -25 ans</p>
+                    <p className="font-semibold text-sky-700">43€</p>
                   </div>
                 </div>
               </div>
             </div>
           </TabsContent>
 
-          <TabsContent value="instruction" className="space-y-4">
-            <div className="rounded-lg border border-sky-100 overflow-hidden">
-              <div className="bg-sky-50 px-4 py-3 border-b border-sky-100">
-                <h3 className="font-medium text-sky-800">Tarifs instruction</h3>
-              </div>
-              <div className="divide-y divide-sky-100">
-                <div className="px-4 py-3 flex justify-between items-center">
-                  <p className="text-gray-700">Instruction en vol</p>
-                  <p className="font-semibold text-sky-700">24€/h</p>
-                </div>
-                <div className="px-4 py-3 flex justify-between items-center">
-                  <p className="text-gray-700">Cours théoriques</p>
-                  <p className="font-semibold text-sky-700">35€/h</p>
-                </div>
-                <div className="px-4 py-3 flex justify-between items-center">
-                  <p className="text-gray-700">Simulateur de vol</p>
-                  <p className="font-semibold text-sky-700">45€/h</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-lg border border-sky-100 overflow-hidden">
-              <div className="bg-sky-50 px-4 py-3 border-b border-sky-100">
-                <h3 className="font-medium text-sky-800">Forfaits formation</h3>
-              </div>
-              <div className="divide-y divide-sky-100">
-                <div className="px-4 py-3">
-                  <div className="flex justify-between mb-1">
-                    <p className="font-medium text-gray-700">Forfait initiation</p>
-                    <p className="font-semibold text-sky-700">350€</p>
-                  </div>
-                  <p className="text-xs text-gray-500">3 heures de vol avec instructeur</p>
-                </div>
-                <div className="px-4 py-3">
-                  <div className="flex justify-between mb-1">
-                    <p className="font-medium text-gray-700">Pack PPL théorique</p>
-                    <p className="font-semibold text-sky-700">650€</p>
-                  </div>
-                  <p className="text-xs text-gray-500">Cours complet + supports + examens blancs</p>
-                </div>
-                <div className="px-4 py-3">
-                  <div className="flex justify-between mb-1">
-                    <p className="font-medium text-gray-700">Pack perfectionnement</p>
-                    <p className="font-semibold text-sky-700">550€</p>
-                  </div>
-                  <p className="text-xs text-gray-500">5 heures avec instructeur spécialisé</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-lg border border-sky-100 overflow-hidden">
-              <div className="bg-sky-50 px-4 py-3 border-b border-sky-100">
-                <h3 className="font-medium text-sky-800">Coût total estimé</h3>
-              </div>
-              <div className="divide-y divide-sky-100">
-                <div className="px-4 py-3">
-                  <div className="flex justify-between mb-1">
-                    <p className="font-medium text-gray-700">Brevet ULM</p>
-                    <p className="font-semibold text-sky-700">~3 500€</p>
-                  </div>
-                  <p className="text-xs text-gray-500">Basé sur 25 heures de vol</p>
-                </div>
-                <div className="px-4 py-3">
-                  <div className="flex justify-between mb-1">
-                    <p className="font-medium text-gray-700">LAPL</p>
-                    <p className="font-semibold text-sky-700">~6 000€</p>
-                  </div>
-                  <p className="text-xs text-gray-500">Basé sur 30 heures de vol</p>
-                </div>
-                <div className="px-4 py-3">
-                  <div className="flex justify-between mb-1">
-                    <p className="font-medium text-gray-700">PPL</p>
-                    <p className="font-semibold text-sky-700">~9 000€</p>
-                  </div>
-                  <p className="text-xs text-gray-500">Basé sur 45 heures de vol</p>
-                </div>
-              </div>
-            </div>
-          </TabsContent>
+         
         </Tabs>
 
         <div className="mt-8 text-center">
