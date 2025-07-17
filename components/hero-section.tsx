@@ -16,7 +16,7 @@ export function HeroSection() {
       {!imageError && (
         <div className="absolute inset-0 w-full h-full">
           <Image
-            src="/aerodrome.jpg"
+            src="/hero.jpeg"
             alt="Aérodrome de Castelnaudary"
             fill
             priority
@@ -114,14 +114,7 @@ export function HeroSection() {
               Ce n'est pas qu'un rêve d'enfant, c'est une aventure accessible à tous.
             </p>
           </FadeIn>
-          <FadeIn delay={0.8}>
-            <div className="flex flex-col sm:flex-row gap-4 mt-4">
-              <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white">
-                Découvrir nos formations
-              </Button>
-            
-            </div>
-          </FadeIn>
+         
         </div>
       </div>
 

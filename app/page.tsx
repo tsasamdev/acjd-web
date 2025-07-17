@@ -69,8 +69,7 @@ export default function Home() {
               { name: "A propos", href: "#about", id: "about" },
               { name: "Services", href: "#services", id: "services" },
               { name: "Flotte", href: "#fleet", id: "fleet" },
-              { name: "Formations", href: "#events", id: "events" },
-              { name: "Webcam", href: "#webcam", id: "webcam" },
+              { name: "Formations", href: "#formations", id: "formations" },
               { name: "Contact", href: "#contact", id: "contact" },
             ].map((item) => {
               const isActive = activeSection === item.id || (activeSection === "" && item.id === "home")
@@ -437,8 +436,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Events section */}
-        <section id="events" className="py-20 md:py-28 bg-white">
+       
+        <section id="formations" className="py-20 md:py-28 bg-white">
           {/* Content remains the same */}
           <div className="container">
             <div className="text-center mb-16">
@@ -604,34 +603,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="webcam" className="py-20 md:py-28 bg-sky-50">
-      <div className="container">
-        <div className="text-center mb-10">
-          <FadeIn>
-            <h2 className="text-3xl font-bold tracking-tight mb-4 text-sky-900">Notre Webcam en direct</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Découvrez en temps réel les conditions météorologiques et l'ambiance de notre aérodrome !
-            </p>
-          </FadeIn>
-        </div>
-
-        <div className="flex flex-col lg:flex-row gap-12">
-          {/* Webcam Feed Section (Left Side) */}
-          <div className="lg:w-1/2">
-            <FadeIn delay={0.1}>
-              <WebcamFeed streamUrl="https://www.youtube.com/watch?v=t0J6D3XAVh8"  isYouTube/>
-            </FadeIn>
-          </div>
-
-          {/* Weather Forecast Section (Right Side) */}
-          <div className="lg:w-1/2">
-            <div className="mt-16 lg:mt-0">
-              <WeatherForecast latitude={43.310362} longitude={1.921527} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+   
 
         {/* Contact section */}
         <section id="contact" className="py-20 md:py-28 bg-gradient-to-b from-sky-50 to-white">

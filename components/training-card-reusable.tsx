@@ -56,36 +56,9 @@ export default function TrainingCard({
                                 </li>
                             ))}
                         </ul>
-                    </CardContent>
-
-                    <CardFooter className="mt-auto">
-                        <DialogTrigger asChild>
-                            <Button
-                                variant="outline"
-                                className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
-                            >
-                                En savoir plus
-                            </Button>
-                        </DialogTrigger>
-                    </CardFooter>
+                    </CardContent>              
                 </div>
             </Card>
-
-            <DialogContent
-                className="!rounded-3xl !bg-white/70 !backdrop-blur-xl !shadow-2xl !border !border-white/20 p-6 sm:p-10 w-[90vw] sm:max-w-lg max-h-[90vh] overflow-y-auto"
-            >
-                {modalContent}
-                <div className="mt-6 flex justify-end">
-                    <DialogClose asChild>
-                        <Button
-                            variant="outline"
-                            className="border-sky-200 text-sky-700 hover:bg-sky-50"
-                        >
-                            Fermer
-                        </Button>
-                    </DialogClose>
-                </div>
-            </DialogContent>
         </Dialog>
     )
 }
