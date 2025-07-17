@@ -23,14 +23,14 @@ export function Footer() {
             </p>
             <div className="flex gap-4 mb-6">
               <a
-                href="#"
+                href="https://www.facebook.com/aeroclub.castelnaudary"
                 className="w-10 h-10 rounded-full bg-sky-800/50 flex items-center justify-center hover:bg-sky-700/50 transition-colors"
               >
                 <Facebook className="h-5 w-5 text-white" />
                 <span className="sr-only">Facebook</span>
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/aeroclub.castelnaudary/"
                 className="w-10 h-10 rounded-full bg-sky-800/50 flex items-center justify-center hover:bg-sky-700/50 transition-colors"
               >
                 <Instagram className="h-5 w-5 text-white" />
@@ -163,16 +163,6 @@ export function Footer() {
                           PPL
                         </Link>
                       </li>
-                      <li>
-                        <Link href="#" className="text-sky-200 hover:text-white transition-colors text-sm">
-                          Perfectionnement
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="#" className="text-sky-200 hover:text-white transition-colors text-sm">
-                          Vols d'initiation
-                        </Link>
-                      </li>
                     </ul>
                   </div>
                 </details>
@@ -212,11 +202,11 @@ export function Footer() {
                 de pilotes depuis plus de 50 ans.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="text-sky-200 hover:text-white transition-colors">
+                <a href="https://www.facebook.com/aeroclub.castelnaudary" className="text-sky-200 hover:text-white transition-colors">
                   <Facebook className="h-5 w-5" />
                   <span className="sr-only">Facebook</span>
                 </a>
-                <a href="#" className="text-sky-200 hover:text-white transition-colors">
+                <a href="https://www.instagram.com/aeroclub.castelnaudary/" className="text-sky-200 hover:text-white transition-colors">
                   <Instagram className="h-5 w-5" />
                   <span className="sr-only">Instagram</span>
                 </a>

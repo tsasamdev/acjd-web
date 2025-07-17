@@ -548,34 +548,20 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-5">
-                      <div className="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center shrink-0">
-                        <Clock className="h-6 w-6 text-sky-600" />
-                      </div>
-                      <div>
-                        <h3 className="font-medium text-lg text-sky-800 mb-2">Horaires</h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          Lundi - Vendredi: 8:00 AM - 6:00 PM
-                          <br />
-                          Samedi: 9:00 AM - 5:00 PM
-                          <br />
-                          Dimanche: 10:00 AM - 4:00 PM
-                        </p>
-                      </div>
-                    </div>
+                   
 
                     <div className="pt-4">
                       <h3 className="font-medium text-lg text-sky-800 mb-4">Suivez-nous</h3>
                       <div className="flex gap-4">
                         <a
-                          href="#"
+                          href="https://www.facebook.com/aeroclub.castelnaudary"
                           className="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center hover:bg-sky-200 transition-colors"
                         >
                           <Facebook className="h-5 w-5 text-sky-600" />
                           <span className="sr-only">Facebook</span>
                         </a>
                         <a
-                          href="#"
+                          href="https://www.instagram.com/aeroclub.castelnaudary/"
                           className="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center hover:bg-sky-200 transition-colors"
                         >
                           <Instagram className="h-5 w-5 text-sky-600" />
