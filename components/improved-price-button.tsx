@@ -10,7 +10,7 @@ export function ImprovedPriceButton() {
   const [open, setOpen] = useState(false)
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={setOpen} modal={false}>
       {/* Sticky button that stays in a more accessible position */}
       <div className="fixed left-0 top-1/2 -translate-y-1/2 z-40">
         <Button
@@ -25,7 +25,11 @@ export function ImprovedPriceButton() {
         </Button>
       </div>
 
-      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto bg-white">
+      <DialogContent
+        className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto bg-white"
+        hideClose={false}
+        closePosition="top-right"
+      >
         <DialogHeader className="border-b border-sky-100 pb-4 mb-6">
           <DialogTitle className="text-xl font-semibold text-sky-800">Tarifs</DialogTitle>
         </DialogHeader>
