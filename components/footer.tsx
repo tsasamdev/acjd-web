@@ -237,7 +237,7 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#events" className="text-sky-200 hover:text-white transition-colors">
+                  <Link href="#formations" className="text-sky-200 hover:text-white transition-colors">
                     Formations
                   </Link>
                 </li>
@@ -253,30 +253,20 @@ export function Footer() {
               <h3 className="font-semibold text-lg mb-4">Formations</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="#" className="text-sky-200 hover:text-white transition-colors">
+                  <Link href="#formations" className="text-sky-200 hover:text-white transition-colors">
                     Brevet ULM
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-sky-200 hover:text-white transition-colors">
+                  <Link href="#formations" className="text-sky-200 hover:text-white transition-colors">
                     LAPL
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-sky-200 hover:text-white transition-colors">
+                  <Link href="#formations" className="text-sky-200 hover:text-white transition-colors">
                     PPL
                   </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-sky-200 hover:text-white transition-colors">
-                    Perfectionnement
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-sky-200 hover:text-white transition-colors">
-                    Vols d'initiation
-                  </Link>
-                </li>
+                </li>        
               </ul>
             </div>
 
@@ -314,6 +304,19 @@ export function Footer() {
                 <img src="/castel.png" alt="Castelnaudary" className="h-10" />
               </a>
             </div>
+          </div>
+          <div className="mt-2 flex justify-center text-xs text-sky-400">
+            <span>
+              Made with <span className="text-pink-400">♥</span> by{' '}
+              <a
+                href="https://github.com/tsasamdev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-pink-400"
+              >
+                Tsiory
+              </a>
+            </span>
           </div>
         </div>
       </div>
