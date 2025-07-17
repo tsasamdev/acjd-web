@@ -56,7 +56,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <ScrollProgress />
-      <FlyingPlane delay={3} />
+      {/* <FlyingPlane delay={3} /> */}
       <header className="sticky top-0 z-50 w-full border-b border-sky-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
