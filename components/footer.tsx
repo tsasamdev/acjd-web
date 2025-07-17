@@ -187,6 +187,19 @@ export function Footer() {
               © {new Date().getFullYear()} Aeroclub Jean Doudies. Tous droits réservés.
             </p>
           </div>
+          <div className="mt-2 flex justify-center text-xs text-sky-400">
+            <span>
+              Made with <span className="text-pink-400">♥</span> by{' '}
+              <a
+                href="https://github.com/tsasamdev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-pink-400"
+              >
+                Tsiory
+              </a>
+            </span>
+          </div>
         </div>
 
         {/* Desktop Footer */}
