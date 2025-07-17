@@ -73,15 +73,6 @@ export function AircraftCard({
             </div>
           </div>
         </CardContent>
-        <CardFooter className="p-6 pt-0">
-          <Button
-            variant="outline"
-            className="w-full border-sky-200 text-sky-700 hover:bg-sky-50 hover:text-sky-800"
-            onClick={onDetailsClick}
-          >
-            Voir les détails
-          </Button>
-        </CardFooter>
       </div>
     </Card>
   )

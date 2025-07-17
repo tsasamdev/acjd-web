@@ -188,16 +188,15 @@ export default function Home() {
               <FadeIn>
                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-sm font-medium mb-4">
                   <CompassIcon className="w-4 h-4 mr-2" />
-                  Nos services
+                  Nous proposons
                 </div>
               </FadeIn>
               <FadeIn delay={0.1}>
-                <h2 className="text-3xl font-bold tracking-tight mb-4 text-sky-900">Ce que nous proposons</h2>
+                <h2 className="text-3xl font-bold tracking-tight mb-4 text-sky-900">Ce que vous trouverez chez nous</h2>
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Du vol découverte à la formation de futurs pilotes ou location d'avions, nous pouvons vous offrir
-                  différents types de services correspondant à vos besoins.
+                  Du vol découverte à la formation de futurs pilotes, nous pourront surement repondre a vos besoins.
                 </p>
               </FadeIn>
             </div>
@@ -367,7 +366,7 @@ export default function Home() {
 
                       <HoverCard>
                         <AircraftCard
-                          name="Evektor Sportstar F-HDLV"
+                          name="Evektor Sportstar F-HDLT"
                           description="Avion biplace de fabrication tchèque, récent, très moderne équipé d'écrans numériques (EFIS) et utilisé pour l'école et les voyages."
                           images={evektorImages}
                           badge="École"
@@ -386,7 +385,7 @@ export default function Home() {
                     <div className="grid gap-8 md:grid-cols-2">
                       <HoverCard>
                         <AircraftCard
-                          name="Robin DR400 180cv"
+                          name="Robin DR400 180cv F-GGHL"
                           description="Avion quadriplace de voyage, de fabrication française. Distance franchissable de près de 1000 km à une vitesse de croisière de 240 km/h."
                           images={robinDR180Images}
                           badge="Voyage"
@@ -399,7 +398,7 @@ export default function Home() {
 
                       <HoverCard>
                         <AircraftCard
-                          name="Robin DR400 160cv"
+                          name="Robin DR400 160cv F-GGKN"
                           description="Avion quadriplace de propriétaire mis à disposition des membres du club qualifiés pour les sorties et les animations."
                           images={robinDR160Images}
                           badge="Voyage"
