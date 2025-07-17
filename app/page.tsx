@@ -45,6 +45,7 @@ import { WebcamFeed } from "@/components/webcam-feed"
 import WeatherComponent from "@/components/weather-component"
 import WeatherForecast from "@/components/weather-component"
 import { FormationsSection } from "@/components/formations-section"
+import { SectionHeader } from "@/components/section-header"
 
 export default function Home() {
   const activeSection = useActiveSection(["home", "about", "services", "fleet", "events", "webcam","contact"])
@@ -103,11 +104,11 @@ export default function Home() {
           <div className="container">
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-start">
               <div>
-                <FadeIn>
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-sm font-medium mb-6">
-                    <Plane className="w-4 h-4 mr-2" />À propos de nous
-                  </div>
-                </FadeIn>
+                <SectionHeader
+                  icon={<Plane className="w-4 h-4 mr-2" />} 
+                  title="À propos de nous"
+                  className="mb-6 text-left"
+                />
                 <FadeIn delay={0.1}>
                   <h2 className="text-3xl font-bold tracking-tight mb-6 text-sky-900">Notre aéroclub</h2>
                 </FadeIn>
@@ -185,12 +186,10 @@ export default function Home() {
           {/* Content remains the same */}
           <div className="container">
             <div className="text-center mb-16">
-              <FadeIn>
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-sm font-medium mb-4">
-                  <CompassIcon className="w-4 h-4 mr-2" />
-                  Nous proposons
-                </div>
-              </FadeIn>
+              <SectionHeader
+                icon={<CompassIcon className="w-4 h-4 mr-2" />}
+                title="Nous proposons"
+              />
               <FadeIn delay={0.1}>
                 <h2 className="text-3xl font-bold tracking-tight mb-4 text-sky-900">Ce que vous trouverez chez nous</h2>
               </FadeIn>
@@ -308,12 +307,10 @@ export default function Home() {
           {/* Content remains the same */}
           <div className="container">
             <div className="text-center mb-16">
-              <FadeIn>
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-sm font-medium mb-4">
-                  <Plane className="w-4 h-4 mr-2" />
-                  Notre flotte
-                </div>
-              </FadeIn>
+              <SectionHeader
+                icon={<Plane className="w-4 h-4 mr-2" />}
+                title="Notre flotte"
+              />
               <FadeIn delay={0.1}>
                 <h2 className="text-3xl font-bold tracking-tight mb-4 text-sky-900">Nos avions</h2>
               </FadeIn>
@@ -484,12 +481,10 @@ export default function Home() {
           {/* Content remains the same */}
           <div className="container">
             <div className="text-center mb-16">
-              <FadeIn>
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-sm font-medium mb-4">
-                  <Mail className="w-4 h-4 mr-2" />
-                  Contact
-                </div>
-              </FadeIn>
+              <SectionHeader
+                icon={<Mail className="w-4 h-4 mr-2" />}
+                title="Contact"
+              />
               <FadeIn delay={0.1}>
                 <h2 className="text-3xl font-bold tracking-tight mb-4 text-sky-900">Nous contacter</h2>
               </FadeIn>
