@@ -26,78 +26,78 @@ interface Event {
 const events: Event[] = [
   {
     id: "event-1",
-    title: "Journée Portes Ouvertes",
-    date: "2025-11-15",
-    formattedDate: "15 Novembre 2025",
+    title: "Aub'air'ge Espagnole",
+    date: "2025-08-01",
+    formattedDate: "01 Aout 2025",
     time: "10:00 - 17:00",
     location: "Aérodrome de Castelnaudary",
-    description:
-      "Venez découvrir l'aéroclub et ses activités lors de notre journée portes ouvertes. Au programme : présentation des avions, démonstrations de vol, baptêmes de l'air à tarif réduit, et rencontre avec nos instructeurs. Une occasion unique de découvrir le monde de l'aviation légère et de poser toutes vos questions sur la formation de pilote.",
+    description: "",
     category: "social",
     image: "/placeholder.svg?height=400&width=600&text=Journée+Portes+Ouvertes",
     participants: 45,
   },
   {
     id: "event-2",
-    title: "Formation Météo pour Pilotes",
-    date: "2025-12-05",
-    formattedDate: "5 Décembre 2025",
-    time: "14:00 - 17:00",
-    location: "Salle de cours de l'aéroclub",
-    description:
-      "Session de formation sur l'interprétation des données météorologiques pour les pilotes. Cette formation est ouverte à tous les membres du club et couvre les bases de la météorologie aéronautique, la lecture des METAR/TAF, et l'utilisation des outils de prévision météo pour la préparation des vols.",
-    category: "formation",
-    participants: 12,
+    title: "Cassoulet airport 2025",
+    date: "2025-08-23",
+    formattedDate: "08 Aout 2025",
+    time: "10:00 - 17:00",
+    location: "Aérodrome de Castelnaudary",
+    description: "",
+    category: "social",
+    image: "/placeholder.svg?height=400&width=600&text=Journée+Portes+Ouvertes",
+    participants: 45,
   },
   {
     id: "event-3",
-    title: "Rallye Aérien Régional",
-    date: "2025-01-20",
-    formattedDate: "20 Janvier 2025",
-    time: "09:00 - 18:00",
-    location: "Départ de Castelnaudary",
-    description:
-      "Participez à notre rallye aérien régional ! Un parcours de navigation passionnant à travers la région Occitanie. Ouvert aux pilotes brevetés membres du club. Briefing la veille à 18h. Inscription obligatoire avant le 10 janvier.",
-    category: "competition",
-    image: "/placeholder.svg?height=400&width=600&text=Rallye+Aérien",
-    participants: 8,
+    title: "Forum des associations",
+    date: "2025-09-06",
+    formattedDate: "06 Septembre 2025",
+    time: "10:00 - 17:00",
+    location: "Aérodrome de Castelnaudary",
+    description: "",
+    category: "social",
+    image: "/placeholder.svg?height=400&width=600&text=Journée+Portes+Ouvertes",
+    participants: 45,
   },
   {
     id: "event-4",
-    title: "Assemblée Générale Annuelle",
-    date: "2024-02-10",
-    formattedDate: "10 Février 2024",
-    time: "18:30 - 20:30",
-    location: "Clubhouse",
-    description:
-      "Assemblée générale annuelle de l'aéroclub. Présentation du bilan de l'année écoulée, des projets pour l'année à venir, et élection du nouveau bureau. La réunion sera suivie d'un apéritif convivial. Présence de tous les membres souhaitée.",
-    category: "meeting",
-    participants: 60,
+    title: "Journée des associations",
+    date: "2025-09-13",
+    formattedDate: "13 Septembre 2025",
+    time: "10:00 - 17:00",
+    location: "Aérodrome de Castelnaudary",
+    description: "",
+    category: "social",
+    image: "/placeholder.svg?height=400&width=600&text=Journée+Portes+Ouvertes",
+    participants: 45,
   },
   {
     id: "event-5",
-    title: "Week-end Maintenance Participative",
-    date: "2024-03-15",
-    formattedDate: "15-16 Mars 2024",
-    time: "09:00 - 17:00",
-    location: "Hangar de l'aéroclub",
+    title: "Choucroute party + arrosage du LT ",
+    date: "2025-10-25",
+    formattedDate: "25 Octobre 2025",
+    time: "12:00 - 20:30",
+    location: "Clubhouse",
     description:
-      "Week-end dédié à la maintenance participative des avions du club. Venez aider à l'entretien de notre flotte sous la supervision de nos mécaniciens. Aucune compétence particulière requise, juste de la bonne volonté ! Repas offert aux participants.",
-    category: "social",
-    participants: 15,
-  },
+      "",
+    category: "meeting",
+    participants: 60,
+  }
 ]
 
 interface EventsTimelineProps {
   limit?: number
 }
 
-export function EventsTimeline({ limit = 3 }: EventsTimelineProps) {
+export function EventsTimeline({ limit = 5 }: EventsTimelineProps) {
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  // Limit the number of events to display
-  const displayedEvents = events.slice(0, limit)
+  // Sort events by date ascending, then limit
+  const displayedEvents = [...events]
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+    
 
   const handleEventClick = (event: Event) => {
     setSelectedEvent(event)
@@ -152,7 +152,6 @@ export function EventsTimeline({ limit = 3 }: EventsTimelineProps) {
             viewport={{ once: true }}
             className="relative"
           >
-            
             {/* Timeline icon - visible on sm and above */}
             <Plane className="absolute left-4 top-6 w-4 h-4 text-sky-500 transform -translate-x-1/2 hidden sm:block" />
 
@@ -270,8 +269,6 @@ export function EventsTimeline({ limit = 3 }: EventsTimelineProps) {
                 <h4 className="font-medium text-sky-800 mb-2">Description</h4>
                 <p className="text-gray-600">{selectedEvent.description}</p>
               </div>
-
-             
             </>
           )}
         </DialogContent>

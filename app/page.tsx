@@ -114,16 +114,14 @@ export default function Home() {
                 </FadeIn>
                 <FadeIn delay={0.2}>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    L'aéroclub est implanté sur le domaine public de l'aérodrome de Castelnaudary Villeneuve et dispose
-                    d'un hangar pouvant abriter 5 aéronefs, d'une tour de contrôle abritant le bureau des instructeurs
-                    et un simulateur de vol, d'un grand clubhouse ou se passent les réunions et animations du club, et
-                    d'une salle de cours dédiée aux élèves ULM.
+                    L'aéroclub est implanté sur le domaine public de l'aérodrome de Castelnaudary-Villeneuve et dispose d'un hangar pouvant abriter 5 aéronefs. Une tour de contrôle abrite le bureau des instructeurs et un simulateur de vol. Le clubhouse accueille les réunions et animations du club. Une salle de cours est dédiée aux élèves ULM.
+
                   </p>
                 </FadeIn>
                 <FadeIn delay={0.3}>
                   <p className="text-muted-foreground mb-8 leading-relaxed">
                     Forte d'une soixantaine de membres actifs, elle est dirigée par un Comité de direction élu en
-                    assemblée générale et qui délègue la gestion courante au bureau directeur (Président, Trésorier,
+                    assemblée générale et qui délègue la gestion courante au bureau directeur (Président, trésorier,
                     secrétaire). Tous les membres assurant le bon fonctionnement de l'aéroclub (dirigeants,
                     instructeurs, responsables divers postes…) sont bénévoles.
                   </p>
@@ -195,12 +193,12 @@ export default function Home() {
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Du vol découverte à la formation de futurs pilotes, nous pourront surement repondre a vos besoins.
+                  Du vol découverte à la formation de futurs pilotes, nous pourront sûrement repondre a vos besoins.
                 </p>
               </FadeIn>
             </div>
             <StaggerIn>
-              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
                 {/* Service cards */}
                 <HoverCard>
                   <TrainingCard
@@ -243,7 +241,7 @@ export default function Home() {
                     title="Vols découvertes"
                     description=""
                     icon={<CompassIcon className="h-6 w-6 text-white" />}
-                    details={["Baptêmes de l'air", "Vols d'initiation au pilotage", "Vols a frais partagés"]}
+                    details={["Baptêmes de l'air", "Vols d'initiation au pilotage", "Vols à frais partagés"]}
                     modalContent={
                       <>
                         <DialogHeader>
@@ -266,37 +264,7 @@ export default function Home() {
                       </>
                     }
                   />
-                </HoverCard>
-
-                <HoverCard>
-                  <TrainingCard
-                    title="Location d'avions"
-                    description=""
-                    icon={<ReceiptCentIcon className="h-6 w-6 text-white" />}
-                    details={["Location à l'heure ou à la journée", "Large choix d'appareils", "Pack murissement"]}
-                    modalContent={
-                      <>
-                        <DialogHeader>
-                          <div className="flex items-center gap-3 mb-4">
-                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-400 to-azure-600 flex items-center justify-center">
-                              <ReceiptCentIcon className="h-5 w-5 text-white" />
-                            </div>
-                            <DialogTitle className="text-xl font-semibold text-sky-900">Location d'avions</DialogTitle>
-                          </div>
-                          <DialogDescription className="text-base text-sky-800 leading-relaxed">
-                            Coucou, ici description plus detaillée.
-                          </DialogDescription>
-                        </DialogHeader>
-
-                        <div className="mt-4 space-y-3 text-sm text-sky-700">
-                          <p>🎓 10+ ppl par an</p>
-                          <p>🛩️ Avions equipés a jours</p>
-                          <p>📍 Aeroclub tres bien situé</p>
-                        </div>
-                      </>
-                    }
-                  />
-                </HoverCard>
+                </HoverCard>    
               </div>
             </StaggerIn>
           </div>
@@ -335,7 +303,7 @@ export default function Home() {
                     value="touring"
                     className="data-[state=active]:bg-sky-600 data-[state=active]:text-white text-xs sm:text-sm rounded-lg transition-all"
                   >
-                    Avion voyage
+                    Avions voyage
                   </TabsTrigger>
                   <TabsTrigger
                     value="advanced"
@@ -420,7 +388,7 @@ export default function Home() {
                           badge="ULM"
                           seats={2}
                           flightRules="VFR"
-                          price="90€/h"
+                          price="81€/h"
                           speed="180 km/h"
                         />
                       </HoverCard>

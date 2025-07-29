@@ -37,7 +37,7 @@ export function ImprovedPriceButton() {
         <Tabs defaultValue="discovery" className="w-full">
           <TabsList className="flex w-full mb-6 bg-sky-50">
             <TabsTrigger value="discovery" className="flex-1 data-[state=active]:bg-sky-600 data-[state=active]:text-white">
-              Pack decouverte
+              Découverte
             </TabsTrigger>
             <TabsTrigger value="aircraft" className="flex-1 data-[state=active]:bg-sky-600 data-[state=active]:text-white">
               Avions
@@ -54,7 +54,7 @@ export function ImprovedPriceButton() {
           <TabsContent value="discovery" className="space-y-4">
             <div className="rounded-lg border border-sky-100 overflow-hidden">
               <div className="bg-sky-50 px-4 py-3 border-b border-sky-100">
-                <h3 className="font-medium text-sky-800">Tarifs horaires de location</h3>
+                <h3 className="font-medium text-sky-800">Packs découverte</h3>
               </div>
               <div className="divide-y divide-sky-100">
                 <div className="px-4 py-3 flex justify-between items-center">
@@ -70,6 +70,59 @@ export function ImprovedPriceButton() {
                     <p className="text-xs text-gray-500">cotisation annuelle incluse - durée vol 45 mn</p>
                   </div>
                   <p className="font-semibold text-sky-700">460€</p>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+           <TabsContent value="discovery" className="space-y-4">
+            <div className="rounded-lg border border-sky-100 overflow-hidden">
+              <div className="bg-sky-50 px-4 py-3 border-b border-sky-100">
+                <h3 className="font-medium text-sky-800">Vols découverte (30min)</h3>
+              </div>
+              <div className="divide-y divide-sky-100">
+                <div className="px-4 py-3 flex justify-between items-center">
+                  <div>
+                    <p className="font-medium text-gray-700">Robin DR480</p>
+                    <p className="text-xs text-gray-500">1 à 3 personnes</p>
+                  </div>
+                  <p className="font-semibold text-sky-700">120€</p>
+                </div>
+                <div className="px-4 py-3 flex justify-between items-center">
+                  <div>
+                    <p className="font-medium text-gray-700">Evektor</p>
+                    <p className="text-xs text-gray-500">1 personne</p>
+                  </div>
+                  <p className="font-semibold text-sky-700">60€</p>
+                </div>
+                 <div className="px-4 py-3 flex justify-between items-center">
+                  <div>
+                    <p className="font-medium text-gray-700">Super Guépard</p>
+                    <p className="text-xs text-gray-500">1 personne</p>
+                  </div>
+                  <p className="font-semibold text-sky-700">50€</p>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+            <TabsContent value="discovery" className="space-y-4">
+            <div className="rounded-lg border border-sky-100 overflow-hidden">
+              <div className="bg-sky-50 px-4 py-3 border-b border-sky-100">
+                <h3 className="font-medium text-sky-800">Vols d'initiation avec instructeur (45min)</h3>
+              </div>
+              <div className="divide-y divide-sky-100">
+                <div className="px-4 py-3 flex justify-between items-center">
+                  <div>
+                    <p className="font-medium text-gray-700">Evektor</p>
+                   
+                  </div>
+                  <p className="font-semibold text-sky-700">120€</p>
+                </div>
+                 <div className="px-4 py-3 flex justify-between items-center">
+                  <div>
+                    <p className="font-medium text-gray-700">Super Guépard</p>
+              
+                  </div>
+                  <p className="font-semibold text-sky-700">90€</p>
                 </div>
               </div>
             </div>
