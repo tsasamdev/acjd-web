@@ -103,13 +103,15 @@ export function HeroSection() {
         <div className="flex flex-col items-start gap-6 text-white max-w-xl bg-black/40 rounded-xl p-8 shadow-lg">
         
           <FadeIn delay={0.4}>
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl leading-tight">
-              <AnimatedText text="Apprendre à piloter" delay={0.6} />
-              <span className="text-sky-300">...</span>
+            <h1 className="text-center w-full font-extrabold text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight drop-shadow-lg">
+              Apprendre à <span className="relative text-sky-400">
+                piloter
+                <span className="block mx-auto mt-1 h-1 w-16 bg-sky-400/70 rounded-full"></span>
+              </span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.6}>
-            <p className="text-lg md:text-xl text-white">
+            <p className="mt-4 text-xl md:text-2xl text-white/80 text-center max-w-lg mx-auto">
               Ce n'est pas qu'un rêve d'enfant, c'est une aventure accessible à tous.
             </p>
           </FadeIn>
