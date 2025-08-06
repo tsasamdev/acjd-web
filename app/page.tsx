@@ -4,9 +4,6 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import {
-  BookAIcon,
-  ChevronRight,
-  Clock,
   CompassIcon,
   Facebook,
   Instagram,
@@ -14,17 +11,13 @@ import {
   MapPin,
   Phone,
   Plane,
-  ReceiptCentIcon,
   Shield,
   Users,
   Calendar,
 } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { MobileMenu } from "@/components/mobile-menu"
-import { PricingInfo } from "@/components/pricing-info"
 import { ContactFormEnhanced } from "@/components/contact-form-enhanced"
 import { Footer } from "@/components/footer"
 import { StickyContactBar } from "@/components/sticky-contact-bar"
@@ -32,23 +25,19 @@ import { FadeIn } from "@/components/animations/fade-in"
 import { StaggerIn } from "@/components/animations/stagger-in"
 import { HoverCard } from "@/components/animations/hover-card"
 import { ScrollProgress } from "@/components/animations/scroll-progress"
-import { FlyingPlane } from "@/components/animations/flying-plane"
 import { HeroSection } from "@/components/hero-section"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import TrainingCard from "@/components/training-card-reusable"
 import { useActiveSection } from "@/hooks/use-active-section"
 import { AircraftCard } from "@/components/aircraft-card"
 import { evektorImages, robinDR180Images, robinDR160Images, ulmImages } from "@/components/placeholder-images"
 import { ImprovedPriceButton } from "@/components/improved-price-button"
 import { EventsTimeline } from "@/components/events-timeline"
-import { WebcamFeed } from "@/components/webcam-feed"
-import WeatherComponent from "@/components/weather-component"
-import WeatherForecast from "@/components/weather-component"
 import { FormationsSection } from "@/components/formations-section"
 import { SectionHeader } from "@/components/section-header"
 
 export default function Home() {
-  const activeSection = useActiveSection(["home", "about", "services", "fleet", "events", "webcam","contact"])
+  const activeSection = useActiveSection(["home", "about", "services", "fleet", "events", "webcam", "contact"])
   const [useBackupHero, setUseBackupHero] = useState(false)
   const [isPriceModalOpen, setIsPriceModalOpen] = useState(false)
 
@@ -61,8 +50,15 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b border-sky-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <Image src="/logo.png" alt="" width={40} height={40} className="h-10 w-auto" />
-            <span className="text-xl font-bold text-sky-800">Aeroclub Jean Doudies</span>
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={40}
+              height={40}
+              className="h-10 w-auto"
+              style={{ width: "40px", height: "auto" }}
+            />
+            <span className="text-xl font-bold text-sky-800">Aéroclub Jean Doudies</span>
           </div>
           <nav className="hidden md:flex gap-6">
             {[
@@ -105,7 +101,7 @@ export default function Home() {
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-start">
               <div>
                 <SectionHeader
-                  icon={<Plane className="w-4 h-4 mr-2" />} 
+                  icon={<Plane className="w-4 h-4 mr-2" />}
                   title="À propos de nous"
                   className="mb-6 text-left"
                 />
@@ -114,7 +110,7 @@ export default function Home() {
                 </FadeIn>
                 <FadeIn delay={0.2}>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    L'aéroclub est implanté sur le domaine public de l'aérodrome de Castelnaudary-Villeneuve et dispose d'un hangar pouvant abriter 5 aéronefs. Une tour de contrôle abrite le bureau des instructeurs et un simulateur de vol. Le clubhouse accueille les réunions et animations du club. Une salle de cours est dédiée aux élèves ULM.
+                    L'aéroclub est implanté sur le domaine public de l'aérodrome de Castelnaudary-Villeneuve et dispose d'un hangar pouvant abriter 5 aéronefs. Une tour de contrôle abrite le bureau des instructeurs et un simulateur de vol. Le club-house accueille les réunions et animations du club. Une salle de cours est dédiée aux élèves ULM.
 
                   </p>
                 </FadeIn>
@@ -222,14 +218,14 @@ export default function Home() {
                             </DialogTitle>
                           </div>
                           <DialogDescription className="text-base text-sky-800 leading-relaxed">
-                            Coucou, ici description plus detaillée.
+                            Coucou, ici description plus détaillée.
                           </DialogDescription>
                         </DialogHeader>
 
                         <div className="mt-4 space-y-3 text-sm text-sky-700">
                           <p>🎓 10+ ppl par an</p>
-                          <p>🛩️ Avions equipés a jours</p>
-                          <p>📍 Aeroclub tres bien situé</p>
+                          <p>🛩️ Avions équipés a jours</p>
+                          <p>📍 Aéroclub très bien situé</p>
                         </div>
                       </>
                     }
@@ -252,19 +248,19 @@ export default function Home() {
                             <DialogTitle className="text-xl font-semibold text-sky-900">Vols découvertes</DialogTitle>
                           </div>
                           <DialogDescription className="text-base text-sky-800 leading-relaxed">
-                            Coucou, ici description plus detaillée.
+                            Coucou, ici description plus détaillée.
                           </DialogDescription>
                         </DialogHeader>
 
                         <div className="mt-4 space-y-3 text-sm text-sky-700">
                           <p>🎓 10+ ppl par an</p>
-                          <p>🛩️ Avions equipés a jours</p>
-                          <p>📍 Aeroclub tres bien situé</p>
+                          <p>🛩️ Avions équipés a jours</p>
+                          <p>📍 Aéroclub très bien situé</p>
                         </div>
                       </>
                     }
                   />
-                </HoverCard>    
+                </HoverCard>
               </div>
             </StaggerIn>
           </div>
@@ -415,7 +411,7 @@ export default function Home() {
                 "Brevet acquis à vie",
                 "Certificat médical simple",
               ],
-             
+
             },
             {
               title: "LAPL (light aircraft pilot licence)",
@@ -427,7 +423,7 @@ export default function Home() {
                 "30 heures de vol minimum",
                 "Examen théorique et pratique",
               ],
-            
+
             },
             {
               title: "PPL (private pilot licence)",
@@ -439,7 +435,7 @@ export default function Home() {
                 "45 heures de vol minimum",
                 "Possibilité d'évolution professionnelle",
               ],
-           
+
             },
           ]}
         />
