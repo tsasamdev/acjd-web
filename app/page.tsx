@@ -409,7 +409,7 @@ export default function Home() {
               title: "Brevet pilote ULM multiaxes",
               description:
                 "Schématiquement, l'ULM multiaxes est un petit aéronef dont le poids et la puissance sont limités et qui permet l'emport d'une à deux personnes. La pratique du pilotage d'un ULM nécessite, outre la licence fédérale, un certificat médical de non contre-indication délivré par un médecin généraliste.",
-              duration: "~ 1 an",
+              duration: "",
               features: [
                 "Formation théorique et pratique",
                 "Brevet acquis à vie",
@@ -421,7 +421,7 @@ export default function Home() {
               title: "LAPL (light aircraft pilot licence)",
               description:
                 "La LAPL permet d'accéder au pilotage de la plupart des avions d'aéroclub. Cette licence est européenne, valable uniquement au sein de l'espace Schengen. Le pilote LAPL devra avoir réalisé 10 heures de vol solo après obtention de sa licence pour être autorisé à emmener des passagers.",
-              duration: "~ 1 an",
+              duration: "",
               features: [
                 "Licence européenne",
                 "30 heures de vol minimum",
@@ -433,7 +433,7 @@ export default function Home() {
               title: "PPL (private pilot licence)",
               description:
                 "La PPL, outre sa reconnaissance internationale, est une des portes d'entrée pour poursuivre une formation de pilote professionnel (pilote de ligne, vol aux instruments, avions multi-moteurs, avions de plus de cinq places,…).",
-              duration: "~ 1 an",
+              duration: "",
               features: [
                 "Reconnaissance internationale",
                 "45 heures de vol minimum",

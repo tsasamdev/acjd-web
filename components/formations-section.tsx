@@ -33,7 +33,7 @@ export function FormationsSection({
         <div className="text-center mb-16">
           <FadeIn>
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-sm font-medium mb-4">
-              <BookAIcon className="w-4 h-4 mr-2" />
+            
               {sectionTitle}
             </div>
           </FadeIn>
@@ -54,7 +54,7 @@ export function FormationsSection({
                   <div className="flex flex-col flex-grow">
                     <CardHeader className="p-6">
                       <div className="flex items-center gap-2 text-sky-600 mb-3">
-                        <BookAIcon className="h-5 w-5" />
+                       
                         {formation.duration && <span className="text-sm font-medium">{formation.duration}</span>}
                       </div>
                       <CardTitle className="text-xl text-sky-800">{formation.title}</CardTitle>
