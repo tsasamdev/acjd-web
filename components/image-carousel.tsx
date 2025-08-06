@@ -32,7 +32,7 @@ export function ImageCarousel({
   showDots = true,
   showPlayPause = true,
   className = "",
-  overlayGradient = false,
+  overlayGradient = false, // deprecated, always off
   badges,
 }: ImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -117,9 +117,6 @@ export function ImageCarousel({
   if (images.length <= 1) {
     return (
       <div className={`relative overflow-hidden ${aspectRatioClass} ${className}`}>
-        {overlayGradient && (
-          <div className="absolute inset-0 bg-gradient-to-t from-sky-900/80 to-transparent z-10"></div>
-        )}
         <div className="absolute inset-0 w-full h-full">
           <Image
             src={images[0]?.src || "/placeholder.svg"}
@@ -145,8 +142,7 @@ export function ImageCarousel({
         setIsHovering(false)
       }}
     >
-      {/* Gradient overlay */}
-      {overlayGradient && <div className="absolute inset-0 bg-gradient-to-t from-sky-900/80 to-transparent z-10"></div>}
+      {/* Gradient overlay removed */}
 
       {/* Main image carousel */}
       <AnimatePresence initial={false} custom={direction} mode="popLayout">

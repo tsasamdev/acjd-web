@@ -11,7 +11,7 @@ export function HeroSection() {
   const [imageError, setImageError] = useState(false)
 
   return (
-    <section id="home" className="relative h-[600px] md:h-[700px] lg:h-[800px] bg-sky-900 overflow-hidden">
+    <section id="home" className="relative h-[600px] md:h-[700px] lg:h-[800px] bg-black overflow-hidden">
       {/* Background image */}
       {!imageError && (
         <div className="absolute inset-0 w-full h-full">
@@ -20,11 +20,10 @@ export function HeroSection() {
             alt="Aérodrome de Castelnaudary"
             fill
             priority
-            className={`object-cover ${imageLoaded ? "opacity-70" : "opacity-0"} transition-opacity duration-500`}
+            className={`object-cover ${imageLoaded ? "opacity-100" : "opacity-0"} transition-opacity duration-500`}
             onLoad={() => setImageLoaded(true)}
             onError={() => setImageError(true)}
           />
-          <div className="absolute inset-0 bg-sky-900/50"></div>
         </div>
       )}
 
@@ -110,7 +109,7 @@ export function HeroSection() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.6}>
-            <p className="text-lg md:text-xl text-sky-100">
+            <p className="text-lg md:text-xl text-white">
               Ce n'est pas qu'un rêve d'enfant, c'est une aventure accessible à tous.
             </p>
           </FadeIn>
