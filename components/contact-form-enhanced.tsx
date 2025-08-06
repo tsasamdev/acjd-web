@@ -18,21 +18,28 @@ export function ContactFormEnhanced() {
 
     try {
       const formData = new FormData(event.currentTarget)
-
-      // Log form data for debugging
-      console.log("Form data:", {
+      const payload = {
         name: formData.get("name"),
         email: formData.get("email"),
         subject: formData.get("subject"),
         message: formData.get("message"),
+      }
+
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       })
 
-      // In a real implementation, you would send this data to your server
-      // For now, we'll simulate a successful submission
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      if (!res.ok) {
+        throw new Error("Erreur lors de l'envoi du message.")
+      }
 
       setFormSuccess("Votre message a été envoyé avec succès! Nous vous répondrons dans les plus brefs délais.")
-      event.currentTarget.reset()
+      // Only reset if event.currentTarget exists and is a form
+      if (event.target && (event.target as HTMLFormElement).reset) {
+        (event.target as HTMLFormElement).reset()
+      }
     } catch (error) {
       console.error("Form submission error:", error)
       setFormError("Une erreur s'est produite. Veuillez réessayer.")
@@ -52,7 +59,7 @@ export function ContactFormEnhanced() {
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Message envoyé!</h3>
             <p className="text-gray-600">{formSuccess}</p>
             <Button onClick={() => setFormSuccess(null)} className="mt-4 bg-azure-600 hover:bg-azure-700">
-              Envoyer un autre message
+             Fermer
             </Button>
           </div>
         </div>
