@@ -465,8 +465,8 @@ export default function Home() {
 
             <div className="grid gap-10 lg:grid-cols-2">
               <FadeIn direction="left" delay={0.3}>
-                <div className="bg-white p-8 rounded-2xl shadow-lg border border-sky-100">
-                  <div className="space-y-8">
+                <div className="bg-white p-8 rounded-2xl shadow-lg border border-sky-100 flex flex-col h-full min-h-[420px]">
+                  <div className="space-y-8 flex-1">
                     <div className="flex items-start gap-5">
                       <div className="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center shrink-0">
                         <MapPin className="h-6 w-6 text-sky-600" />
@@ -511,8 +511,6 @@ export default function Home() {
                       </div>
                     </div>
 
-                   
-
                     <div className="pt-4">
                       <h3 className="font-medium text-lg text-sky-800 mb-4">Suivez-nous</h3>
                       <div className="flex gap-4">
@@ -537,9 +535,11 @@ export default function Home() {
               </FadeIn>
 
               <FadeIn direction="right" delay={0.4}>
-                <div className="bg-white p-8 rounded-2xl shadow-lg border border-sky-100">
+                <div className="bg-white p-8 rounded-2xl shadow-lg border border-sky-100 flex flex-col h-full min-h-[420px]">
                   <h3 className="text-xl font-semibold mb-6 text-sky-800">Envoyez nous un message</h3>
-                  <ContactFormEnhanced />
+                  <div className="flex-1 flex flex-col">
+                    <ContactFormEnhanced />
+                  </div>
                 </div>
               </FadeIn>
             </div>
