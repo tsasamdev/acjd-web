@@ -183,9 +183,11 @@ export function EventsTimeline({ limit = 5 }: EventsTimelineProps) {
 
                   <div className="flex items-start justify-between">
                     <h3 className="font-medium text-base text-sky-900 mb-1">{event.title}</h3>
+                    {/*
                     <Badge className={`${getCategoryColor(event.category)} ml-2 text-xs`}>
                       {getCategoryLabel(event.category)}
                     </Badge>
+                    */}
                   </div>
 
                   <div className="flex flex-wrap gap-2 text-xs text-gray-600 mb-2">

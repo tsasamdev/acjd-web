@@ -100,7 +100,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="container relative z-10 h-full flex items-center">
-        <div className="flex flex-col items-start gap-6 text-white max-w-xl">
+        <div className="flex flex-col items-start gap-6 text-white max-w-xl bg-black/40 rounded-xl p-8 shadow-lg">
         
           <FadeIn delay={0.4}>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl leading-tight">
