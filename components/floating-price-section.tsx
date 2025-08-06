@@ -1,40 +1,52 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { EuroIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-export function FloatingPriceButton() {
+export default function FloatingPriceSection() {
     const [open, setOpen] = useState(false)
+
+    // Prevent background scroll when modal is open, but allow modal vertical scroll
+    useEffect(() => {
+        if (open) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [open]);
 
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <Button
                 onClick={() => setOpen(true)}
-                className="fixed bottom-24 right-4 md:bottom-8 md:right-8 z-40 rounded-full shadow-lg bg-sky-600 hover:bg-sky-700 text-white h-14 w-14 p-0"
+                className="fixed bottom-6 right-4 z-40 rounded-full shadow-lg bg-sky-600 hover:bg-sky-700 text-white h-14 w-14 p-0"
                 aria-label="Voir les tarifs"
             >
                 <EuroIcon className="h-6 w-6" />
             </Button>
-            <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto bg-white">
-                <DialogHeader className="border-b border-sky-100 pb-4 mb-6">
-                    <DialogTitle className="text-xl font-semibold text-sky-800">Tarifs</DialogTitle>
+            <DialogContent className="w-full max-w-full max-h-[80vh] sm:max-h-[90vh] sm:max-w-[600px] overflow-y-auto bg-white px-1.5 py-1.5 sm:px-6 sm:py-6 rounded-lg">
+                <DialogHeader className="border-b border-sky-100 pb-1 mb-2 sm:pb-4 sm:mb-6">
+                    <DialogTitle className="text-base sm:text-xl font-semibold text-sky-800">Tarifs</DialogTitle>
                 </DialogHeader>
 
-                <Tabs defaultValue="membership" className="w-full">
-                    <TabsList className="grid w-full grid-cols-4 mb-6 bg-sky-50">
-                        <TabsTrigger value="membership" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
+                <Tabs defaultValue="membership" className="w-full text-xs sm:text-sm">
+                    <TabsList className="flex w-full mb-2 sm:mb-6 bg-sky-50 overflow-x-auto no-scrollbar sm:grid sm:grid-cols-4">
+                        <TabsTrigger value="membership" className="min-w-[80px] sm:min-w-[120px] text-xs sm:text-base data-[state=active]:bg-sky-600 data-[state=active]:text-white px-2 sm:px-4 py-1">
                             Adhésion
                         </TabsTrigger>
-                        <TabsTrigger value="aircraft" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
+                        <TabsTrigger value="aircraft" className="min-w-[80px] sm:min-w-[120px] text-xs sm:text-base data-[state=active]:bg-sky-600 data-[state=active]:text-white px-2 sm:px-4 py-1">
                             Avions
                         </TabsTrigger>
-                        <TabsTrigger value="instruction" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
+                        <TabsTrigger value="instruction" className="min-w-[80px] sm:min-w-[120px] text-xs sm:text-base data-[state=active]:bg-sky-600 data-[state=active]:text-white px-2 sm:px-4 py-1">
                             Formation
                         </TabsTrigger>
-                        <TabsTrigger value="decouverte" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
+                        <TabsTrigger value="decouverte" className="min-w-[80px] sm:min-w-[120px] text-xs sm:text-base data-[state=active]:bg-sky-600 data-[state=active]:text-white px-2 sm:px-4 py-1">
                             Decouverte
                         </TabsTrigger>
                     </TabsList>
@@ -267,6 +279,6 @@ export function FloatingPriceButton() {
                 </Tabs>
 
             </DialogContent>
-        </Dialog>
-    )
-}
+                </Dialog>
+            )
+        }

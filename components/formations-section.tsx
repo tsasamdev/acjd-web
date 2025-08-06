@@ -46,10 +46,10 @@ export function FormationsSection({
         </div>
 
         <StaggerIn>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-full">
             {formations.map((formation, idx) => (
               <HoverCard key={formation.title + idx}>
-                <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-all duration-300 rounded-xl overflow-hidden">
+                <Card className="flex flex-col h-full border-sky-100 shadow-sm hover:shadow-md transition-all duration-300 rounded-xl overflow-hidden min-w-0 w-full max-w-full">
                   <div className="h-2 bg-gradient-to-r from-sky-400 to-azure-500"></div>
                   <div className="flex flex-col flex-grow">
                     <CardHeader className="p-6">

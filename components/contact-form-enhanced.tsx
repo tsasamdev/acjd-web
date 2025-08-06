@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react"
 import { Button } from "@/components/ui/button"
-import { Mail, User, MessageSquare, Send, Loader2, CheckCircle2 } from "lucide-react"
+import { Mail, User, MessageSquare, Send, Loader2, CheckCircle2, Plane } from "lucide-react"
 
 export function ContactFormEnhanced() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -51,7 +51,7 @@ export function ContactFormEnhanced() {
   return (
     <div className="relative">
       {formSuccess && (
-        <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-95 rounded-lg transition-all duration-300 ease-in-out z-10">
+        <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-95 rounded-lg transition-all duration-300 ease-in-out z-20">
           <div className="text-center p-6 max-w-md">
             <div className="mx-auto w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
               <CheckCircle2 className="h-6 w-6 text-green-600" />
@@ -84,111 +84,130 @@ export function ContactFormEnhanced() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid gap-6 sm:grid-cols-2">
+      <div className={isSubmitting ? "pointer-events-none opacity-60" : ""}>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid gap-6 sm:grid-cols-2">
+            <div className="space-y-2">
+              <label htmlFor="name" className="text-sm font-medium flex items-center gap-2 text-gray-700">
+                <User className="h-4 w-4 text-sky-600" />
+                <span>Nom</span>
+              </label>
+              <div
+                className={`relative transition-all duration-200 ${
+                  focusedField === "name" ? "transform -translate-y-1" : ""
+                }`}
+              >
+                <input
+                  id="name"
+                  name="name"
+                  className="flex h-11 w-full rounded-md border border-sky-200 bg-white px-4 py-2 text-sm shadow-sm transition-all duration-200 placeholder:text-gray-400 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-200"
+                  placeholder="Votre nom"
+                  required
+                  onFocus={() => setFocusedField("name")}
+                  onBlur={() => setFocusedField(null)}
+                />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="email" className="text-sm font-medium flex items-center gap-2 text-gray-700">
+                <Mail className="h-4 w-4 text-sky-600" />
+                <span>Email</span>
+              </label>
+              <div
+                className={`relative transition-all duration-200 ${
+                  focusedField === "email" ? "transform -translate-y-1" : ""
+                }`}
+              >
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  className="flex h-11 w-full rounded-md border border-sky-200 bg-white px-4 py-2 text-sm shadow-sm transition-all duration-200 placeholder:text-gray-400 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-200"
+                  placeholder="Votre email"
+                  required
+                  onFocus={() => setFocusedField("email")}
+                  onBlur={() => setFocusedField(null)}
+                />
+              </div>
+            </div>
+          </div>
           <div className="space-y-2">
-            <label htmlFor="name" className="text-sm font-medium flex items-center gap-2 text-gray-700">
-              <User className="h-4 w-4 text-sky-600" />
-              <span>Nom</span>
+            <label htmlFor="subject" className="text-sm font-medium flex items-center gap-2 text-gray-700">
+              <span>Sujet</span>
             </label>
             <div
               className={`relative transition-all duration-200 ${
-                focusedField === "name" ? "transform -translate-y-1" : ""
+                focusedField === "subject" ? "transform -translate-y-1" : ""
               }`}
             >
               <input
-                id="name"
-                name="name"
+                id="subject"
+                name="subject"
                 className="flex h-11 w-full rounded-md border border-sky-200 bg-white px-4 py-2 text-sm shadow-sm transition-all duration-200 placeholder:text-gray-400 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-200"
-                placeholder="Votre nom"
+                placeholder="Sujet du message"
                 required
-                onFocus={() => setFocusedField("name")}
+                onFocus={() => setFocusedField("subject")}
                 onBlur={() => setFocusedField(null)}
               />
             </div>
           </div>
           <div className="space-y-2">
-            <label htmlFor="email" className="text-sm font-medium flex items-center gap-2 text-gray-700">
-              <Mail className="h-4 w-4 text-sky-600" />
-              <span>Email</span>
+            <label htmlFor="message" className="text-sm font-medium flex items-center gap-2 text-gray-700">
+              <MessageSquare className="h-4 w-4 text-sky-600" />
+              <span>Message</span>
             </label>
             <div
               className={`relative transition-all duration-200 ${
-                focusedField === "email" ? "transform -translate-y-1" : ""
+                focusedField === "message" ? "transform -translate-y-1" : ""
               }`}
             >
-              <input
-                id="email"
-                name="email"
-                type="email"
-                className="flex h-11 w-full rounded-md border border-sky-200 bg-white px-4 py-2 text-sm shadow-sm transition-all duration-200 placeholder:text-gray-400 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-200"
-                placeholder="Votre email"
+              <textarea
+                id="message"
+                name="message"
+                className="flex min-h-[140px] w-full rounded-md border border-sky-200 bg-white px-4 py-3 text-sm shadow-sm transition-all duration-200 placeholder:text-gray-400 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-200"
+                placeholder="Votre message"
                 required
-                onFocus={() => setFocusedField("email")}
+                onFocus={() => setFocusedField("message")}
                 onBlur={() => setFocusedField(null)}
               />
             </div>
           </div>
-        </div>
-        <div className="space-y-2">
-          <label htmlFor="subject" className="text-sm font-medium flex items-center gap-2 text-gray-700">
-            <span>Sujet</span>
-          </label>
-          <div
-            className={`relative transition-all duration-200 ${
-              focusedField === "subject" ? "transform -translate-y-1" : ""
-            }`}
+          <Button
+            type="submit"
+            className="w-full h-12 bg-gradient-to-r from-azure-600 to-sky-600 hover:from-azure-700 hover:to-sky-700 text-white font-medium rounded-md shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2"
+            disabled={isSubmitting}
           >
-            <input
-              id="subject"
-              name="subject"
-              className="flex h-11 w-full rounded-md border border-sky-200 bg-white px-4 py-2 text-sm shadow-sm transition-all duration-200 placeholder:text-gray-400 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-200"
-              placeholder="Sujet du message"
-              required
-              onFocus={() => setFocusedField("subject")}
-              onBlur={() => setFocusedField(null)}
-            />
-          </div>
-        </div>
-        <div className="space-y-2">
-          <label htmlFor="message" className="text-sm font-medium flex items-center gap-2 text-gray-700">
-            <MessageSquare className="h-4 w-4 text-sky-600" />
-            <span>Message</span>
-          </label>
-          <div
-            className={`relative transition-all duration-200 ${
-              focusedField === "message" ? "transform -translate-y-1" : ""
-            }`}
-          >
-            <textarea
-              id="message"
-              name="message"
-              className="flex min-h-[140px] w-full rounded-md border border-sky-200 bg-white px-4 py-3 text-sm shadow-sm transition-all duration-200 placeholder:text-gray-400 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-200"
-              placeholder="Votre message"
-              required
-              onFocus={() => setFocusedField("message")}
-              onBlur={() => setFocusedField(null)}
-            />
-          </div>
-        </div>
-        <Button
-          type="submit"
-          className="w-full h-12 bg-gradient-to-r from-azure-600 to-sky-600 hover:from-azure-700 hover:to-sky-700 text-white font-medium rounded-md shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2"
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? (
-            <>
-              <Loader2 className="h-5 w-5 animate-spin" />
-              <span>Envoi en cours...</span>
-            </>
-          ) : (
             <>
               <Send className="h-5 w-5" />
               <span>Envoyer le message</span>
             </>
-          )}
-        </Button>
-      </form>
+          </Button>
+        </form>
+      </div>
+
+      {/* Overlay spinner when submitting */}
+      {isSubmitting && (
+        <div className="absolute inset-0 z-30 flex items-center justify-center bg-gray-100 bg-opacity-80 rounded-lg">
+          <div className="flex flex-col items-center gap-4">
+            <span className="flex items-center gap-3">
+              <Loader2 className="h-8 w-8 animate-spin text-sky-600" />
+              <Plane className="h-8 w-8 text-azure-600 animate-bounce-slow" />
+            </span>
+            <span className="text-lg font-medium text-gray-700">Envoi en cours...</span>
+          </div>
+        </div>
+      )}
+
+      {/* Add a slow bounce animation for the plane icon */}
+      <style jsx global>{`
+        @keyframes bounce-slow {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-8px); }
+        }
+        .animate-bounce-slow {
+          animation: bounce-slow 1.4s infinite;
+        }
+      `}</style>
     </div>
   )
 }
