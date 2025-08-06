@@ -40,7 +40,7 @@ const events: Event[] = [
     id: "event-2",
     title: "Cassoulet airport 2025",
     date: "2025-08-23",
-    formattedDate: "08 Aout 2025",
+    formattedDate: "23 Aout 2025",
     time: "10:00 - 17:00",
     location: "Aérodrome de Castelnaudary",
     description: "",
@@ -91,18 +91,20 @@ interface EventsTimelineProps {
 }
 
 export function EventsTimeline({ limit = 5 }: EventsTimelineProps) {
-  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  // Remove modal state and handler
+  // const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
+  // const [isModalOpen, setIsModalOpen] = useState(false)
 
   // Sort events by date ascending, then limit
   const displayedEvents = [...events]
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
     
 
-  const handleEventClick = (event: Event) => {
-    setSelectedEvent(event)
-    setIsModalOpen(true)
-  }
+  // Remove handleEventClick
+  // const handleEventClick = (event: Event) => {
+  //   setSelectedEvent(event)
+  //   setIsModalOpen(true)
+  // }
 
   // Get category badge color
   const getCategoryColor = (category: string) => {
@@ -157,8 +159,8 @@ export function EventsTimeline({ limit = 5 }: EventsTimelineProps) {
 
             {/* Event card - more compact */}
             <div
-              className="sm:ml-10 bg-white rounded-lg shadow-sm border border-sky-100 overflow-hidden hover:shadow-md transition-shadow cursor-pointer"
-              onClick={() => handleEventClick(event)}
+              className="sm:ml-10 bg-white rounded-lg shadow-sm border border-sky-100 overflow-hidden hover:shadow-md transition-shadow"
+              // onClick removed
             >
               <div className="flex flex-col sm:flex-row">
                 {/* Date column - visible on sm and above */}
@@ -205,74 +207,7 @@ export function EventsTimeline({ limit = 5 }: EventsTimelineProps) {
         ))}
       </div>
 
-      {/* Event details modal */}
-      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
-          {selectedEvent && (
-            <>
-              <DialogHeader>
-                <div className="flex items-center justify-between">
-                  <DialogTitle className="text-xl font-semibold text-sky-900">{selectedEvent.title}</DialogTitle>
-                  <Badge className={getCategoryColor(selectedEvent.category)}>
-                    {getCategoryLabel(selectedEvent.category)}
-                  </Badge>
-                </div>
-              </DialogHeader>
-
-              {selectedEvent.image && (
-                <div className="relative h-48 w-full rounded-lg overflow-hidden mb-4">
-                  <img
-                    src={selectedEvent.image || "/placeholder.svg"}
-                    alt={selectedEvent.title}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-              )}
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                <div className="flex items-center">
-                  <Calendar className="h-5 w-5 mr-2 text-sky-600" />
-                  <div>
-                    <p className="text-sm text-gray-500">Date</p>
-                    <p className="font-medium">{selectedEvent.formattedDate}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center">
-                  <Clock className="h-5 w-5 mr-2 text-sky-600" />
-                  <div>
-                    <p className="text-sm text-gray-500">Horaire</p>
-                    <p className="font-medium">{selectedEvent.time}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center">
-                  <MapPin className="h-5 w-5 mr-2 text-sky-600" />
-                  <div>
-                    <p className="text-sm text-gray-500">Lieu</p>
-                    <p className="font-medium">{selectedEvent.location}</p>
-                  </div>
-                </div>
-
-                {selectedEvent.participants && (
-                  <div className="flex items-center">
-                    <Users className="h-5 w-5 mr-2 text-sky-600" />
-                    <div>
-                      <p className="text-sm text-gray-500">Participants</p>
-                      <p className="font-medium">{selectedEvent.participants} inscrits</p>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              <div className="mb-6">
-                <h4 className="font-medium text-sky-800 mb-2">Description</h4>
-                <p className="text-gray-600">{selectedEvent.description}</p>
-              </div>
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
+      {/* Event details modal removed */}
     </div>
   )
 }
