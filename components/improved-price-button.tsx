@@ -276,13 +276,6 @@ export function ImprovedPriceButton() {
 
          
         </Tabs>
-
-        <div className="mt-8 text-center">
-          <p className="text-sm text-gray-500 mb-4">
-            Pour plus d'informations ou pour des tarifs personnalisés, n'hésitez pas à nous contacter.
-          </p>
-          <Button className="bg-sky-600 hover:bg-sky-700 text-white">Nous contacter</Button>
-        </div>
       </DialogContent>
     </Dialog>
   )
