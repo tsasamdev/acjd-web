@@ -10,22 +10,39 @@ export default function FloatingPriceSection() {
     const [open, setOpen] = useState(false)
 
     // Prevent background scroll when modal is open, but allow modal vertical scroll
+    // Robust scroll lock: add/remove class and inject CSS
     useEffect(() => {
         if (open) {
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('scroll-lock');
         } else {
-            document.body.style.overflow = '';
+            document.body.classList.remove('scroll-lock');
         }
         return () => {
-            document.body.style.overflow = '';
+            document.body.classList.remove('scroll-lock');
         };
     }, [open]);
+
+    // Inject scroll lock CSS (only once)
+    useEffect(() => {
+        const style = document.createElement('style');
+        style.innerHTML = `
+          body.scroll-lock {
+            overflow: hidden !important;
+            overscroll-behavior: contain !important;
+            -webkit-overflow-scrolling: auto !important;
+          }
+        `;
+        document.head.appendChild(style);
+        return () => {
+            if (style.parentNode) style.parentNode.removeChild(style);
+        };
+    }, []);
 
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <Button
                 onClick={() => setOpen(true)}
-                className="fixed bottom-6 right-4 z-40 rounded-full shadow-lg bg-sky-600 hover:bg-sky-700 text-white h-14 w-14 p-0"
+                className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-40 rounded-full shadow-lg bg-sky-600 hover:bg-sky-700 text-white h-14 w-14 p-0"
                 aria-label="Voir les tarifs"
             >
                 <EuroIcon className="h-6 w-6" />
