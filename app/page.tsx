@@ -314,7 +314,7 @@ export default function Home() {
                     <div className="grid gap-8 md:grid-cols-2">
                       <HoverCard>
                         <AircraftCard
-                          name="Evektor Sportstar F-HDLV"
+                          name="Evektor Sportstar F-HDLT"
                           description="Avion biplace de fabrication tchèque, récent, très moderne équipé d'écrans numériques (EFIS) et utilisé pour l'école et les voyages."
                           images={fhdltImages}
                           badge="École"
@@ -327,7 +327,7 @@ export default function Home() {
 
                       <HoverCard>
                         <AircraftCard
-                          name="Evektor Sportstar F-HDLT"
+                          name="Evektor Sportstar F-HDLV "
                           description="Avion biplace de fabrication tchèque, récent, très moderne équipé d'écrans numériques (EFIS) et utilisé pour l'école et les voyages."
                           images={fhdlvImages}
                           badge="École"
