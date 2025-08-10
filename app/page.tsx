@@ -30,7 +30,7 @@ import { DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/di
 import TrainingCard from "@/components/training-card-reusable"
 import { useActiveSection } from "@/hooks/use-active-section"
 import { AircraftCard } from "@/components/aircraft-card"
-import { evektorImages, robinDR180Images, robinDR160Images, ulmImages } from "@/components/placeholder-images"
+import { fhdltImages,fhdlvImages, robinDR180Images, robinDR160Images, ulmImages } from "@/components/placeholder-images"
 import { ImprovedPriceButton } from "@/components/improved-price-button"
 import { EventsTimeline } from "@/components/events-timeline"
 import { FormationsSection } from "@/components/formations-section"
@@ -316,7 +316,7 @@ export default function Home() {
                         <AircraftCard
                           name="Evektor Sportstar F-HDLV"
                           description="Avion biplace de fabrication tchèque, récent, très moderne équipé d'écrans numériques (EFIS) et utilisé pour l'école et les voyages."
-                          images={evektorImages}
+                          images={fhdltImages}
                           badge="École"
                           seats={2}
                           flightRules="VFR"
@@ -329,7 +329,7 @@ export default function Home() {
                         <AircraftCard
                           name="Evektor Sportstar F-HDLT"
                           description="Avion biplace de fabrication tchèque, récent, très moderne équipé d'écrans numériques (EFIS) et utilisé pour l'école et les voyages."
-                          images={evektorImages}
+                          images={fhdlvImages}
                           badge="École"
                           seats={2}
                           flightRules="VFR"
@@ -359,7 +359,7 @@ export default function Home() {
 
                       <HoverCard>
                         <AircraftCard
-                          name="Robin DR400 160cv F-GGKN"
+                          name="Robin DR400 160cv F-GDKN"
                           description="Avion quadriplace de propriétaire mis à disposition des membres du club qualifiés pour les sorties et les animations."
                           images={robinDR160Images}
                           badge="Voyage"

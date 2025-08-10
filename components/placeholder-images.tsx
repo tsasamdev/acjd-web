@@ -2,34 +2,41 @@
 // you would replace these with actual images of your aircraft.
 
 // For Evektor Sportstar
-export const evektorImages = [
+export const fhdltImages = [
+    { src: "/hdlt-right.jpg", alt: "Evektor Sportstar - Vue extérieure" },
+    { src: "/hdlt-left.jpg", alt: "Evektor Sportstar - Cockpit" },
+    { src: "/hdlt-front.jpg", alt: "Evektor Sportstar - En vol" },
+    { src: "/hdlt-cockpit.jpg", alt: "Evektor Sportstar - Vue latérale" },
+  ]
+
+  export const fhdlvImages = [
     { src: "/evss.png", alt: "Evektor Sportstar - Vue extérieure" },
-    { src: "/placeholder.svg?height=400&width=600&text=Cockpit", alt: "Evektor Sportstar - Cockpit" },
-    { src: "/placeholder.svg?height=400&width=600&text=En+vol", alt: "Evektor Sportstar - En vol" },
-    { src: "/placeholder.svg?height=400&width=600&text=Vue+latérale", alt: "Evektor Sportstar - Vue latérale" },
+    { src: "/hdlt-left.jpg", alt: "Evektor Sportstar - Cockpit" },
+    { src: "/hdlt-front.jpg", alt: "Evektor Sportstar - En vol" },
+    { src: "/hdlt-cockpit.jpg", alt: "Evektor Sportstar - Vue latérale" },
   ]
   
   // For Robin DR400 180cv
   export const robinDR180Images = [
-    { src: "/dr180.png", alt: "Robin DR400 180cv - Vue extérieure" },
-    { src: "/placeholder.svg?height=400&width=600&text=Cockpit", alt: "Robin DR400 180cv - Cockpit" },
-    { src: "/placeholder.svg?height=400&width=600&text=En+vol", alt: "Robin DR400 180cv - En vol" },
-    { src: "/placeholder.svg?height=400&width=600&text=Vue+latérale", alt: "Robin DR400 180cv - Vue latérale" },
+   { src: "/hl-right.jpg", alt: "Robin DR400 160cv - Vue extérieure" },
+    { src: "/hl-left.jpg", alt: "Robin DR400 160cv - Cockpit" },
+    { src: "/kn-front.jpg", alt: "Robin DR400 160cv - En vol" },
+    { src: "/hl-cockpit.jpg", alt: "Robin DR400 160cv - Vue latérale" },
   ]
   
   // For Robin DR400 160cv
   export const robinDR160Images = [
-    { src: "/dr160.webp", alt: "Robin DR400 160cv - Vue extérieure" },
-    { src: "/placeholder.svg?height=400&width=600&text=Cockpit", alt: "Robin DR400 160cv - Cockpit" },
-    { src: "/placeholder.svg?height=400&width=600&text=En+vol", alt: "Robin DR400 160cv - En vol" },
-    { src: "/placeholder.svg?height=400&width=600&text=Vue+latérale", alt: "Robin DR400 160cv - Vue latérale" },
+    { src: "/kn-rightg.jpg", alt: "Robin DR400 160cv - Vue extérieure" },
+    { src: "/kn-left.jpg", alt: "Robin DR400 160cv - Cockpit" },
+    { src: "/kn-front.jpg", alt: "Robin DR400 160cv - En vol" },
+    { src: "/kn-cockpit.jpg", alt: "Robin DR400 160cv - Vue latérale" },
   ]
   
   // For Super guepard ULM
   export const ulmImages = [
-    { src: "/ulm.png", alt: "Super guepard - Vue extérieure" },
-    { src: "/placeholder.svg?height=400&width=600&text=Cockpit", alt: "Super guepard - Cockpit" },
-    { src: "/placeholder.svg?height=400&width=600&text=En+vol", alt: "Super guepard - En vol" },
-    { src: "/placeholder.svg?height=400&width=600&text=Vue+latérale", alt: "Super guepard - Vue latérale" },
+    { src: "/ulm-right.jpg", alt: "Robin DR400 160cv - Vue extérieure" },
+    { src: "/ulm-left.jpg", alt: "Robin DR400 160cv - Cockpit" },
+    { src: "/ulm-front.jpg", alt: "Robin DR400 160cv - En vol" },
+    { src: "/ulm-cockpit.jpg", alt: "Robin DR400 160cv - Vue latérale" },
   ]
   
