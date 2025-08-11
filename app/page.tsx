@@ -189,7 +189,7 @@ export default function Home() {
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Du vol découverte à la formation de futurs pilotes, nous pourront sûrement repondre a vos besoins.
+                  Du vol découverte à la formation de futurs pilotes, nous pourrons sûrement répondre a vos besoins.
                 </p>
               </FadeIn>
             </div>
@@ -203,7 +203,7 @@ export default function Home() {
                     icon={<Plane className="h-6 w-6 text-white" />}
                     details={[
                       "Light aircraft pilot licence (LAPL)",
-                      "License pilote privé avion (PPL)",
+                      "Licence pilote privé avion (PPL)",
                       "Brevet de pilote (ULM)",
                     ]}
                     modalContent={
@@ -234,7 +234,7 @@ export default function Home() {
 
                 <HoverCard>
                   <TrainingCard
-                    title="Vols découvertes"
+                    title="Les types de vols"
                     description=""
                     icon={<CompassIcon className="h-6 w-6 text-white" />}
                     details={["Baptêmes de l'air", "Vols d'initiation au pilotage", "Vols à frais partagés"]}
@@ -351,7 +351,7 @@ export default function Home() {
                           images={robinDR180Images}
                           badge="Voyage"
                           seats={4}
-                          flightRules="VFR/IFR"
+                          flightRules="VFR/VFR de nuit"
                           price="180€/h"
                           speed="240 km/h"
                         />
