@@ -25,6 +25,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={inter.variable}>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className="antialiased">{children}</body>
       <Analytics />
     </html>
