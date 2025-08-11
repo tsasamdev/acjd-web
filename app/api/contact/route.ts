@@ -17,13 +17,14 @@ export async function POST(req: NextRequest) {
     })
 
     // Email options
-    const mailOptions = {
-      from: `"${name}" <${email}>`,
-      to: process.env.CONTACT_RECEIVER_EMAIL,
-      subject: subject || "Nouveau message de contact",
-      text: message,
-      html: `<p><b>Nom:</b> ${name}</p><p><b>Email:</b> ${email}</p><p><b>Sujet:</b> ${subject}</p><p><b>Message:</b><br/>${message}</p>`
-    }
+      const mailOptions = {
+        from: `"${name}" <${process.env.SMTP_USER}>`,
+        to: process.env.CONTACT_RECEIVER_EMAIL,
+        replyTo: email,
+        subject: subject || "Nouveau message de contact",
+        text: message,
+        html: `<p><b>Nom:</b> ${name}</p><p><b>Email:</b> ${email}</p><p><b>Sujet:</b> ${subject}</p><p><b>Message:</b><br/>${message}</p>`
+      }
 
     await transporter.sendMail(mailOptions)
 
