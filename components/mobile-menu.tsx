@@ -21,7 +21,7 @@ export function MobileMenu({ onOpenPriceModal }: { onOpenPriceModal: () => void 
     { name: "A propos", href: "#about", id: "about" },
     { name: "Services", href: "#services", id: "services" },
     { name: "Flotte", href: "#fleet", id: "fleet" },
-    { name: "Formations", href: "#events", id: "events" },
+    { name: "Formations", href: "#formations", id: "formations" },
     { name: "Contact", href: "#contact", id: "contact" },
   ]
 
