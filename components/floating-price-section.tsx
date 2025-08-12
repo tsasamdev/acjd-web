@@ -42,10 +42,10 @@ export default function FloatingPriceSection() {
         <Dialog open={open} onOpenChange={setOpen}>
             <Button
                 onClick={() => setOpen(true)}
-                className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-40 rounded-full shadow-lg bg-sky-600 hover:bg-sky-700 text-white h-14 w-14 p-0"
+                className="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-40 rounded-full shadow-lg bg-sky-600 hover:bg-sky-700 text-white h-20 w-20 p-0 text-2xl flex items-center justify-center"
                 aria-label="Voir les tarifs"
             >
-                <EuroIcon className="h-6 w-6" />
+                <EuroIcon className="h-9 w-9" />
             </Button>
             <DialogContent className="w-full max-w-full max-h-[80vh] sm:max-h-[90vh] sm:max-w-[600px] overflow-y-auto bg-white px-1.5 py-1.5 sm:px-6 sm:py-6 rounded-lg">
                 <DialogHeader className="border-b border-sky-100 pb-1 mb-2 sm:pb-4 sm:mb-6">

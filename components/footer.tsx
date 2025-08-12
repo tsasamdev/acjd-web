@@ -56,10 +56,10 @@ export function Footer() {
                 <li className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-sky-300 shrink-0" />
                   <a
-                    href="mailto:ac.jd@freesbee.fr"
+                    href="mailto:contact@aeroclubjeandoudies.fr"
                     className="text-sky-200 text-sm hover:text-white transition-colors"
                   >
-                    ac.jd@freesbee.fr
+                    contact@aeroclubjeandoudies.fr
                   </a>
                 </li>
               </ul>
