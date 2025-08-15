@@ -59,7 +59,7 @@ export function Footer() {
                     href="mailto:contact@aeroclubjeandoudies.fr"
                     className="text-sky-200 text-sm hover:text-white transition-colors"
                   >
-                    contact@aeroclubjeandoudies.fr
+                     ac.jd@freesbee.fr
                   </a>
                 </li>
               </ul>
@@ -296,7 +296,7 @@ export function Footer() {
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-sky-300 shrink-0" />
-                  <span className="text-sky-200">contact@aeroclubjeandoudies.fr</span>
+                  <span className="text-sky-200"> ac.jd@freesbee.fr</span>
                 </li>
               </ul>
             </div>

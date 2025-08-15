@@ -501,7 +501,7 @@ export default function Home() {
                         <h3 className="font-medium text-lg text-sky-800 mb-2">Email</h3>
                         <p className="text-muted-foreground">
                           <a href="mailto:ac.jd@freesbee.fr" className="hover:text-sky-600 transition-colors">
-                           contact@aeroclubjeandoudies.fr
+                           ac.jd@freesbee.fr
                           </a>
                         </p>
                       </div>
