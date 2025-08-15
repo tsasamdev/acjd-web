@@ -10,10 +10,10 @@ export const fhdltImages = [
   ]
 
   export const fhdlvImages = [
-    { src: "/hdlv-right.jpg", alt: "Evektor Sportstar - Vue extérieure" },
-    { src: "/hdlv-left.jpg", alt: "Evektor Sportstar - Cockpit" },
-    { src: "/hdlv-front.jpg", alt: "Evektor Sportstar - En vol" },
-    { src: "/hdlv-cockpit.jpg", alt: "Evektor Sportstar - Vue latérale" },
+    { src: "/hdlv-right.JPG", alt: "Evektor Sportstar - Vue extérieure" },
+    { src: "/hdlv-left.JPG", alt: "Evektor Sportstar - Cockpit" },
+    { src: "/hdlv-front.JPG", alt: "Evektor Sportstar - En vol" },
+    { src: "/hdlv-cockpit.JPG", alt: "Evektor Sportstar - Vue latérale" },
   ]
   
   // For Robin DR400 180cv
