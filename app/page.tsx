@@ -166,7 +166,7 @@ export default function Home() {
                         <Calendar className="h-5 w-5 text-sky-600" />
                         <h3 className="font-semibold text-lg text-sky-800">Événements à venir</h3>
                       </div>
-                      <EventsTimeline limit={3} />
+                      <EventsTimeline limit={10} />
                     </div>
                   </FadeIn>
                 </div>
