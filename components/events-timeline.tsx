@@ -176,10 +176,12 @@ export function EventsTimeline({ limit = 10 }: EventsTimelineProps) {
                             <Clock className="h-3 w-3 mr-1 text-sky-600" />
                             <span>{time}</span>
                           </div>
-                          <div className="flex items-center">
-                            <MapPin className="h-3 w-3 mr-1 text-sky-600" />
-                            <span>{event.location}</span>
-                          </div>
+                          {event.location && (
+                            <div className="flex items-center gap-1 text-xs text-gray-500 mt-1">
+                              <MapPin className="w-4 h-4" />
+                              <span>{event.location}</span>
+                            </div>
+                          )}
                         </div>
 
                         <p className="text-xs text-gray-600 line-clamp-1 mb-1">{event.description}</p>
